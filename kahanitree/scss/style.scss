@@ -1,0 +1,71 @@
+// @import url(https://db.onlinewebfonts.com/c/9b87010f400f9a4158d2da2a7793db25?family=ITCZemkeHandW01-Regular);
+
+@font-face {
+	font-family: "Zemke Hand";
+	src: url(../fonts/zemke_hand.woff);
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+* {
+	box-sizing: border-box;
+}
+
+.kt-logo {
+	font-family: "Zemke Hand";
+	color: #39673A;
+	text-shadow: -0.04em -0.025em #B4D187;
+}
+.kt-subtext {
+	font-family: "Zemke Hand";
+}
+
+nav{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+	.nav-left, .nav-right, .nav-center {
+		padding: 0.5em;
+	}
+	.nav-left, .nav-right {
+		display: flex;
+		justify-content: space-around;
+		div {
+			padding: 1em;	
+		}
+	}
+	.nav-center {
+		font-size: 2em;
+		text-align: center;
+	}
+}
+
+@media(max-width: 768px) {
+	nav {
+		.nav-left,.nav-right, .nav-center { 
+			padding: 0.5em;
+		}
+		.nav-center {
+			flex: 0 0 100%;
+			order: 0;
+			padding-bottom: 0;
+		}
+		.nav-left, .nav-right {
+			flex: 0 0 50%;
+			div {
+				padding: 0 1em;	
+			}
+		}
+		.nav-left {
+			order: 1;
+		}
+		.nav-right {
+			order: 2;
+		}
+	}
+}

@@ -1,0 +1,53 @@
+@font-face {
+  font-family: "Zemke Hand";
+  src: url(../fonts/zemke_hand.woff); }
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto; }
+
+* {
+  box-sizing: border-box; }
+
+.kt-logo {
+  font-family: "Zemke Hand";
+  color: #39673A;
+  text-shadow: -0.04em -0.025em #B4D187; }
+
+.kt-subtext {
+  font-family: "Zemke Hand"; }
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between; }
+  nav .nav-left, nav .nav-right, nav .nav-center {
+    padding: 0.5em; }
+  nav .nav-left, nav .nav-right {
+    display: flex;
+    justify-content: space-around; }
+    nav .nav-left div, nav .nav-right div {
+      padding: 1em; }
+  nav .nav-center {
+    font-size: 2em;
+    text-align: center; }
+
+@media (max-width: 768px) {
+  nav .nav-left, nav .nav-right, nav .nav-center {
+    padding: 0.5em; }
+  nav .nav-center {
+    flex: 0 0 100%;
+    order: 0;
+    padding-bottom: 0; }
+  nav .nav-left, nav .nav-right {
+    flex: 0 0 50%; }
+    nav .nav-left div, nav .nav-right div {
+      padding: 0 1em; }
+  nav .nav-left {
+    order: 1; }
+  nav .nav-right {
+    order: 2; } }
+
+/*# sourceMappingURL=style.css.map */

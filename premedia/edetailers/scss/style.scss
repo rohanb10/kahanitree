@@ -1,0 +1,62 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	background-color: #FFF;
+}
+
+.column {
+	padding: 1em;
+	box-sizing: border-box;
+	border: 1px dashed #000;
+	img {
+		max-width: 700px;
+		width: 100%;
+	}
+}
+
+h2, .btn-container  {
+	text-align: center;
+}
+
+nav {
+	text-align: center;
+	border: 1px solid blue;
+}
+
+@media (min-width: 600px) {
+	.container {
+		max-width: 1000px;
+		padding: 1em 3em;
+		margin: 0 auto;
+	}
+	#fp-nav ul li .fp-tooltip {
+		color: #000;
+	}
+	.grid {
+		display: flex;
+		flex-wrap: wrap;
+
+		&.column-center .column{
+			text-align: center;
+		}
+	}
+
+	.column {
+		flex: 1;
+	}
+
+	.bigger { 
+		flex: 2;
+	}
+
+	.halves .column { 
+		flex: 0 0 50%; 
+	}
+	.thirds .column { 
+		flex: 0 0 33.3333%;
+	}
+	.fourths .column {
+		flex: 0 0 25%;
+	}
+}
