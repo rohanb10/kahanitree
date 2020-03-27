@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		.slide {
+			width: 100vw;
+			height: 100vh;
+			position: relative;
+		}
+		.circle {
+			background-color: green;
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			display: none;
+			animation-duration: 1s;
+			animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+			animation-fill-mode: forwards;
+			text-align: center;
+		}
+		.circleInfo {
+			width: 50%;
+			margin: 0 auto;
+			animation: fade-in 1s linear both;
+			background-color: red;
+		}
+
+		@keyframes fade-in {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		#green, #red, #blue {
+			position: fixed;
+			top: 50vh;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			margin-left: -25px;
+			border: 1px solid black;
+		}
+		#green {
+			left: 25vw;
+		}
+		#blue {
+			left: 50vw;
+		}
+		#red {
+			left: 75vw;
+		}
+	</style>
+</head>
+<body>
+	<div class="slide">
+		<button id="green" onclick="circleIn(this)" data-x="25%" data-y="50%">Clicky</button>
+		<button id="blue"  onclick="circleIn(this)" data-x="50%" data-y="50%">Clicky</button>
+		<button id="red"   onclick="circleIn(this)" data-x="75%" data-y="50%">Clicky</button>
+		<div id="overlay" class="circle">
+			<button id="close" onclick="circleOut(this)">Close</button>
+			<div id="overlayInside" class="circleInfo">
+				<p>Hello there</p>
+			</div>
+		</div>
+	</div>
+	<script src='http://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+	<script src="./jquery.keyframes.min.js"></script>
+	<script type="text/javascript">
+		function circleIn(el) {
+			var x=el.getAttribute('data-x');
+			var y=el.getAttribute('data-y');
+			document.getElementById('close').setAttribute('data-x', x);
+			document.getElementById('close').setAttribute('data-y', y);
+			addKeyframeIn(x+y);
+			document.getElementById('overlay').style.display = "block";
+		}
+
+		function addKeyframeIn(cords){
+			$.keyframe.define([{
+			    name: 'circleIn',
+			    from: {'clip-path': 'circle(0.0% at '+cords+")"},
+			    to: {'clip-path': 'circle(100.0% at '+cords+")"},
+			}]);
+			document.getElementById('overlay').style.animationName = "circleIn";
+			document.getElementById('overlayInside').style.animationDelay=".75s";
+        }
+        function addKeyframeOut(cords){
+			$.keyframe.define([{
+			    name: 'circleOut',
+			    to: {'clip-path': 'circle(0.0% at '+cords+")"},
+			    from: {'clip-path': 'circle(100.0% at '+cords+")"},
+			}]);
+			document.getElementById('overlay').style.animationName = "circleOut"
+        }
+
+        function circleOut(el) {
+        	var x=el.getAttribute('data-x');
+			var y=el.getAttribute('data-y');
+        	addKeyframeOut(x+y);
+        }
+
+	</script>
+</body>
+</html>
