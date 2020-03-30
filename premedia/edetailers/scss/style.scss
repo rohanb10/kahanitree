@@ -1,27 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Varela&display=swap');
+
+$darkBlue: #3A3A9D;
+$lightGray: #F4F4F4;
+$lightBlue: #83D0F4;
+
 html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	background-color: #FFF;
+	font-family: 'Lato', sans-serif;
 }
 
 .column {
 	padding: 1em;
 	box-sizing: border-box;
-	border: 1px dashed #000;
 	img {
 		max-width: 700px;
 		width: 100%;
 	}
 }
 
-h2, .btn-container  {
-	text-align: center;
+h1, h2, h3, h4, h5{
+	fontfont-family: 'Varela', sans-serif;
+}
+
+p {
+	margin-block-start: 1.2em;
+	margin-block-end: 1.2em;
+	line-height: 1.5em;
 }
 
 nav {
-	text-align: center;
-	border: 1px solid blue;
+	position: fixed;
+	height: 3em;
+	display:block;
+	width: 100%;
+	background: #333;
+	z-index:9;
+	text-align:center;
+	color: #f2f2f2;
+}
+
+#home {
+	background-color: $darkBlue;
+	h1, p {
+		color: #fff;
+	}
+	.btn {
+		background-color: $darkBlue;
+		padding: 1em;
+		font-size: 1.2em;
+		color: #FFF;
+		border: none;
+		&.accent-blue {
+			color: #000;
+			background-color: $lightBlue;
+		}
+	}
+}
+
+#eDetailers {
+	.info-panel {
+		margin-right: 1em;
+		background-color: $lightGray;
+		padding: 1em 2em 2em;
+		h1{
+			color: $darkBlue;
+		}
+		hr {
+			border: none;
+			height: .25em;
+			background-color: $lightBlue;
+		}
+	}
+	.service-panel {
+		background-color: $darkBlue;
+		margin-top: 1em;
+		color: #FFF;
+		.column {
+			hr {
+				background-color: $lightBlue;
+				border: none;
+				height: .125em;
+				width: 3em;
+				margin: 1em auto .25em;
+			}
+		}
+	}
+}
+
+#services {
+	background-image: linear-gradient(0, rgba(58, 58, 157, .57), rgba(58, 58, 157, .57)), url('../img/service-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	.column {
+		margin-left: .5em;
+		margin-right: .5em;
+		h3 {
+			margin-top: 0;
+			font-size: 1.5em;
+		}
+	}
+	.development {
+		background-color: #DDDEDE;
+		h3 {
+			color: $darkBlue;
+		}
+	}
+	.localisation {
+		background-color: $darkBlue;
+		color: #FFF;
+		h3 {
+			color: $lightBlue;
+		}
+	}
+	.translation {
+		background-color: #ECEFF0;
+		h3 {
+			color: $darkBlue;
+		}
+	}
+	.transcreation {
+		background-color: $lightBlue;
+		h3 {
+			color: #fff;
+		}
+	}
+
+}
+
+#how-we-work {
+	.title {
+		text-align: center;
+		h2 {
+			color: $darkBlue;
+		}
+		hr {
+			background-color: $lightBlue;
+			border: none;
+			height: .25em;
+			width: 12em;
+			margin: 1em auto;
+		}
+	}
+	.work-selector {
+		padding: 0;
+		color: #919191;
+		.column:nth-of-type(1) {
+			text-align: right;
+		}
+		.active {
+			color: #575757;
+		}
+	}
+	.work-container {
+		.column {
+			h3 {
+				color: $darkBlue;
+			}
+		}
+	}
+	.btn-container {
+		margin-top: 1em;
+		text-align: center;
+		button {
+			font-size: 1.2em;
+			outline: none;
+			background-color: $darkBlue;
+			color: #fff;
+			padding:1em 5em;
+		}
+	}
+}
+
+#map {
+
+}
+
+#about {
+	.column {
+		margin: 0 1.5em;
+		padding: 0;
+		.info-panel {
+			padding: 1em;
+			background-color: $darkBlue;
+			color: #fff;
+
+			h2 {
+				color: #fff;
+			}
+			hr {
+				background-color: $lightBlue;
+				border: none;
+				height: .25em;
+				width: 5em;
+				margin: 1em 0;
+			}
+		}
+	}
+	.business-panel {
+		padding-top: 15em;
+		h3 {
+			color: $darkBlue;
+		}
+		.column {
+			padding: 1em;
+			margin: 0;
+		}
+	}
+}
+#contact {
+	background-color: $darkBlue;
+	color: #fff;
+	hr {
+		background-color: $lightBlue;
+		border: none;
+		height: .25em;
+		width: 10em;
+		margin: 1em 0;
+	}
+	h3 {
+		color: $lightBlue;
+		text-transform: uppercase;
+	}
 }
 
 @media (min-width: 600px) {
@@ -29,10 +232,23 @@ nav {
 		max-width: 1000px;
 		padding: 1em 3em;
 		margin: 0 auto;
+		&.bigger {
+			max-width: 1200px;
+		}
 	}
+	// tooltip colour
 	#fp-nav ul li .fp-tooltip {
 		color: #000;
 	}
+
+	#home {
+		clip-path: ellipse(94% 53% at 50% 40%);	
+	}
+
+	#services {
+		// background-size: cover;
+	}
+
 	.grid {
 		display: flex;
 		flex-wrap: wrap;
@@ -48,6 +264,10 @@ nav {
 
 	.bigger { 
 		flex: 2;
+	}
+
+	.big {
+		flex: 1.5;	
 	}
 
 	.halves .column { 
