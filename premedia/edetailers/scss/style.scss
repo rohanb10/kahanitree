@@ -254,7 +254,8 @@ nav {
 	}
 
 	#home {
-		clip-path: ellipse(94% 53% at 50% 40%);	
+		-webkit-clip-path: ellipse(94% 53% at 50% 40%);
+		clip-path: ellipse(94% 53% at 50% 40%);
 	}
 
 	#services {

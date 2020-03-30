@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			position: relative;
+			height: 100vh;
+			width: 100vw;
+		}
+		#overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: red;
+			display: none;
+			animation: wave 2s linear both;
+		}
+		@keyframes wave {
+			0% {
+				clip-path: offset-path('M0.00,-1.47 C198.08,-57.72 271.49,-49.98 500.00,-0.48 L512.41,-57.72 L-6.20,-38.97 Z');
+			}
+			25% {
+				clip-path: offset-path('M0.00,-1.47 C378.67,-60.69 455.98,173.19 500.00,-0.48 L512.41,-57.72 L-6.20,-38.97 Z');
+			}
+			50% {
+				clip-path: offset-path('M0.00,-1.47 C378.67,-60.69 284.99,287.66 502.82,76.47 L512.41,-57.72 L-6.20,-38.97 Z')
+			}
+			75% {
+				clip-path: offset-path('M-11.84,58.70 C207.67,-56.73 118.50,289.63 510.15,234.38 L512.41,-57.72 L-6.20,-38.97 Z')
+			}
+			100% {
+				clip-path: offset-path('M-14.67,290.63 C229.12,-16.28 118.50,289.63 510.15,234.38 L512.41,-57.72 L-6.20,-38.97 Z')
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<button onclick="wave()">clicky</button>
+	<div id="overlay"></div>
+</div>
+<script type="text/javascript">
+	function wave() {
+		document.getElementById('overlay').style.display = 'block';
+	}
+</script>
+</body>
+</html>

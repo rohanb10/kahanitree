@@ -184,6 +184,7 @@ nav {
     color: #000; }
 
   #home {
+    -webkit-clip-path: ellipse(94% 53% at 50% 40%);
     clip-path: ellipse(94% 53% at 50% 40%); }
 
   .grid {
