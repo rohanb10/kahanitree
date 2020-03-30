@@ -5,12 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>E-Detailing Services | Vakils Premedia</title>
 	<link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jqvmap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<nav id="header">
-		Header
-	</nav>
+	<!-- <nav id="header">Header</nav> -->
 	<div id="fullpage">
 		<div id="home" class="section">
 			<div class="grid container">
@@ -118,11 +117,13 @@
 			</div>
 		</div>
 		<div id="map" class="section">
-			<div class="container">
+			<div class="container bigger">
 				<h2>Countries we work with</h2>
 				<div class="grid column-center">
 					<div class="column">
-						<img src="./img/map.png">
+						<div class="map-container">
+							<div id="vmap"></div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -184,6 +185,8 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.vmap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.vmap.world.js"></script>
 	<script type="text/javascript" src="./js/fullpage.min.js"></script>
 	<script type="text/javascript">
 		new fullpage('#fullpage', {
@@ -194,6 +197,35 @@
 			navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
 			responsiveWidth: 600,
 			css3: true
+		});
+		const COUNTRIES = ['ch', 'gb', 'at', 'dk', 'de', 'fr', 'ie', 'mx', 'ar', 'sg', 'kr', 'my', 'be', 'hk', 'au', 'us'];
+		$(document).ready(function() {
+			$('#vmap').vectorMap({
+				map: 'world_en',
+				backgroundColor: '#fff',
+				enableZoom: false,
+				selectedRegions: COUNTRIES,
+				selectedColor: '#83D0F4',
+				borderColor: '#AAA',
+				borderOpacity: 0.4,
+				borderWidth: 1,
+				hoverColor: '#3A3A9D',
+				scaleColors: ['#b6d6ff', '#005ace'],
+				onRegionClick: function(e){
+					e.preventDefault();
+				},
+				onRegionOver: function(e, code) {
+					if (COUNTRIES.indexOf(code) == -1) {
+						e.preventDefault();
+					}
+				},
+				onLabelShow: function(e, label, code) {
+					console.log(code);
+					if (COUNTRIES.indexOf(code) == -1) {
+						e.preventDefault();
+					}
+				}
+			});
 		});
 		fullpage_api.setAllowScrolling(true);
 	</script>

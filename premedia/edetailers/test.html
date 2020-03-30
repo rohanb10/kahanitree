@@ -23,22 +23,6 @@
 			animation-duration: 1s;
 			animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
 			animation-fill-mode: forwards;
-			text-align: center;
-		}
-		.circleInfo {
-			width: 50%;
-			margin: 0 auto;
-			animation: fade-in 1s linear both;
-			background-color: red;
-		}
-
-		@keyframes fade-in {
-			from {
-				opacity: 0;
-			}
-			to {
-				opacity: 1;
-			}
 		}
 
 		#green, #red, #blue {
@@ -68,12 +52,9 @@
 		<button id="red"   onclick="circleIn(this)" data-x="75%" data-y="50%">Clicky</button>
 		<div id="overlay" class="circle">
 			<button id="close" onclick="circleOut(this)">Close</button>
-			<div id="overlayInside" class="circleInfo">
-				<p>Hello there</p>
-			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+	<script src='http://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
 	<script src="./jquery.keyframes.min.js"></script>
 	<script type="text/javascript">
 		function circleIn(el) {
@@ -91,8 +72,7 @@
 			    from: {'clip-path': 'circle(0.0% at '+cords+")"},
 			    to: {'clip-path': 'circle(100.0% at '+cords+")"},
 			}]);
-			document.getElementById('overlay').style.animationName = "circleIn";
-			document.getElementById('overlayInside').style.animationDelay=".75s";
+			document.getElementById('overlay').style.animationName = "circleIn"
         }
         function addKeyframeOut(cords){
 			$.keyframe.define([{

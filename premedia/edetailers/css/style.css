@@ -124,6 +124,18 @@ nav {
     color: #fff;
     padding: 1em 5em; }
 
+#map {
+  text-align: center; }
+  #map h2 {
+    color: #3A3A9D; }
+  #map .map-container {
+    width: 100%;
+    height: 600px;
+    max-height: 75ch; }
+    #map .map-container #vmap {
+      width: 100%;
+      height: 100%; }
+
 #about .column {
   margin: 0 1.5em;
   padding: 0; }

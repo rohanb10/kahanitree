@@ -176,7 +176,19 @@ nav {
 }
 
 #map {
-
+	text-align: center;
+	h2 {
+		color: $darkBlue;
+	}
+	.map-container {
+		width: 100%;
+		height: 600px;
+		max-height: 75ch; 
+		#vmap {
+			width: 100%;
+			height: 100%;
+		}
+	}
 }
 
 #about {
