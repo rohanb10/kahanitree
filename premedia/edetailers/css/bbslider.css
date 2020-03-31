@@ -1,0 +1,50 @@
+/*!
+ * Bare Bones Slider
+ * http://www.bbslider.com/
+ */
+.bbslider-wrapper {
+	display:block;
+	overflow:hidden;
+	position:relative;
+}
+.bbslider-wrapper {
+  -webkit-transition-property: height;
+	transition-property:height;
+}
+.bbslider-wrapper > .panel {
+	display:block;
+	position:absolute;
+	width:100%;
+}
+.bbslider-wrapper > .panel.init,
+.bbslider-wrapper > .panel.init > .panel-inner {
+	-webkit-transition: none !important;
+	transition:none !important;
+}
+.bbslider-wrapper > .panel > .panel-inner {
+  -webkit-transition-duration: inherit;
+	transition-duration:inherit;
+  -webkit-transition-timing-function: inherit;
+	transition-timing-function:inherit;
+}
+.bbslider-wrapper.loop-false.first-panel .prev-control-wrapper {
+	display:none;
+}
+.bbslider-wrapper.loop-false.last-panel .next-control-wrapper {
+	display:none;
+}
+.bbslider-wrapper > .panel.slide {
+  -webkit-transition-property: transform;
+	transition-property:transform;
+	display:block;
+}
+.bbslider-wrapper > .panel.none {
+	display:none;
+}
+.bbslider-wrapper > .panel.none.active {
+	display:block;
+}
+.bbslider-wrapper.linear > .panel {
+	-webkit-transition-timing-function: linear;
+	transition-timing-function: linear;
+}

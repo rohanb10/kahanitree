@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>E-Detailing Services | Vakils Premedia</title>
 	<link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bbslider.css">
 	<link rel="stylesheet" type="text/css" href="./css/jqvmap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
@@ -12,10 +13,26 @@
 	<!-- <nav id="header">Header</nav> -->
 	<div id="fullpage">
 		<div id="home" class="section">
-			<div class="grid container">
-				<div class="column big">
+			<div class="grid container bigger">
+				<div class="column bigger">
+					<div class="slide-container">
+						<div class="frame-container slider">
+							<div class="slide">
+								<img src="./img/slide1.png">
+							</div>
+							<div class="slide">
+								<img src="./img/slide2.png">
+							</div>
+							<div class="slide">
+								<img src="./img/slide3.png">
+							</div>
+						</div>
+						<div class="pager-container">
+							<div class="pager"></div>
+						</div>
+					</div>
 				</div>
-				<div class="column">
+				<div class="column info-panel">
 					<h1>A Global eDetailing Development Partner to Brands and Agencies</h1>
 					<p>We collaborate seamlessly with companies and local agencies to develop, localise, adapt and distribute visual aids using the platform of your choice.</p>
 					<p>We understand that local agencies often understand the local market best, and recommend that design and strategy is done by them.</p>
@@ -124,6 +141,12 @@
 						<div class="map-container">
 							<div id="vmap"></div>
 						</div>
+						<div id="pins">
+							<div id="au_pin">
+								<i>Hello there</i>
+								<p>Yes this is cool</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -185,10 +208,13 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.vmap.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.vmap.world.js"></script>
 	<script type="text/javascript" src="./js/fullpage.min.js"></script>
 	<script type="text/javascript">
+
+
 		new fullpage('#fullpage', {
 			licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
 			autoScrolling:true,
@@ -196,8 +222,21 @@
 			navigation: true,
 			navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
 			responsiveWidth: 600,
-			css3: true
+			css3: true,
+			slideSelector: null,
+			scrollbar: true,
 		});
+
+		$('.slider').bbslider({
+			auto: true,
+			timer: 4000,
+			loop: true,
+			duration: 666,
+			pager: true,
+			pagerWrap: '.pager'
+		});
+
+
 		const COUNTRIES = ['ch', 'gb', 'at', 'dk', 'de', 'fr', 'ie', 'mx', 'ar', 'sg', 'kr', 'my', 'be', 'hk', 'au', 'us', 'za'];
 		$(document).ready(function() {
 			$('#vmap').vectorMap({
@@ -211,8 +250,12 @@
 				borderWidth: 1,
 				hoverColor: '#3A3A9D',
 				scaleColors: ['#b6d6ff', '#005ace'],
-				onRegionClick: function(e){
-					e.preventDefault();
+				pinMode: 'id',
+				pins: {'au': 'au_pin'},
+				onRegionClick: function(e, code){
+					if (COUNTRIES.indexOf(code) == -1) {
+						e.preventDefault();
+					}
 				},
 				onRegionOver: function(e, code) {
 					if (COUNTRIES.indexOf(code) == -1) {

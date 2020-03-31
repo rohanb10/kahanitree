@@ -31,6 +31,10 @@ p {
 	line-height: 1.5em;
 }
 
+.hidden {
+	display: none;
+}
+
 nav {
 	position: fixed;
 	height: 3em;
@@ -44,21 +48,63 @@ nav {
 
 #home {
 	background-color: $darkBlue;
-	h1, p {
+	.info-panel {
 		color: #fff;
+		h1 {
+			margin-top: 0;
+		}
+
+		.btn {
+			margin-top: 3em;
+			background-color: $darkBlue;
+			padding: 1em;
+			font-size: 1.2em;
+			color: #FFF;
+			border: none;
+			&.accent-blue {
+				color: #000;
+				background-color: $lightBlue;
+			}
+		}
 	}
-	.btn {
-		background-color: $darkBlue;
-		padding: 1em;
-		font-size: 1.2em;
-		color: #FFF;
-		border: none;
-		&.accent-blue {
-			color: #000;
-			background-color: $lightBlue;
+
+	.slide-container {
+		text-align: center;
+		// margin-top: em;
+		* {
+			margin: 0 auto;
+		}
+		width: 70%;
+
+		.frame-container {
+			border: 1vw solid;
+			border-image-source: url('../img/slide_frame.png');
+			border-image-slice: 30;
+			background-color: black;
+			border-radius: 20px;
+
+			img {
+				background-color: black;
+				display:block;
+				border-radius: .4em;
+			}
+		}
+
+		.pager-container .pager .bb-link-wrapper {
+			display: inline-block;
+			margin: 1em .5em;
+			a {
+				color: #fff;
+				text-decoration: none;
+
+			}
+			&.activePanel a {
+				color: $lightBlue;
+			}
 		}
 	}
 }
+
 
 #eDetailers {
 	.info-panel {
@@ -259,7 +305,7 @@ nav {
 	}
 
 	#services {
-		// background-size: cover;
+		background-size: cover;
 	}
 
 	.grid {
