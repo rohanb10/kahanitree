@@ -70,7 +70,6 @@ nav {
 
 	.slide-container {
 		text-align: center;
-		// margin-top: em;
 		* {
 			margin: 0 auto;
 		}
@@ -82,6 +81,7 @@ nav {
 			border-image-slice: 30;
 			background-color: black;
 			border-radius: 20px;
+			box-shadow: 35px 10px 72px -16px rgba(0,0,0,0.44);
 
 			img {
 				background-color: black;
@@ -135,6 +135,118 @@ nav {
 		}
 	}
 }
+.no-vert .fp-tableCell {
+	vertical-align: unset;
+}
+
+#certifications {
+	background-color: #EFEFEF;
+	position: relative;
+	.section-title {
+		margin-bottom: 10em;
+	}
+	.column {
+		.logo-container {
+			background-color: #ddd;
+			margin: 1em;
+			padding: 2em 0;
+			border-radius: 5px;
+			cursor: pointer;
+			img {
+				max-width: 80%;
+			}
+			&:hover {
+				// background-color: #bfddfb;
+				background-color: $lightBlue;
+			}
+			&:active {
+				background-color: $darkBlue;
+				img {
+					opacity: 0;
+				}
+			}
+
+		}
+	}
+	#cert-modal {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: $darkBlue;
+		// display: flex;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		animation-duration: 1s;
+		animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+		animation-fill-mode: both;
+		
+		.modal-content {
+			position: relative;
+			display: block;
+
+			margin: auto;
+			width: 70%;
+			.cert-content {
+				padding: 5em;
+				background-color: white;
+				border-radius: 5px;
+
+				h3 {
+					font-size: 1.6em;
+					color: $darkBlue;
+					margin: 0 0 .25em;
+					letter-spacing: 2px;
+					span {
+						border-bottom: 5px solid $lightBlue;
+					}
+				}
+				// hr {
+				// 	background-color: $lightBlue;
+				// 	border: none;
+				// 	height: .25em;
+				// 	width: 5em;
+				// 	margin: 0 0 1.5em;
+				// }
+				#veeva, #oce, #econtent {
+					display: none;
+				}
+
+				#veeva {
+					.cert-icon-container {
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+    					text-align: center;
+						.icon {
+							display: inline-block;
+							width: 33.3%;
+							padding: 2em 0;
+							img {
+								width: 75%;
+							}
+						}
+					}
+				}
+
+			}
+
+			.close-btn {
+				position: absolute;
+				top: -4.5em;
+				right: -4em;
+				color: #FFF;
+				cursor: pointer;
+				span {
+					font-size: 4em;
+				}
+			}
+			
+		}
+	}
+}
 
 #services {
 	background-image: linear-gradient(0, rgba(58, 58, 157, .57), rgba(58, 58, 157, .57)), url('../img/service-bg.jpg');
@@ -177,20 +289,21 @@ nav {
 
 }
 
-#how-we-work {
-	.title {
-		text-align: center;
-		h2 {
-			color: $darkBlue;
-		}
-		hr {
-			background-color: $lightBlue;
-			border: none;
-			height: .25em;
-			width: 12em;
-			margin: 1em auto;
-		}
+.section-title {
+	text-align: center;
+	h2 {
+		color: $darkBlue;
 	}
+	hr {
+		background-color: $lightBlue;
+		border: none;
+		height: .25em;
+		width: 12em;
+		margin: 1em auto;
+	}
+}
+
+#how-we-work {
 	.work-selector {
 		padding: 0;
 		color: #919191;
@@ -282,6 +395,32 @@ nav {
 	h3 {
 		color: $lightBlue;
 		text-transform: uppercase;
+	}
+}
+
+.fade-in {
+	animation: fade-in .5s linear both;
+}
+
+@keyframes fade-in { 
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fade-out {
+	animation: fade-out .5s linear both;
+}
+
+@keyframes fade-out { 
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
 	}
 }
 

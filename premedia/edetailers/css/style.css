@@ -60,7 +60,8 @@ nav {
       border-image-source: url("../img/slide_frame.png");
       border-image-slice: 30;
       background-color: black;
-      border-radius: 20px; }
+      border-radius: 20px;
+      box-shadow: 35px 10px 72px -16px rgba(0, 0, 0, 0.44); }
       #home .slide-container .frame-container img {
         background-color: black;
         display: block;
@@ -95,6 +96,79 @@ nav {
     width: 3em;
     margin: 1em auto .25em; }
 
+.no-vert .fp-tableCell {
+  vertical-align: unset; }
+
+#certifications {
+  background-color: #EFEFEF;
+  position: relative; }
+  #certifications .section-title {
+    margin-bottom: 10em; }
+  #certifications .column .logo-container {
+    background-color: #ddd;
+    margin: 1em;
+    padding: 2em 0;
+    border-radius: 5px;
+    cursor: pointer; }
+    #certifications .column .logo-container img {
+      max-width: 80%; }
+    #certifications .column .logo-container:hover {
+      background-color: #83D0F4; }
+    #certifications .column .logo-container:active {
+      background-color: #3A3A9D; }
+      #certifications .column .logo-container:active img {
+        opacity: 0; }
+  #certifications #cert-modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3A3A9D;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 1s;
+    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+    animation-fill-mode: both; }
+    #certifications #cert-modal .modal-content {
+      position: relative;
+      display: block;
+      margin: auto;
+      width: 70%; }
+      #certifications #cert-modal .modal-content .cert-content {
+        padding: 5em;
+        background-color: white;
+        border-radius: 5px; }
+        #certifications #cert-modal .modal-content .cert-content h3 {
+          font-size: 1.6em;
+          color: #3A3A9D;
+          margin: 0 0 .25em;
+          letter-spacing: 2px; }
+          #certifications #cert-modal .modal-content .cert-content h3 span {
+            border-bottom: 5px solid #83D0F4; }
+        #certifications #cert-modal .modal-content .cert-content #veeva, #certifications #cert-modal .modal-content .cert-content #oce, #certifications #cert-modal .modal-content .cert-content #econtent {
+          display: none; }
+        #certifications #cert-modal .modal-content .cert-content #veeva .cert-icon-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          text-align: center; }
+          #certifications #cert-modal .modal-content .cert-content #veeva .cert-icon-container .icon {
+            display: inline-block;
+            width: 33.3%;
+            padding: 2em 0; }
+            #certifications #cert-modal .modal-content .cert-content #veeva .cert-icon-container .icon img {
+              width: 75%; }
+      #certifications #cert-modal .modal-content .close-btn {
+        position: absolute;
+        top: -4.5em;
+        right: -4em;
+        color: #FFF;
+        cursor: pointer; }
+        #certifications #cert-modal .modal-content .close-btn span {
+          font-size: 4em; }
+
 #services {
   background-image: linear-gradient(0, rgba(58, 58, 157, 0.57), rgba(58, 58, 157, 0.57)), url("../img/service-bg.jpg");
   background-repeat: no-repeat;
@@ -124,16 +198,17 @@ nav {
     #services .transcreation h3 {
       color: #fff; }
 
-#how-we-work .title {
+.section-title {
   text-align: center; }
-  #how-we-work .title h2 {
+  .section-title h2 {
     color: #3A3A9D; }
-  #how-we-work .title hr {
+  .section-title hr {
     background-color: #83D0F4;
     border: none;
     height: .25em;
     width: 12em;
     margin: 1em auto; }
+
 #how-we-work .work-selector {
   padding: 0;
   color: #919191; }
@@ -201,6 +276,22 @@ nav {
     color: #83D0F4;
     text-transform: uppercase; }
 
+.fade-in {
+  animation: fade-in .5s linear both; }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+.fade-out {
+  animation: fade-out .5s linear both; }
+
+@keyframes fade-out {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
 @media (min-width: 600px) {
   .container {
     max-width: 1000px;

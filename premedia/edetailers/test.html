@@ -62,7 +62,7 @@
 		<div class="square"></div>
 	</div>
 	<script src='http://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
-	<script src="./jquery.keyframes.min.js"></script>
+	<script src="./js/jquery.keyframes.min.js"></script>
 	<script type="text/javascript">
 		function circleIn(el) {
 			var x=el.getAttribute('data-x');
@@ -79,6 +79,7 @@
 			    from: {'clip-path': 'circle(0.0% at '+cords+")"},
 			    to: {'clip-path': 'circle(100.0% at '+cords+")"},
 			}]);
+			console.log(cords);
 			document.getElementById('overlay').style.animationName = "circleIn"
         }
         function addKeyframeOut(cords){
