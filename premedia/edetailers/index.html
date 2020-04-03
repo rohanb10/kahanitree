@@ -10,9 +10,26 @@
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
-	<!-- <nav id="header">Header</nav> -->
+	<nav>
+		<div class="nav-container">
+			<div class="left">
+				<div class="nav-logo">
+					<img src="./img/vakils-logo.png">
+				</div>
+			</div>
+			<div class="right" id="navigation-menu">
+				<div data-menuanchor="eDetailers" class="nav-item"><a href="#eDetailers">eDetailing</a></div>
+				<div data-menuanchor="certifications" class="nav-item"><a href="#certifications">Certifications</a></div>
+				<div data-menuanchor="services" class="nav-item"><a href="#services">Services</a></div>
+				<div data-menuanchor="how-we-work" class="nav-item"><a href="#how-we-work">How We Work</a></div>
+				<div data-menuanchor="map" class="nav-item"><a href="#map">Clients</a></div>
+				<div data-menuanchor="about" class="nav-item"><a href="#about">About Us</a></div>
+				<div data-menuanchor="contact" class="nav-item"><a href="#contact">Contact</a></div>
+			</div>
+		</div>
+	</nav>
 	<div id="fullpage">
-		<div id="home" class="section">
+		<div id="home-section" class="section">
 			<div class="grid container bigger">
 				<div class="column bigger">
 					<div class="slide-container">
@@ -42,7 +59,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="eDetailers" class="section">
+		<div id="eDetailers-section" class="section">
 			<div class="container">
 				<div class="grid">
 					<div class="column info-panel">
@@ -64,7 +81,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="certifications" class="section no-vert">
+		<div id="certifications-section" class="section no-vert">
 			<div class="container">
 				<div class="section-title">
 					<h2>Certifications</h2>
@@ -72,17 +89,17 @@
 				</div>
 				<div class="grid column-center">
 					<div class="column">
-						<div class="logo-container" onclick="openCertModal(this, 'veeva')">
+						<div class="cert-logo-container" onclick="openCertModal(this, 'veeva')">
 							<img src="./img/cert/veeva_logo.png">
 						</div>
 					</div>
 					<div class="column">
-						<div class="logo-container" onclick="openCertModal(this, 'oce')">
+						<div class="cert-logo-container" onclick="openCertModal(this, 'oce')">
 							<img src="./img/cert/iqvia_oce_logo.png">
 						</div>
 					</div>
 					<div class="column">
-						<div class="logo-container" onclick="openCertModal(this, 'econtent')">
+						<div class="cert-logo-container" onclick="openCertModal(this, 'econtent')">
 							<img src="./img/cert/iqvia_econtent_logo.png">
 						</div>
 					</div>
@@ -137,7 +154,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="services" class="section fp-auto-height-responsive">
+		<div id="services-section" class="section fp-auto-height-responsive">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column development">
@@ -167,17 +184,17 @@
 				</div>
 			</div>
 		</div>
-		<div id="how-we-work" class="section fp-auto-height-responsive">
-			<div class="container">
+		<div id="how-we-work-section" class="section fp-auto-height-responsive">
+			<div class="container bigger">
 				<div class="section-title">
 					<h2>How We Work</h2>
 					<hr>
 				</div>
 				<div class="grid column work-selector">
-					<span class="column active">Our Model</span>
-					<span class="column">Our Process</span>
+					<span class="column">Our Model</span>
+					<span class="column active">Our Process</span>
 				</div>
-				<div class="grid work-container">
+				<div id="process" class="grid work-container" style="display:none" >
 					<div class="column">
 						<h3>Partnership</h3>
 						<p>We align ourselves to your operational and cultural needs. We’re confident in our development strengths and know where and how to work with agencies and specialist in your country.</p>
@@ -191,30 +208,48 @@
 						<p>We’re an open book. You’ll always have complete clarity on what is being done, by who, when and at what cost.</p>
 					</div>
 				</div>
+				<div id="model" class="grid work-container">
+					<div class="column">
+						<h3>The Brief</h3>
+						<p>We start by exploring what you need and how this can be achieved. We work with you to establish a clear brief</p>
+					</div>
+					<div class="column">
+						<h3>Planning</h3>
+						<p>We define the project scope and establish the most efficient way to do it</p>
+					</div>
+					<div class="column">
+						<h3>Design</h3>
+						<p>We create a visual framework from concept to wireframe to final product</p>
+					</div>
+					<div class="column">
+						<h3>Build</h3>
+						<p>We take the visual design and create a product that performs the way you need it to</p>
+					</div>
+					<div class="column">
+						<h3>Launch</h3>
+						<p>We have stringent quality checks and work on staging links before the final go live</p>
+					</div>
+				</div>
 				<div class="btn-container">
 					<button class="btn">Get in Touch</button>
 				</div>
 			</div>
 		</div>
-		<div id="map" class="section">
+		<div id="map-section" class="section">
 			<div class="container bigger">
 				<h2>Countries we work with</h2>
 				<div class="grid column-center">
 					<div class="column">
 						<div class="map-container">
-							<div id="vmap"></div>
+							<!-- <div id="vmap"></div> -->
+							<div id="gmap"></div>
 						</div>
-						<div id="pins">
-							<div id="au_pin">
-								<i>Hello there</i>
-								<p>Yes this is cool</p>
-							</div>
-						</div>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="about" class="section fp-auto-height-responsive">
+		<div id="about-section" class="section fp-auto-height-responsive">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column">
@@ -248,7 +283,7 @@
 				</div>
 			</div>
 		</div>
-		<div  id="contact" class="section">
+		<div  id="contact-section" class="section">
 			<div class="container">
 				<h2>Let’s work together</h2>
 				<hr>
@@ -274,8 +309,9 @@
 	<script type="text/javascript" src="./js/fullpage.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.keyframes.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.vmap.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.vmap.world.js"></script>
+	<!-- <script type="text/javascript" src="./js/jquery.vmap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.vmap.world.js"></script> -->
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<script type="text/javascript" src="./js/scripts.js"></script>
 </body>
 </html>

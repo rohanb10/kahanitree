@@ -3,6 +3,7 @@
 $darkBlue: #3A3A9D;
 $lightGray: #F4F4F4;
 $lightBlue: #83D0F4;
+$transparent: rgba(0,0,0,0);
 
 html, body {
 	margin: 0;
@@ -35,18 +36,69 @@ p {
 	display: none;
 }
 
-nav {
+
+// Navigation backgrounds
+	// Default
+body[class^="fp-viewing-"] nav {
 	position: fixed;
-	height: 3em;
-	display:block;
 	width: 100%;
-	background: #333;
-	z-index:9;
-	text-align:center;
-	color: #f2f2f2;
+	z-index: 9;
+	
+	.nav-container {
+		margin: 0 auto;
+		max-width: 1000px;
+		height: 3em;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.left .nav-logo img {
+			height: 2.5em;
+			transition: filter .3s linear;
+			transition-delay: .7s;
+		}
+
+		.right .nav-item {
+			display: inline-block;
+			margin-left: 2em;
+			padding: .5em 0;
+
+			border-bottom: 3px solid $transparent;
+			transition: border .3s linear;
+			transition-delay: .7s;
+
+			a {
+				color: #000;
+				text-decoration: none;
+				transition: color .3s linear;
+				transition-delay: .7s;
+			}
+
+			&.active {
+				border-color: $darkBlue;
+			}
+		}
+	}
 }
 
-#home {
+body.fp-viewing-home, body.fp-viewing-services, body.fp-viewing-contact, body.dark-bg {
+	nav .nav-container {
+		.left .nav-logo img{
+			filter: brightness(0) invert(1);
+		}
+		.right .nav-item {
+			a {
+				color: #fff;	
+			}
+			&.active {
+				border-color: #fff;
+			}
+		}
+	}
+}
+
+#home-section {
 	background-color: $darkBlue;
 	.info-panel {
 		color: #fff;
@@ -106,7 +158,7 @@ nav {
 }
 
 
-#eDetailers {
+#eDetailers-section {
 	.info-panel {
 		margin-right: 1em;
 		background-color: $lightGray;
@@ -118,6 +170,9 @@ nav {
 			border: none;
 			height: .25em;
 			background-color: $lightBlue;
+		}
+		p:last-of-type {
+			margin-bottom: 0;
 		}
 	}
 	.service-panel {
@@ -139,27 +194,26 @@ nav {
 	vertical-align: unset;
 }
 
-#certifications {
+#certifications-section {
 	background-color: #EFEFEF;
 	position: relative;
 	.section-title {
-		margin-bottom: 10em;
+		margin: 5em 0 3em;
 	}
 	.column {
-		.logo-container {
-			background-color: #ddd;
+		.cert-logo-container {
 			margin: 1em;
-			padding: 2em 0;
-			border-radius: 5px;
+			padding: 7em 0;
+			border-radius: 15em;
 			cursor: pointer;
 			img {
 				max-width: 80%;
 			}
 			&:hover {
 				// background-color: #bfddfb;
-				background-color: $lightBlue;
+				background-color: #ddd;
 			}
-			&:active {
+			&:active, &.active {
 				background-color: $darkBlue;
 				img {
 					opacity: 0;
@@ -179,13 +233,13 @@ nav {
 		display: none;
 		align-items: center;
 		justify-content: center;
-		animation-duration: 1s;
+		animation-duration: .7s;
 		animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
 		animation-fill-mode: both;
 		
 		.modal-content {
 			position: relative;
-			display: block;
+			display: none;
 
 			margin: auto;
 			width: 70%;
@@ -203,13 +257,6 @@ nav {
 						border-bottom: 5px solid $lightBlue;
 					}
 				}
-				// hr {
-				// 	background-color: $lightBlue;
-				// 	border: none;
-				// 	height: .25em;
-				// 	width: 5em;
-				// 	margin: 0 0 1.5em;
-				// }
 				#veeva, #oce, #econtent {
 					display: none;
 				}
@@ -248,7 +295,7 @@ nav {
 	}
 }
 
-#services {
+#services-section {
 	background-image: linear-gradient(0, rgba(58, 58, 157, .57), rgba(58, 58, 157, .57)), url('../img/service-bg.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -303,7 +350,7 @@ nav {
 	}
 }
 
-#how-we-work {
+#how-we-work-section {
 	.work-selector {
 		padding: 0;
 		color: #919191;
@@ -334,23 +381,26 @@ nav {
 	}
 }
 
-#map {
+#map-section {
 	text-align: center;
 	h2 {
 		color: $darkBlue;
 	}
 	.map-container {
 		width: 100%;
-		height: 600px;
-		max-height: 75ch; 
-		#vmap {
+		height: 75vh;
+		margin: 0 auto;
+		#vmap, #gmap {
+			// width: 50vw;
+			// height: 75vh;
 			width: 100%;
 			height: 100%;
+			color: #267114
 		}
 	}
 }
 
-#about {
+#about-section {
 	.column {
 		margin: 0 1.5em;
 		padding: 0;
@@ -382,7 +432,7 @@ nav {
 		}
 	}
 }
-#contact {
+#contact-section {
 	background-color: $darkBlue;
 	color: #fff;
 	hr {
@@ -398,32 +448,6 @@ nav {
 	}
 }
 
-.fade-in {
-	animation: fade-in .5s linear both;
-}
-
-@keyframes fade-in { 
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-.fade-out {
-	animation: fade-out .5s linear both;
-}
-
-@keyframes fade-out { 
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}
-
 @media (min-width: 600px) {
 	.container {
 		max-width: 1000px;
@@ -433,17 +457,13 @@ nav {
 			max-width: 1200px;
 		}
 	}
-	// tooltip colour
-	#fp-nav ul li .fp-tooltip {
-		color: #000;
-	}
 
-	#home {
+	#home-section {
 		-webkit-clip-path: ellipse(94% 53% at 50% 40%);
 		clip-path: ellipse(94% 53% at 50% 40%);
 	}
 
-	#services {
+	#services-section {
 		background-size: cover;
 	}
 
@@ -460,12 +480,11 @@ nav {
 		flex: 1;
 	}
 
-	.bigger { 
-		flex: 2;
-	}
-
 	.big {
 		flex: 1.5;	
+	}
+	.bigger { 
+		flex: 2;
 	}
 
 	.halves .column { 
