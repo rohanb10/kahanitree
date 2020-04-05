@@ -6,10 +6,10 @@
 	<title>E-Detailing Services | Vakils Premedia</title>
 	<link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/bbslider.css">
-	<link rel="stylesheet" type="text/css" href="./css/jqvmap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/jvectormap.2.0.5.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body>
+<body class="preload">
 	<nav>
 		<div class="nav-container">
 			<div class="left">
@@ -35,13 +35,13 @@
 					<div class="slide-container">
 						<div class="frame-container slider">
 							<div class="slide">
-								<img src="./img/slide1.png">
+								<img src="./img/slides/slide1.jpg">
 							</div>
 							<div class="slide">
-								<img src="./img/slide2.png">
+								<img src="./img/slides/slide2.jpg">
 							</div>
 							<div class="slide">
-								<img src="./img/slide3.png">
+								<img src="./img/slides/slide3.jpg">
 							</div>
 						</div>
 						<div class="pager-container">
@@ -191,10 +191,10 @@
 					<hr>
 				</div>
 				<div class="grid column work-selector">
-					<span class="column">Our Model</span>
-					<span class="column active">Our Process</span>
+					<span class="column active" onclick="howWeWorkHandler(this, 'model')"><span>Our Model</span></span>
+					<span class="column" onclick="howWeWorkHandler(this, 'process')"><span>Our Process</span></span>
 				</div>
-				<div id="process" class="grid work-container" style="display:none" >
+				<div id="model" class="grid work-container active">
 					<div class="column">
 						<h3>Partnership</h3>
 						<p>We align ourselves to your operational and cultural needs. We’re confident in our development strengths and know where and how to work with agencies and specialist in your country.</p>
@@ -208,7 +208,7 @@
 						<p>We’re an open book. You’ll always have complete clarity on what is being done, by who, when and at what cost.</p>
 					</div>
 				</div>
-				<div id="model" class="grid work-container">
+				<div id="process" class="grid work-container">
 					<div class="column">
 						<h3>The Brief</h3>
 						<p>We start by exploring what you need and how this can be achieved. We work with you to establish a clear brief</p>
@@ -236,26 +236,20 @@
 			</div>
 		</div>
 		<div id="map-section" class="section">
-			<div class="container bigger">
-				<h2>Countries we work with</h2>
-				<div class="grid column-center">
-					<div class="column">
-						<div class="map-container">
-							<!-- <div id="vmap"></div> -->
-							<div id="gmap"></div>
-						</div>
-						
-					</div>
+			<div class="container no-max-width no-padding">
+				<h2>Our Clients all over globe</h2>
+				<div class="map-container">
+					<div id="jvectormap"></div>
 				</div>
 			</div>
 		</div>
 		<div id="about-section" class="section fp-auto-height-responsive">
 			<div class="container bigger">
 				<div class="grid">
-					<div class="column">
+					<div class="column no-padding">
 						<div class="info-panel">
 							<h2>About Us</h2>
-							<hr>
+							<hr class="left">
 							<div>
 								<p>Vakils Premedia is a subsidiary of Vakils, a family business for over 70 years now.</p>
 								<p>It was founded in 2004 and began operations in 2007. We are based in India with a team size of 120 and with sales offices in the UK and the US.</p>
@@ -267,14 +261,23 @@
 						<h3>Our three main areas of business are</h3>
 						<div class="grid">
 							<div class="column">
+								<div class="about-icon">
+									<img src="./img/it_services.svg">
+								</div>
 								<h3>IT Services</h3>
 								<p>IT services which include eDetailers, website design development and migrations, emailers and custom software.</p>
 							</div>
 							<div class="column">
+								<div class="about-icon">
+									<img src="./img/pharma_artwork.svg">
+								</div>
 								<h3>Pharma Artwork</h3>
 								<p>Pharmaceutical Artwork and Labeling Compliance.</p>
 							</div>
 							<div class="column">
+								<div class="about-icon">
+									<img src="./img/premedia.svg">
+								</div>
 								<h3>Premedia Services</h3>
 								<p>Premedia services which included Typesetting, colour retouching, image cutouts, data sheets etc.</p>
 							</div>
@@ -286,7 +289,7 @@
 		<div  id="contact-section" class="section">
 			<div class="container">
 				<h2>Let’s work together</h2>
-				<hr>
+				<hr class="left">
 				<div>
 					<h3>Contact</h3>
 					<div>
@@ -305,13 +308,12 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript" src="./js/jquery.slim.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.slimish.min.js"></script>
 	<script type="text/javascript" src="./js/fullpage.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.keyframes.min.js"></script>
-	<!-- <script type="text/javascript" src="./js/jquery.vmap.min.js"></script>
-	<script type="text/javascript" src="./js/jquery.vmap.world.js"></script> -->
-	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="./js/jvectormap.2.0.5.min.js"></script>
+	<script type="text/javascript" src="./js/jvector.world.min.js"></script>
 	<script type="text/javascript" src="./js/scripts.js"></script>
 </body>
 </html>
