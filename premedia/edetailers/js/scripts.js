@@ -6,11 +6,43 @@ new fullpage('#fullpage', {
 	menu: '#navigation-menu',
 	// navigation: true,
 	// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
-	responsiveWidth: 600,
-	paddingTop: '3em',
+	// responsiveWidth: 600,
+	scrollBar: false,
+	paddingTop: '4em',
 	slideSelector: null,
-	bigSectionsDestination: 'top'
+	bigSectionsDestination: 'top',
+	onLeave: function(origin, destination, direction){
+		sectionAnimations(origin, destination, direction);
+	},
 });
+
+function sectionAnimations(origin, destination, direction) {
+	//skip animations for section if already completed
+	if (destination.item.classList.contains('animated')) {
+		console.log('skipping animations');
+		return;
+	}
+	// switch (destination.anchor) {
+	// 	case 'eDetailers':
+	// 		break;
+	// 	case 'certifications':
+	// 		break;
+	// 	case 'services':
+	// 		break;
+	// 	case 'how-we-work':
+	// 		break;
+	// 	case 'map':
+	// 		break;
+	// 	case 'about':
+	// 		break;
+	// 	case 'contact':
+	// 		break;
+	// 	default: 
+	// 		break;
+	// }
+	//mark section as complete to prevent animations in future
+	destination.item.classList.add('animated');
+}
 
 // Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
 $('.slider').bbslider({
@@ -52,11 +84,11 @@ $('.slider').bbslider({
 		$.keyframe.define([{
 			name: 'circle-in',
 			from: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
-			to: {'clip-path': 'circle(100% at '+ xy + ')', '-webkit-clip-path': 'circle(100% at '+ xy + ')'},
+			to: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
 		}]);
 		$.keyframe.define([{
 			name: 'circle-out',
-			from: {'clip-path': 'circle(100% at '+ xy + ')', '-webkit-clip-path': 'circle(100% at '+ xy + ')'},
+			from: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
 			to: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
 		}]);
 	}
@@ -102,6 +134,7 @@ function howWeWorkHandler(el, id) {
 			map: 'world_mill',
 			backgroundColor: '#FFF',
 			zoomMax: 4,
+			zoomMin: 0.7,
 			zoomOnScroll: false,
 			zoomStep: 1.6,
 			regionStyle: {
@@ -119,12 +152,17 @@ function howWeWorkHandler(el, id) {
 					'fill': '#3A3A9D',
 					'fill-opacity': 0.8,
 					'stroke': '#83D0F4',
-					'r': 6,
+					'r': 5,
 				},
 				hover: {
 					'fill': '#3A3A9D',
 					'stroke': 'black'
 				}
+			},
+			focusOn: {
+				x: 0.5,
+				y: 0.5,
+				scale: 0.9,
 			},
 			markers: COUNTRIES,
 			onRegionTipShow: function(e){
@@ -138,8 +176,6 @@ function howWeWorkHandler(el, id) {
 		});
 	});
 // Map / Clients section end
-
-
 // Block all css transitions until page fully loaded
 $(window).load(function() {
 	$("body").removeClass("preload");
