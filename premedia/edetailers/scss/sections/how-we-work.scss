@@ -6,7 +6,7 @@
 		width: 12em;
 	}
 	.work-selector {
-		margin: 4em 0 2em;
+		margin: 2em 0 3em;
 		span {
 			padding: 0;
 			margin: 0 .5em;
@@ -15,7 +15,7 @@
 				cursor: pointer;
 				padding: .5em .5em;
 				border-bottom: 3px solid $transparent;
-				transition: all .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+				transition: all .3s $easeInOut;
 				&.active {
 					color: #000;
 					border-color: #000;
@@ -27,7 +27,7 @@
 		}
 	}
 	.work-container {
-		display: none;
+		display: flex;
 		.timeline {
 			width: 100%;
 			padding: 0 1em;
@@ -60,9 +60,6 @@
 			}
 			height: 15em;
 		}
-		&.active {
-			display: flex;
-		}
 	}
 	.btn-container {
 		text-align: center;
@@ -89,7 +86,7 @@
 				animation-delay: 7s;
 			}
 			.line {
-				animation: timeline-draw-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				animation: timeline-draw-right 1s $easeInOut both;
 				&.one {
 					animation-delay: 1.5s;
 				}
@@ -105,6 +102,24 @@
 				&.five {
 					animation-delay: 7.5s;
 				}
+			}
+		}
+		.work-container .column {
+			animation: fade-in .5s $easeInOut both;
+			&.one {
+				animation-delay: 1s;
+			}
+			&.two {
+				animation-delay: 2.5s;
+			}
+			&.three {
+				animation-delay: 4s;
+			}
+			&.four {
+				animation-delay: 5.5s;
+			}
+			&.five {
+				animation-delay: 7s;
 			}
 		}
 	}

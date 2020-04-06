@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato|Varela&display=swap");
 .preload * {
   -webkit-transition: none !important;
-  transition: none !important; }
+  transition: none !important;
+  animation-duration: 0s !important;
+  -webkit-animation-duration: 0s !important; }
 
 .grid {
   display: flex;
@@ -58,6 +60,20 @@
     opacity: 1; }
   100% {
     transform: translateY(0); } }
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(100vw); }
+  to {
+    opacity: 1;
+    transform: translateX(0); } }
+@keyframes animate-home-bg {
+  from {
+    -webkit-clip-path: ellipse(100% 100% at 50% 40%);
+    clip-path: ellipse(100% 100% at 50% 40%); }
+  to {
+    -webkit-clip-path: ellipse(94% 53% at 50% 40%);
+    clip-path: ellipse(94% 53% at 50% 40%); } }
 body[class^="fp-viewing-"] nav {
   position: fixed;
   width: 100%;
@@ -76,9 +92,9 @@ body[class^="fp-viewing-"] nav {
     body[class^="fp-viewing-"] nav .nav-container .right .nav-item {
       display: inline-block;
       margin-left: 1.25em;
-      padding: 1em 0 .5em;
+      padding: 1em 0 .25em;
       border-bottom: 3px solid rgba(58, 58, 157, 0);
-      transition: border-color 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transition: border-bottom 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       transition-delay: .6s; }
       body[class^="fp-viewing-"] nav .nav-container .right .nav-item a {
         font-size: .9em;
@@ -98,8 +114,8 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
 
 #home-section {
   background-color: #3A3A9D;
-  -webkit-clip-path: ellipse(94% 53% at 50% 40%);
-  clip-path: ellipse(94% 53% at 50% 40%); }
+  animation: animate-home-bg 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 3s; }
   #home-section .info-panel {
     color: #fff; }
     #home-section .info-panel h1 {
@@ -132,15 +148,33 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
         text-decoration: none; }
       #home-section .slide-container .pager-container .pager .bb-link-wrapper.activePanel a {
         color: #83D0F4; }
+  #home-section .slide-container {
+    animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: .5s; }
+  #home-section .info-panel h1, #home-section .info-panel p {
+    animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 1.5s; }
+  #home-section .info-panel .btn {
+    animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 2.5s; }
 
 #eDetailers-section .info-panel {
   margin-right: 1em;
   background-color: #F4F4F4;
   padding: 1em 2em 2em; }
   #eDetailers-section .info-panel h1 {
+    margin-top: 0;
     color: #3A3A9D; }
   #eDetailers-section .info-panel p:last-of-type {
     margin-bottom: 0; }
+#eDetailers-section .image-panel {
+  display: flex;
+  align-items: flex-end; }
+  #eDetailers-section .image-panel img:nth-of-type(1) {
+    width: calc(60% - 1em);
+    padding-right: 1em; }
+  #eDetailers-section .image-panel img:nth-of-type(2) {
+    width: 40%; }
 #eDetailers-section .service-panel {
   background-color: #3A3A9D;
   margin-top: 1em;
@@ -151,6 +185,18 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
     margin: 1em auto .25em;
     background-color: #83D0F4;
     border: none; }
+#eDetailers-section.animated .info-panel {
+  animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 0.5s; }
+#eDetailers-section.animated .image-panel img {
+  animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  #eDetailers-section.animated .image-panel img:nth-of-type(1) {
+    animation-delay: 1.3s; }
+  #eDetailers-section.animated .image-panel img:nth-of-type(2) {
+    animation-delay: 1.5s; }
+#eDetailers-section.animated .service-panel {
+  animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 2s; }
 
 #certifications-section {
   background-color: #EFEFEF;
@@ -183,7 +229,7 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
     justify-content: center;
     background-color: #3A3A9D;
     animation-duration: .7s;
-    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
     animation-fill-mode: both; }
     #certifications-section #cert-modal .modal-content {
       position: relative;
@@ -222,6 +268,9 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
         cursor: pointer; }
         #certifications-section #cert-modal .modal-content .close-btn span {
           font-size: 4em; }
+  #certifications-section.animated .grid .cert-logo-container {
+    animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: .7s; }
 
 #services-section {
   background-image: url("../img/service_bg.jpg");
@@ -273,7 +322,7 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
 #how-we-work-section hr {
   width: 12em; }
 #how-we-work-section .work-selector {
-  margin: 4em 0 2em; }
+  margin: 2em 0 3em; }
   #how-we-work-section .work-selector span {
     padding: 0;
     margin: 0 .5em; }
@@ -289,7 +338,7 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
     #how-we-work-section .work-selector span.column:nth-of-type(1) {
       text-align: right; }
 #how-we-work-section .work-container {
-  display: none; }
+  display: flex; }
   #how-we-work-section .work-container .timeline {
     width: 100%;
     padding: 0 1em; }
@@ -315,8 +364,6 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
     height: 15em; }
     #how-we-work-section .work-container .column h3 {
       color: #3A3A9D; }
-  #how-we-work-section .work-container.active {
-    display: flex; }
 #how-we-work-section .btn-container {
   text-align: center; }
   #how-we-work-section .btn-container .btn {
@@ -345,6 +392,18 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
       animation-delay: 6s; }
     #how-we-work-section.animated .work-container .dot .line.five {
       animation-delay: 7.5s; }
+#how-we-work-section.animated .work-container .column {
+  animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  #how-we-work-section.animated .work-container .column.one {
+    animation-delay: 1s; }
+  #how-we-work-section.animated .work-container .column.two {
+    animation-delay: 2.5s; }
+  #how-we-work-section.animated .work-container .column.three {
+    animation-delay: 4s; }
+  #how-we-work-section.animated .work-container .column.four {
+    animation-delay: 5.5s; }
+  #how-we-work-section.animated .work-container .column.five {
+    animation-delay: 7s; }
 
 #map-section {
   text-align: center; }
@@ -406,12 +465,15 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
   color: #292929;
   border: solid 2px #3A3A9D;
   border-radius: 0;
-  padding: .25em;
+  padding: .5em;
   font-size: initial;
-  margin: 5em; }
-  .jvectormap-tip .company-name {
-    font-weight: bold;
-    font-size: 1.2em; }
+  margin: 5em;
+  font-family: 'Lato'; }
+  .jvectormap-tip .country-name {
+    font-family: 'Varela';
+    text-transform: uppercase;
+    font-size: .9em;
+    color: #3A3A9D; }
 
 /* ZOOM CONTROLS
 .jvectormap-container:hover {
@@ -456,6 +518,21 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
   #about-section .business-panel .column {
     padding: 1em;
     margin: 0; }
+#about-section.animated .info-panel {
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: .5s; }
+#about-section.animated .business-panel h3 {
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 1.5s; }
+#about-section.animated .business-panel .column:nth-of-type(1) {
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 2s; }
+#about-section.animated .business-panel .column:nth-of-type(2) {
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 2.5s; }
+#about-section.animated .business-panel .column:nth-of-type(3) {
+  animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 3s; }
 
 #contact-section {
   background-color: #3A3A9D;
@@ -506,7 +583,7 @@ p {
 
 .light-blue-underline {
   border-bottom: 4px solid #83D0F4;
-  padding-bottom: .5em;
+  padding-bottom: .25em;
   box-sizing: border-box;
   margin-bottom: 1.5em; }
 

@@ -16,7 +16,7 @@
 
 	&.animated {
 		.jvectormap-marker {
-			animation: fade-in .2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+			animation: fade-in .2s $easeInOut both;
 			@include staggeredDelays(20, .2, .5);
 		}
 	}
@@ -28,13 +28,16 @@
 	color: #292929;
 	border: solid 2px #3A3A9D;
 	border-radius: 0;
-	padding: .25em;
+	padding: .5em;
 	font-size: initial;
     margin: 5em;
+    font-family: 'Lato';
 
-	.company-name {
-		font-weight: bold;
-		font-size: 1.2em;
+	.country-name {
+		font-family: 'Varela';
+		text-transform: uppercase;
+		font-size: .9em;
+		color: #3A3A9D;
 	}
 }
 /* ZOOM CONTROLS

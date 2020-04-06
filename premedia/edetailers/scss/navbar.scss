@@ -14,24 +14,24 @@ body[class^="fp-viewing-"] nav {
 
 		.left .nav-logo img {
 			height: 2.75em;
-			transition: filter .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+			transition: filter .1s $easeInOut;
 			transition-delay: .6s;
 		}
 
 		.right .nav-item {
 			display: inline-block;
 			margin-left: 1.25em;
-			padding: 1em 0 .5em;
+			padding: 1em 0 .25em;
 
 			border-bottom: 3px solid $transparent;
-			transition: border-color .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+			transition: border-bottom .1s $easeInOut;
 			transition-delay: .6s;
 
 			a {
 				font-size: .9em;
 				color: #000;
 				text-decoration: none;
-				transition: color .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+				transition: color .1s $easeInOut;
 				transition-delay: .6s;
 			}
 

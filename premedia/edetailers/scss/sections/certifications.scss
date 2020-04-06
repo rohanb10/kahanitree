@@ -42,7 +42,7 @@
 		background-color: $darkBlue;
 
 		animation-duration: .7s;
-		animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+		animation-timing-function: $easeInOut;
 		animation-fill-mode: both;
 		
 		.modal-content {
@@ -96,6 +96,14 @@
 				span {
 					font-size: 4em;
 				}
+			}
+		}
+	}
+	&.animated {
+		.grid {
+			.cert-logo-container {
+				animation: fade-in 1s $easeInOut both;
+				animation-delay: .7s;
 			}
 		}
 	}

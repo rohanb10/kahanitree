@@ -39,3 +39,24 @@
 		transform: translateY(0);
 	}
 }
+@keyframes fade-in-left {
+	from {
+		opacity: 0;
+		transform: translateX(100vw);
+	}
+	to {
+		opacity: 1;
+		transform: translateX(0);	
+	}
+}
+
+@keyframes animate-home-bg {
+	from {
+		-webkit-clip-path: ellipse(100% 100% at 50% 40%);
+		clip-path: ellipse(100% 100% at 50% 40%);
+	}
+	to {
+		-webkit-clip-path: ellipse(94% 53% at 50% 40%);
+		clip-path: ellipse(94% 53% at 50% 40%);
+	}
+}

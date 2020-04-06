@@ -1,7 +1,7 @@
 #home-section {
 	background-color: $darkBlue;
-	-webkit-clip-path: ellipse(94% 53% at 50% 40%);
-	clip-path: ellipse(94% 53% at 50% 40%);
+	// -webkit-clip-path: ellipse(94% 53% at 50% 40%);
+	// clip-path: ellipse(94% 53% at 50% 40%);
 	.info-panel {
 		color: #fff;
 		h1 {
@@ -48,6 +48,26 @@
 			&.activePanel a {
 				color: $lightBlue;
 			}
+		}
+	}
+
+	// Animations (no .animated class because) it does not appear on page load
+	animation: animate-home-bg 1s $easeInOut both;
+	animation-delay: 3s;
+
+	.slide-container {
+		animation: fade-in 1s $easeInOut both;
+		animation-delay: .5s;
+	}
+
+	.info-panel {
+		h1, p {
+			animation: fade-in 1s $easeInOut both;
+			animation-delay: 1.5s;		
+		}
+		.btn {
+			animation: fade-in 1s $easeInOut both;
+			animation-delay: 2.5s;
 		}
 	}
 }

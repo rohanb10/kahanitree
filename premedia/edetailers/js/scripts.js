@@ -2,6 +2,7 @@
 new fullpage('#fullpage', {
 	licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
 	autoScrolling:true,
+	animateAnchor: false,
 	anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
 	menu: '#navigation-menu',
 	// navigation: true,
@@ -66,7 +67,7 @@ $('.slider').bbslider({
 		$('#'+certName).css({'display':'block'});
 		$('body').addClass('dark-bg');
 		$('.modal-content').delay(600).fadeIn(300);
-		$('.nav-item').delay(300).fadeOut(100);
+		$('.nav-item').fadeOut(100);
 	}
 
 	// close modal animation
@@ -98,11 +99,11 @@ function howWeWorkHandler(el, id) {
 	$('.work-selector span').removeClass('active');
 	$(el).addClass('active');
 	if (id === 'model') {
-		$('#model').addClass('active');
-		$('#process').removeClass('active');
+		$('#process').removeClass('active').fadeOut(499);
+		$('#model').addClass('active').delay(500).fadeIn(500);
 	} else {
-		$('#process').addClass('active');
-		$('#model').removeClass('active');
+		$('#model').removeClass('active').fadeOut(499);
+		$('#process').addClass('active').delay(500).fadeIn(500);
 	}
 }
 
@@ -171,12 +172,18 @@ function howWeWorkHandler(el, id) {
 			// Intercept the tooltip shown on hover by adding company name
 			onMarkerTipShow: function(e, tip, code){
 				// console.log(tip[0], code);
-				tip[0].innerHTML = '<div class="company-name">'+ COUNTRIES[code].company + '</div>' + tip[0].innerHTML ;
+				tip[0].innerHTML = markerTooltipBuilder(code);
 			},
 		});
 	});
-// Map / Clients section end
+
+	function markerTooltipBuilder(code) {
+		var cc = COUNTRIES[code];
+		return '<div class="country-name">'+ cc.name + '</div><div>' + cc.company + '</div>';
+	}
+
 // Block all css transitions until page fully loaded
 $(window).load(function() {
 	$("body").removeClass("preload");
+	$("#process").fadeToggle();
 });
