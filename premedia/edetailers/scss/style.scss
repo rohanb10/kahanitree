@@ -83,10 +83,22 @@ p {
 }
 
 .btn {
-	margin-top: 3em;
+	margin-top: 1em;
 	background-color: $darkBlue;
-	padding: 1em;
+	padding: 1em 2em;
 	font-size: 1.2em;
 	color: #FFF;
 	border: none;
+	cursor: pointer;
+	position: relative;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	transition: box-shadow .5s $easeInOut;
+	&.light-blue {
+		color: #000;
+		background-color: $lightBlue;
+	}
+	&:hover, &:focus, &:active {
+		box-shadow: 0 12px 10px -5px rgba(0, 0, 0, 0.5);
+	}
 }

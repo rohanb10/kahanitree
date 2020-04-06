@@ -121,9 +121,7 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
     #home-section .info-panel h1 {
       margin-top: 0; }
     #home-section .info-panel .btn {
-      margin-top: 3em;
-      color: #000;
-      background-color: #83D0F4; }
+      margin-top: 3em; }
   #home-section .slide-container {
     text-align: center;
     width: 70%; }
@@ -537,10 +535,92 @@ body.fp-viewing-home nav .nav-container .right .nav-item.active, body.fp-viewing
 #contact-section {
   background-color: #3A3A9D;
   color: #fff; }
-  #contact-section h3 {
-    font-size: .8em;
-    color: #83D0F4;
-    text-transform: uppercase; }
+  #contact-section .grid {
+    padding-top: 3em; }
+    #contact-section .grid .column {
+      padding: 0; }
+    #contact-section .grid .contact-info {
+      border-right: 2px solid white; }
+      #contact-section .grid .contact-info h3 {
+        color: #83D0F4;
+        text-transform: uppercase;
+        margin: 0; }
+      #contact-section .grid .contact-info p {
+        line-height: initial;
+        margin: .5em 0; }
+        #contact-section .grid .contact-info p a {
+          color: white; }
+    #contact-section .grid .contact-form {
+      display: block;
+      margin-left: 10em; }
+      #contact-section .grid .contact-form label, #contact-section .grid .contact-form input, #contact-section .grid .contact-form textarea {
+        transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        touch-action: manipulation;
+        position: relative; }
+      #contact-section .grid .contact-form label {
+        z-index: 1;
+        display: inline-block;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: .9em; }
+      #contact-section .grid .contact-form input[type="text"], #contact-section .grid .contact-form input[type="number"], #contact-section .grid .contact-form input[type="email"], #contact-section .grid .contact-form textarea {
+        color: white;
+        background-color: rgba(58, 58, 157, 0);
+        border: 0;
+        border-bottom: 2px solid #83D0F4;
+        box-sizing: border-box;
+        padding: .5em 1em;
+        width: 100%;
+        -webkit-appearance: none;
+        z-index: 3;
+        font-size: 1em; }
+        #contact-section .grid .contact-form input[type="text"]:focus, #contact-section .grid .contact-form input[type="number"]:focus, #contact-section .grid .contact-form input[type="email"]:focus, #contact-section .grid .contact-form textarea:focus {
+          outline: 0; }
+        #contact-section .grid .contact-form input[type="text"]::placeholder, #contact-section .grid .contact-form input[type="number"]::placeholder, #contact-section .grid .contact-form input[type="email"]::placeholder, #contact-section .grid .contact-form textarea::placeholder {
+          opacity: 0;
+          color: #888;
+          transition: inherit; }
+        #contact-section .grid .contact-form input[type="text"]:focus::placeholder, #contact-section .grid .contact-form input[type="number"]:focus::placeholder, #contact-section .grid .contact-form input[type="email"]:focus::placeholder, #contact-section .grid .contact-form textarea:focus::placeholder {
+          opacity: 1; }
+        #contact-section .grid .contact-form input[type="text"]:placeholder-shown + label, #contact-section .grid .contact-form input[type="number"]:placeholder-shown + label, #contact-section .grid .contact-form input[type="email"]:placeholder-shown + label, #contact-section .grid .contact-form textarea:placeholder-shown + label {
+          cursor: text;
+          transform-origin: left bottom;
+          transform: translate(0.85rem, 1.2rem); }
+        #contact-section .grid .contact-form input[type="text"]:not(:placeholder-shown) + label, #contact-section .grid .contact-form input[type="text"]:focus + label, #contact-section .grid .contact-form input[type="number"]:not(:placeholder-shown) + label, #contact-section .grid .contact-form input[type="number"]:focus + label, #contact-section .grid .contact-form input[type="email"]:not(:placeholder-shown) + label, #contact-section .grid .contact-form input[type="email"]:focus + label, #contact-section .grid .contact-form textarea:not(:placeholder-shown) + label, #contact-section .grid .contact-form textarea:focus + label {
+          transform: translate(0, 0);
+          cursor: pointer;
+          font-size: .8em;
+          color: #83D0F4; }
+      #contact-section .grid .contact-form input[data-valid="error"], #contact-section .grid .contact-form textarea[data-valid="error"] {
+        border-color: red; }
+      #contact-section .grid .contact-form textarea {
+        margin-top: 1em;
+        border: 2px solid #83D0F4;
+        height: 6em;
+        padding: 1em;
+        box-sizing: border-box;
+        resize: vertical; }
+        #contact-section .grid .contact-form textarea:placeholder-shown + label {
+          transform: translate(0.85rem, 2.6rem); }
+        #contact-section .grid .contact-form textarea:not(:placeholder-shown) + label, #contact-section .grid .contact-form textarea:focus + label {
+          transform: translate(0, 0.5rem);
+          cursor: pointer; }
+      #contact-section .grid .contact-form .row {
+        display: flex;
+        justify-content: space-between; }
+        #contact-section .grid .contact-form .row .input-container {
+          margin-bottom: 1em;
+          display: flex;
+          flex-flow: column-reverse;
+          width: 45%; }
+          #contact-section .grid .contact-form .row .input-container.full-width {
+            width: 100%; }
+          #contact-section .grid .contact-form .row .input-container #error-name, #contact-section .grid .contact-form .row .input-container #error-email, #contact-section .grid .contact-form .row .input-container #error-message {
+            text-align: right;
+            font-size: .8em;
+            font-style: oblique; }
+        #contact-section .grid .contact-form .row:nth-of-type(1) .input-container {
+          margin-bottom: .2em; }
 
 html, body {
   background-color: #FFF;
@@ -588,11 +668,21 @@ p {
   margin-bottom: 1.5em; }
 
 .btn {
-  margin-top: 3em;
+  margin-top: 1em;
   background-color: #3A3A9D;
-  padding: 1em;
+  padding: 1em 2em;
   font-size: 1.2em;
   color: #FFF;
-  border: none; }
+  border: none;
+  cursor: pointer;
+  position: relative;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  transition: box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .btn.light-blue {
+    color: #000;
+    background-color: #83D0F4; }
+  .btn:hover, .btn:focus, .btn:active {
+    box-shadow: 0 12px 10px -5px rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=style.css.map */

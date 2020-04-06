@@ -13,37 +13,12 @@ new fullpage('#fullpage', {
 	slideSelector: null,
 	bigSectionsDestination: 'top',
 	onLeave: function(origin, destination, direction){
-		sectionAnimations(origin, destination, direction);
+		if (destination.item.classList.contains('animated')) {
+			return;
+		}
+		destination.item.classList.add('animated');
 	},
 });
-
-function sectionAnimations(origin, destination, direction) {
-	//skip animations for section if already completed
-	if (destination.item.classList.contains('animated')) {
-		console.log('skipping animations');
-		return;
-	}
-	// switch (destination.anchor) {
-	// 	case 'eDetailers':
-	// 		break;
-	// 	case 'certifications':
-	// 		break;
-	// 	case 'services':
-	// 		break;
-	// 	case 'how-we-work':
-	// 		break;
-	// 	case 'map':
-	// 		break;
-	// 	case 'about':
-	// 		break;
-	// 	case 'contact':
-	// 		break;
-	// 	default: 
-	// 		break;
-	// }
-	//mark section as complete to prevent animations in future
-	destination.item.classList.add('animated');
-}
 
 // Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
 $('.slider').bbslider({
@@ -181,6 +156,26 @@ function howWeWorkHandler(el, id) {
 		var cc = COUNTRIES[code];
 		return '<div class="country-name">'+ cc.name + '</div><div>' + cc.company + '</div>';
 	}
+
+function validateContactForm(form){
+	var invalidName = !form.name.value.match(/^[a-z ,.'-]+$/i);
+	document.getElementById('error-name').innerHTML = invalidName ? 'Valid name required' : '&nbsp;';
+	form.name.setAttribute('data-valid', (invalidName ? 'error' :''));
+
+	var invalidEmail = !form.email.value.match(re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+	document.getElementById('error-email').innerHTML = invalidEmail ? 'Valid email required' : '&nbsp;';
+	form.email.setAttribute('data-valid', (invalidEmail ? 'error' :''));
+
+	var invalidMessage = !form.message.value.match(/^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/);
+	if (form.message.value.length < 5) {
+		document.getElementById('error-message').innerHTML = invalidMessage ? 'Message required' : '&nbsp;';
+		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
+	} else {
+		document.getElementById('error-message').innerHTML = invalidMessage ? 'No special characters allowed in message body' : '&nbsp;';
+		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
+	}
+	return invalidName === false && invalidEmail === false  && invalidMessage === false;
+}
 
 // Block all css transitions until page fully loaded
 $(window).load(function() {

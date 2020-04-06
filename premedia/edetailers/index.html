@@ -53,7 +53,7 @@
 					<h1>A Global eDetailing Development Partner to Brands and Agencies</h1>
 					<p>We collaborate seamlessly with companies and local agencies to develop, localise, adapt and distribute visual aids using the platform of your choice.</p>
 					<p>We understand that local agencies often understand the local market best, and recommend that design and strategy is done by them.</p>
-					<button class="btn accent-blue">
+					<button class="btn light-blue">
 						Request a Demo
 					</button>
 				</div>
@@ -279,23 +279,55 @@
 				</div>
 			</div>
 		</div>
-		<div  id="contact-section" class="section">
+		<div  id="contact-section" class="section no-vert">
 			<div class="container">
 				<h2><span class="light-blue-underline">Let’s work together</span></h2>
-				<br>
-				<div>
-					<h3>Talk to Us</h3>
-					<div>
+			</div>
+			<div class="container">
+				<div class="grid">
+					<div class="column contact-info">
+						<h3>Talk to Us</h3>
 						<p>info@vakilspremedia.com</p>
 						<p>+91 22 2430 6780</p>
-					</div>
-				</div>
-				<div>
-					<h3>Visit Us</h3>
-					<div>
-						<p>Industry Manor, 2nd Floor</p>
+						<br><br><br><br>
+						<h3>Visit Us</h3>
+						<p><a href="https://goo.gl/maps/3WZwTQobTuJch1Vw8" target="_blank">Industry Manor</a>, 2nd Floor</p>
 						<p>Appasaheb Marathe Marg,</p>
-						<p>Mumbai – 400 025, Maharashtra, India</p>
+						<p>Mumbai – 400 025, India</p>
+					</div>
+					<div class="column bigger contact-form-container">
+						<form class="contact-form" action="" onsubmit="return validateContactForm(this)">
+							<div class="row">
+								<div class="input-container">
+									<div id="error-name">&nbsp;</div>
+									<input type="text" name="name" placeholder="David Beckham">
+									<label for="name">Name *</label>
+								</div>
+								<div class="input-container">
+									<div id="error-email">&nbsp;</div>
+									<input type="text" name="email" placeholder="david@gov.uk">
+									<label for="email">Email *</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-container">
+									<input type="number" name="phone" placeholder="+91 98200 12345">
+									<label for="phone">Phone Number</label>
+								</div>									
+								<div class="input-container">
+									<input type="text" name="company" placeholder="Vakils">
+									<label for="company">Company</label>
+								</div>
+							</div>
+							<div class="row">
+								<div class="input-container full-width">
+									<div id="error-message">&nbsp;</div>
+									<textarea name="message" placeholder="Message"></textarea>
+									<label for="message">Message *</label>
+								</div>
+							</div>
+							<input type="submit" class="btn light-blue" name="submit" value="Send">
+						</form>
 					</div>
 				</div>
 			</div>
