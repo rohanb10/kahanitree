@@ -1,0 +1,111 @@
+#how-we-work-section {
+	.section-title{
+		margin-bottom: 2em;
+	}
+	hr {
+		width: 12em;
+	}
+	.work-selector {
+		margin: 4em 0 2em;
+		span {
+			padding: 0;
+			margin: 0 .5em;
+			span {
+				color: #bbb;
+				cursor: pointer;
+				padding: .5em .5em;
+				border-bottom: 3px solid $transparent;
+				transition: all .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+				&.active {
+					color: #000;
+					border-color: #000;
+				}
+			}
+			&.column:nth-of-type(1) {
+				text-align: right;
+			}
+		}
+	}
+	.work-container {
+		display: none;
+		.timeline {
+			width: 100%;
+			padding: 0 1em;
+			.column {
+				height: 1.5em;
+				padding:0;
+				position: relative;
+			}
+			.dot {
+				height: .9em;
+				width: .9em;
+				border: 1px solid $darkBlue;
+				border-radius: 5em;
+				background-color: $transparent;
+				box-sizing: border-box;
+				
+				.line {
+					position: absolute;
+					height: 2px;
+					top: calc(.45em - 1px);
+					left: .9em;
+					background-color: #8e8e8e;
+					width: calc(100% - .8em);
+				}
+			}
+		}
+		.column {
+			h3 {
+				color: $darkBlue;
+			}
+			height: 15em;
+		}
+		&.active {
+			display: flex;
+		}
+	}
+	.btn-container {
+		text-align: center;
+		.btn {
+			margin-top: 1em;
+		}
+	}
+	&.animated {
+		.work-container .dot {
+			animation: timeline-fill-dot .5s linear forwards;
+			&.one {
+				animation-delay: 1s;
+			}
+			&.two {
+				animation-delay: 2.5s;
+			}
+			&.three {
+				animation-delay: 4s;
+			}
+			&.four {
+				animation-delay: 5.5s;
+			}
+			&.five {
+				animation-delay: 7s;
+			}
+			.line {
+				animation: timeline-draw-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+				&.one {
+					animation-delay: 1.5s;
+				}
+				&.two {
+					animation-delay: 3s;
+				}
+				&.three {
+					animation-delay: 4.5s;
+				}
+				&.four {
+					animation-delay: 6s;
+				}
+				&.five {
+					animation-delay: 7.5s;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+#eDetailers-section {
+	.info-panel {
+		margin-right: 1em;
+		background-color: $lightGray;
+		padding: 1em 2em 2em;
+		h1{
+			color: $darkBlue;
+		}
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+	.service-panel {
+		background-color: $darkBlue;
+		margin-top: 1em;
+		color: #FFF;
+		.column {
+			hr {
+				height: .125em;
+				width: 3em;
+				margin: 1em auto .25em;
+				background-color: $lightBlue;
+				border: none;
+			}
+		}
+	}
+}

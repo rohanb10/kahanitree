@@ -1,0 +1,7 @@
+@mixin staggeredDelays($numberOfStaggers, $interval, $initialDelay: 0){
+	@for $i from 1 through $numberOfStaggers {
+		&:nth-of-type(#{$i}) {
+			animation-delay: #{$initialDelay + ($i * $interval)}s;
+		}
+	}
+}

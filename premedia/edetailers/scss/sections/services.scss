@@ -1,0 +1,53 @@
+#services-section {
+	background-image: url('../img/service_bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: 100%;
+	.column {
+		margin-left: .5em;
+		margin-right: .5em;
+		h3 {
+			margin-top: 0;
+			font-size: 1.5em;
+		}
+	}
+	.development {
+		background-color: #DDDEDE;
+		margin-bottom: 3em;
+		h3 {
+			color: $darkBlue;
+		}
+	}
+	.localisation {
+		background-color: $darkBlue;
+		color: #FFF;
+		margin-bottom: 9em;
+		h3 {
+			color: $lightBlue;
+		}
+		p {
+			margin-bottom: 10em;
+		}
+	}
+	.translation {
+		background-color: #ECEFF0;
+		margin-bottom: 11em;
+		h3 {
+			color: $darkBlue;
+		}
+	}
+	.transcreation {
+		background-color: $lightBlue;
+		margin-bottom: 6em;
+		h3 {
+			color: #fff;
+		}
+	}
+
+	&.animated {
+		.column {
+			animation: slide-in-up .7s linear both;
+			@include staggeredDelays(4, .15, .5);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+#about-section {
+	.column {
+		margin: 0 1.5em;
+		.info-panel {
+			padding: 1em;
+			background-color: $darkBlue;
+			color: #fff;
+		}
+	}
+	.business-panel {
+		padding-top: 12em;
+		.about-icon {
+			height: 4em;
+			img {
+				width: 30%;
+				&.bigger {
+					width: 40%;
+				}
+			}
+		}
+		h3 {
+			color: $darkBlue;
+		}
+		.column {
+			padding: 1em;
+			margin: 0;
+		}
+	}
+}

@@ -7,20 +7,26 @@
 
 @import 'colours';
 @import 'grid';
+@import 'animations';
+@import 'mixins';
 @import 'navbar';
 
-@import 'map';
+@import 'sections/home';
+@import 'sections/edetailers';
+@import 'sections/certifications';
+@import 'sections/services';
+@import 'sections/how-we-work';
+@import 'sections/map';
+@import 'sections/about';
+@import 'sections/contact';
 
 html, body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
 	background-color: #FFF;
 	font-family: 'Lato', sans-serif;
 }
 
 h1, h2, h3, h4, h5{
-	fontfont-family: 'Varela', sans-serif;
+	font-family: 'Varela', sans-serif;
 }
 
 p {
@@ -44,6 +50,11 @@ p {
 	}
 }
 
+// Disable fullpageJS vertical align center
+.no-vert .fp-tableCell {
+	vertical-align: unset;
+}
+
 .column {
 	padding: 1em;
 	box-sizing: border-box;
@@ -55,10 +66,6 @@ p {
 	}
 }
 
-.hidden {
-	display: none;
-}
-
 .section-title {
 	text-align: center;
 	h2 {
@@ -66,337 +73,18 @@ p {
 	}
 }
 
-hr {
-	background-color: $lightBlue;
+.light-blue-underline {
+	border-bottom: 4px solid $lightBlue;
+	padding-bottom: .5em;
+	box-sizing: border-box;
+	margin-bottom: 1.5em;
+}
+
+.btn {
+	margin-top: 3em;
+	background-color: $darkBlue;
+	padding: 1em;
+	font-size: 1.2em;
+	color: #FFF;
 	border: none;
-	height: .25em;
-	// width: 12em;
-	margin: 1em auto;
-	&.left {
-		margin: 1em 0;
-	}
-}
-
-// Hero / Top Home section
-#home-section {
-	background-color: $darkBlue;
-	-webkit-clip-path: ellipse(94% 53% at 50% 40%);
-	clip-path: ellipse(94% 53% at 50% 40%);
-	.info-panel {
-		color: #fff;
-		h1 {
-			margin-top: 0;
-		}
-
-		.btn {
-			margin-top: 3em;
-			background-color: $darkBlue;
-			padding: 1em;
-			font-size: 1.2em;
-			color: #FFF;
-			border: none;
-			&.accent-blue {
-				color: #000;
-				background-color: $lightBlue;
-			}
-		}
-	}
-
-	.slide-container {
-		text-align: center;
-		* {
-			margin: 0 auto;
-		}
-		width: 70%;
-
-		.frame-container {
-			border: 1vw solid;
-			border-image-source: url('../img/slides/slide_frame.png');
-			border-image-slice: 30;
-			background-color: black;
-			border-radius: 20px;
-			box-shadow: 35px 10px 72px -16px rgba(0,0,0,0.44);
-
-			img {
-				background-color: black;
-				display:block;
-				border-radius: .4em;
-			}
-		}
-
-		.pager-container .pager .bb-link-wrapper {
-			display: inline-block;
-			margin: 1em .5em;
-			a {
-				color: #fff;
-				text-decoration: none;
-
-			}
-			&.activePanel a {
-				color: $lightBlue;
-			}
-		}
-	}
-}
-// End Hero / Top Home section
-
-#eDetailers-section {
-	.info-panel {
-		margin-right: 1em;
-		background-color: $lightGray;
-		padding: 1em 2em 2em;
-		h1{
-			color: $darkBlue;
-		}
-		p:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-	.service-panel {
-		background-color: $darkBlue;
-		margin-top: 1em;
-		color: #FFF;
-		.column {
-			hr {
-				height: .125em;
-				width: 3em;
-				margin: 1em auto .25em;
-			}
-		}
-	}
-}
-.no-vert .fp-tableCell {
-	vertical-align: unset;
-}
-
-#certifications-section {
-	background-color: #EFEFEF;
-	position: relative;
-	.section-title {
-		margin: 5em 0 3em;
-		hr {
-			width: 10em;
-		}
-	}
-	.column {
-		.cert-logo-container {
-			margin: 1em;
-			padding: 7em 0;
-			border-radius: 15em;
-			cursor: pointer;
-			img {
-				max-width: 80%;
-			}
-			&:hover {
-				background-color: #ddd;
-			}
-			&:active, &.active {
-				background-color: $darkBlue;
-				img {
-					opacity: 0;
-				}
-			}
-
-		}
-	}
-	#cert-modal {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100vw;
-		height: 100vh;
-
-		display: none;
-		align-items: center;
-		justify-content: center;
-
-		background-color: $darkBlue;
-
-		animation-duration: .7s;
-		animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
-		animation-fill-mode: both;
-		
-		.modal-content {
-			position: relative;
-			display: none;
-
-			margin: auto;
-			width: 70%;
-			.cert-content {
-				padding: 5em;
-				background-color: white;
-				border-radius: 5px;
-
-				h3 {
-					font-size: 1.6em;
-					color: $darkBlue;
-					margin: 0 0 .25em;
-					letter-spacing: 2px;
-					span {
-						border-bottom: 5px solid $lightBlue;
-					}
-				}
-				#veeva, #oce, #econtent {
-					display: none;
-				}
-
-				#veeva {
-					.cert-icon-container {
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-    					text-align: center;
-						.icon {
-							display: inline-block;
-							width: 33.3%;
-							padding: 2em 0;
-							img {
-								width: 75%;
-							}
-						}
-					}
-				}
-			}
-
-			.close-btn {
-				position: absolute;
-				top: -4.5em;
-				right: -4em;
-				color: #FFF;
-				cursor: pointer;
-				span {
-					font-size: 4em;
-				}
-			}
-		}
-	}
-}
-
-#services-section {
-	background-image: url('../img/service_bg.jpg');
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100%;
-	.column {
-		margin-left: .5em;
-		margin-right: .5em;
-		h3 {
-			margin-top: 0;
-			font-size: 1.5em;
-		}
-	}
-	.development {
-		background-color: #DDDEDE;
-		h3 {
-			color: $darkBlue;
-		}
-	}
-	.localisation {
-		background-color: $darkBlue;
-		color: #FFF;
-		h3 {
-			color: $lightBlue;
-		}
-	}
-	.translation {
-		background-color: #ECEFF0;
-		h3 {
-			color: $darkBlue;
-		}
-	}
-	.transcreation {
-		background-color: $lightBlue;
-		h3 {
-			color: #fff;
-		}
-	}
-}
-
-#how-we-work-section {
-	hr {
-		width: 12em;
-	}
-	.work-selector {
-		padding: 0;
-		color: #919191;
-		cursor: pointer;
-		span {
-			padding: .5em .5em;
-		}
-		.column:nth-of-type(1) {
-			text-align: right;
-		}
-		.active {
-			color: #000;
-			span {
-				border-bottom: 3px solid black;	
-			}
-		}
-	}
-	.work-container {
-		display: none;
-		.column {
-			h3 {
-				color: $darkBlue;
-			}
-		}
-		&.active {
-			display: flex;
-		}
-	}
-	.btn-container {
-		margin-top: 3em;
-		text-align: center;
-		button {
-			font-size: 1.2em;
-			outline: none;
-			background-color: $darkBlue;
-			color: #fff;
-			padding:1em 3em;
-		}
-	}
-}
-
-#about-section {
-	.column {
-		margin: 0 1.5em;
-		.info-panel {
-			padding: 1em;
-			background-color: $darkBlue;
-			color: #fff;
-
-			h2 {
-				color: #fff;
-			}
-			hr {
-				width: 6em;
-			}
-		}
-	}
-	.business-panel {
-		padding-top: 12em;
-		.about-icon {
-			width: 50%;
-			height: 5em;
-		}
-		h3 {
-			color: $darkBlue;
-		}
-		.column {
-			padding: 1em;
-			margin: 0;
-		}
-	}
-}
-
-#contact-section {
-	background-color: $darkBlue;
-	color: #fff;
-	hr {
-		width: 10em;
-	}
-	h3 {
-		color: $lightBlue;
-		text-transform: uppercase;
-	}
 }

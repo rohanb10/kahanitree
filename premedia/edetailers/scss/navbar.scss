@@ -6,31 +6,32 @@ body[class^="fp-viewing-"] nav {
 	.nav-container {
 		margin: 0 auto;
 		max-width: 1000px;
-		height: 3em;
+		height: 4em;
 
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
 		.left .nav-logo img {
-			height: 2.5em;
-			transition: filter .3s linear;
+			height: 2.75em;
+			transition: filter .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 			transition-delay: .6s;
 		}
 
 		.right .nav-item {
 			display: inline-block;
-			margin-left: 2em;
-			padding: .5em 0;
+			margin-left: 1.25em;
+			padding: 1em 0 .5em;
 
 			border-bottom: 3px solid $transparent;
-			transition: border-bottom .3s linear;
+			transition: border-color .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 			transition-delay: .6s;
 
 			a {
+				font-size: .9em;
 				color: #000;
 				text-decoration: none;
-				transition: color .3s linear;
+				transition: color .1s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 				transition-delay: .6s;
 			}
 
