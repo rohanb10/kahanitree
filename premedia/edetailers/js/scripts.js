@@ -85,23 +85,26 @@ function howWeWorkHandler(el, id) {
 
 // Map / Clients section
 	const COUNTRIES = [
-		{latLng: [ 46.82,   8.23], name: 'Switzerland', company: 'CompanyName1'},
-		{latLng: [  1.35, 103.82], name: 'Singapore', company: 'CompanyName10'},
-		{latLng: [ -33.92, 18.42], name: 'South Africa', company: 'CompanyName0'},
-		{latLng: [ 51.51,   0.13], name: 'United Kingdom', company: 'CompanyName2'},
-		{latLng: [ 47.51,  14.55], name: 'Austria', company: 'CompanyName3'},
-		{latLng: [ 19.43, -99.13], name: 'Mexico', company: 'CompanyName8'},
-		{latLng: [ 56.26,   9.50], name: 'Denmark', company: 'CompanyName4'},
-		{latLng: [-34.60, -58.38], name: 'Argentina', company: 'CompanyName9'},
-		{latLng: [ 52.52,  13.40], name: 'Germany', company: 'CompanyName5'},
-		{latLng: [ 22.32, 114.17], name: 'Hong Kong', company: 'CompanyName14'},
-		{latLng: [ 46.23,   2.21], name: 'France', company: 'CompanyName6'},
-		{latLng: [ -37.81,144.96], name: 'Melbourne, Australia', company: 'CompanyName15'},
-		{latLng: [ 53.14,  -7.69], name: 'Ireland', company: 'CompanyName7'},
-		{latLng: [ 37.57, 126.98], name: 'South Korea', company: 'CompanyName11'},
-		{latLng: [ 37.37,-122.04], name: 'United States', company: 'CompanyName16'},
-		{latLng: [  4.21, 101.98], name: 'Malaysia', company: 'CompanyName12'},
-		{latLng: [ 50.85,   4.35], name: 'Belgium', company: 'CompanyName13'},
+		{latLng: [ 46.82,   8.23], name: 'Switzerland', details: 'eDetailing, website development, emailers'},
+		{latLng: [  1.35, 103.82], name: 'Singapore', details: 'eDetailing, emailers'},
+		{latLng: [ 25.03, 121.57], name: 'Taiwan', details: 'eDetailing, emailers'},
+		{latLng: [ -33.92, 18.42], name: 'South Africa', details: 'eDetailing'},
+		{latLng: [ 51.51,   0.13], name: 'United Kingdom', details: 'eDetailing, website development'},
+		{latLng: [ 47.51,  14.55], name: 'Austria', details: 'Website development, emailers'},
+		{latLng: [ 19.43, -99.13], name: 'Mexico', details: 'eDetailing, emailers'},
+		{latLng: [ 56.26,   9.50], name: 'Denmark', details: 'Website development'},
+		{latLng: [-22.91, -43.17], name: 'Brazil', details: 'Emailers'},
+		{latLng: [ 52.52,  13.40], name: 'Germany', details: 'Website development'},
+		{latLng: [ 22.32, 114.17], name: 'Hong Kong', details: 'eDetailing'},
+		{latLng: [ 46.23,   2.21], name: 'France', details: 'eDetailing, emailers'},
+		{latLng: [ -37.81,144.96], name: 'Australia', details: 'eDetailing, emailers'},
+		{latLng: [ 53.14,  -7.69], name: 'Ireland', details: 'Emailers'},
+		{latLng: [ 40.42,  -3.70], name: 'Spain', details: 'eDetailing'},
+		{latLng: [ 37.57, 126.98], name: 'South Korea', details: 'eDetailing, emailers'},
+		{latLng: [ 40.06, -74.41], name: 'United States', details: 'eDetailing, website development'}, //NJ
+		{latLng: [ 52.23,  21.01], name: 'Poland', details: 'Emailers'},
+		{latLng: [  4.21, 101.98], name: 'Malaysia', details: 'eDetailing, website development, emailers'},
+		{latLng: [ 50.85,   4.35], name: 'Belgium', details: 'eDetailing, emailers'},
 	]
 
 	// Render the map (jVectorMap 2.0.5)
@@ -154,7 +157,7 @@ function howWeWorkHandler(el, id) {
 
 	function markerTooltipBuilder(code) {
 		var cc = COUNTRIES[code];
-		return '<div class="country-name">'+ cc.name + '</div><div>' + cc.company + '</div>';
+		return '<div class="country-name">'+ cc.name + '</div><div>' + cc.details + '</div>';
 	}
 
 function validateContactForm(form){
