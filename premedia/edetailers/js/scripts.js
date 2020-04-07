@@ -74,10 +74,10 @@ function howWeWorkHandler(el, id) {
 	$('.work-selector span').removeClass('active');
 	$(el).addClass('active');
 	if (id === 'model') {
-		$('#process').removeClass('active').fadeOut(499);
+		$('#process').removeClass('active').fadeOut(500);
 		$('#model').addClass('active').delay(500).fadeIn(500);
 	} else {
-		$('#model').removeClass('active').fadeOut(499);
+		$('#model').removeClass('active').fadeOut(500);
 		$('#process').addClass('active').delay(500).fadeIn(500);
 	}
 }
@@ -85,23 +85,23 @@ function howWeWorkHandler(el, id) {
 
 // Map / Clients section
 	const COUNTRIES = [
-		{latLng: [ -33.92, 18.42], name: 'South Africa', company: 'CompanyName0'},
 		{latLng: [ 46.82,   8.23], name: 'Switzerland', company: 'CompanyName1'},
+		{latLng: [  1.35, 103.82], name: 'Singapore', company: 'CompanyName10'},
+		{latLng: [ -33.92, 18.42], name: 'South Africa', company: 'CompanyName0'},
 		{latLng: [ 51.51,   0.13], name: 'United Kingdom', company: 'CompanyName2'},
 		{latLng: [ 47.51,  14.55], name: 'Austria', company: 'CompanyName3'},
-		{latLng: [ 56.26,   9.50], name: 'Denmark', company: 'CompanyName4'},
-		{latLng: [ 52.52,  13.40], name: 'Germany', company: 'CompanyName5'},
-		{latLng: [ 46.23,   2.21], name: 'France', company: 'CompanyName6'},
-		{latLng: [ 53.14,  -7.69], name: 'Ireland', company: 'CompanyName7'},
 		{latLng: [ 19.43, -99.13], name: 'Mexico', company: 'CompanyName8'},
+		{latLng: [ 56.26,   9.50], name: 'Denmark', company: 'CompanyName4'},
 		{latLng: [-34.60, -58.38], name: 'Argentina', company: 'CompanyName9'},
-		{latLng: [  1.35, 103.82], name: 'Singapore', company: 'CompanyName10'},
+		{latLng: [ 52.52,  13.40], name: 'Germany', company: 'CompanyName5'},
+		{latLng: [ 22.32, 114.17], name: 'Hong Kong', company: 'CompanyName14'},
+		{latLng: [ 46.23,   2.21], name: 'France', company: 'CompanyName6'},
+		{latLng: [ -37.81,144.96], name: 'Melbourne, Australia', company: 'CompanyName15'},
+		{latLng: [ 53.14,  -7.69], name: 'Ireland', company: 'CompanyName7'},
 		{latLng: [ 37.57, 126.98], name: 'South Korea', company: 'CompanyName11'},
+		{latLng: [ 37.37,-122.04], name: 'United States', company: 'CompanyName16'},
 		{latLng: [  4.21, 101.98], name: 'Malaysia', company: 'CompanyName12'},
 		{latLng: [ 50.85,   4.35], name: 'Belgium', company: 'CompanyName13'},
-		{latLng: [ 22.32, 114.17], name: 'Hong Kong', company: 'CompanyName14'},
-		{latLng: [ -37.81,144.96], name: 'Melbourne, Australia', company: 'CompanyName15'},
-		{latLng: [ 37.37,-122.04], name: 'United States', company: 'CompanyName16'},
 	]
 
 	// Render the map (jVectorMap 2.0.5)

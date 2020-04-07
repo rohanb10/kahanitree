@@ -1,11 +1,12 @@
 #certifications-section {
 	background-color: #EFEFEF;
 	position: relative;
+	padding: 0 0 13em;
 	.section-title {
-		margin: 5em 0 3em;
 		hr {
 			width: 10em;
 		}
+		margin-bottom: 5em;
 	}
 	.column {
 		.cert-logo-container {

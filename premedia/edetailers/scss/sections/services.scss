@@ -1,7 +1,8 @@
 #services-section {
 	background-image: url('../img/service_bg.jpg');
 	background-repeat: no-repeat;
-	background-position: center top;
+	background-size: cover;
+	background-position: center center;
 	background-size: 100%;
 	.column {
 		margin-left: .5em;
@@ -46,7 +47,7 @@
 
 	&.animated {
 		.column {
-			animation: slide-in-up .7s linear both;
+			animation: slide-in-up .7s $easeInOut both;
 			@include staggeredDelays(4, .15, .5);
 		}
 	}

@@ -69,7 +69,7 @@
 	}
 	&.animated {
 		.work-container .dot {
-			animation: timeline-fill-dot .5s linear forwards;
+			animation: timeline-fill-dot .5s $easeInOut forwards;
 			&.one {
 				animation-delay: 1s;
 			}
