@@ -28,7 +28,7 @@ if (screen && screen.width > 100) {
 	document.body.appendChild(script);
 }*/
 
-script.onload =  function () {
+// script.onload =  function () {
 	new fullpage('#fullpage', {
 		licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
 		autoScrolling:true,
@@ -49,7 +49,7 @@ script.onload =  function () {
 			destination.item.classList.add('animated');
 		},
 	});
-}
+// }
 
 // Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
 $('.slider').bbslider({
