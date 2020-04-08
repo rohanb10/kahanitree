@@ -1,4 +1,4 @@
-// load FullpageJS library
+/*// load FullpageJS library
 if (screen && screen.width > 100) {
 	// $("nav").show()
 	var script = document.createElement('script');
@@ -26,6 +26,29 @@ if (screen && screen.width > 100) {
 	}
 	script.src = './js/fullpage.min.js';
 	document.body.appendChild(script);
+}*/
+
+script.onload =  function () {
+	new fullpage('#fullpage', {
+		licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
+		autoScrolling:true,
+		animateAnchor: false,
+		anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
+		menu: '#navigation-menu',
+		// navigation: true,
+		// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
+		responsiveWidth: 900,
+		scrollBar: false,
+		paddingTop: '4em',
+		slideSelector: null,
+		bigSectionsDestination: 'top',
+		onLeave: function(origin, destination, direction){
+			if (destination.item.classList.contains('animated')) {
+				return;
+			}
+			destination.item.classList.add('animated');
+		},
+	});
 }
 
 // Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
