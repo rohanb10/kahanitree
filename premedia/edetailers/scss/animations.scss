@@ -9,15 +9,6 @@
 	}
 }
 
-@keyframes timeline-fill-dot {
-	from {
-		background-color: $transparent;
-	}
-	to {
-		background-color: $darkBlue;
-	}
-}
-
 @keyframes fade-in {
 	from {
 		opacity: 0;

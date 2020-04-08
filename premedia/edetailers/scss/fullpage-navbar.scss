@@ -2,11 +2,13 @@ body[class^="fp-viewing-"] nav {
 	position: fixed;
 	width: 100%;
 	z-index: 9;
+	// display: none;
 	
 	.nav-container {
 		margin: 0 auto;
-		max-width: 1000px;
+		max-width: 1024px;
 		height: 4em;
+		padding: 0 1em;
 
 		display: flex;
 		justify-content: space-between;

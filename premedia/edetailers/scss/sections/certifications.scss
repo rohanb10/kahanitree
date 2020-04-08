@@ -1,14 +1,12 @@
 #certifications-section {
 	background-color: #EFEFEF;
 	position: relative;
-	padding: 0 0 13em;
+	padding: 0 0 10em;
 	.section-title {
-		hr {
-			width: 10em;
-		}
 		margin-bottom: 5em;
 	}
 	.column {
+		width: 33%;
 		.cert-logo-container {
 			margin: 1em;
 			padding: 7em 0;
@@ -51,60 +49,67 @@
 			display: none;
 
 			margin: auto;
-			width: 70%;
+			width: 60%;
 			.cert-content {
-				padding: 5em;
+				padding: 4em;
 				background-color: white;
 				border-radius: 5px;
+				box-shadow: 0 10px 72px -16px rgba(0,0,0,0.44);
 
 				h3 {
 					font-size: 1.6em;
 					color: $darkBlue;
-					margin: 0 0 .25em;
+					margin: 0 0 1em;
 					letter-spacing: 2px;
 					span {
 						border-bottom: 5px solid $lightBlue;
 					}
 				}
-				#veeva, #oce, #econtent {
-					display: none;
+				p:last-of-type {
+					margin-bottom: 0;
 				}
-
-				#veeva {
-					.cert-icon-container {
-						display: flex;
-						justify-content: space-between;
-						align-items: center;
-    					text-align: center;
-						.icon {
-							display: inline-block;
-							width: 33.3%;
-							padding: 2em 0;
-							img {
-								width: 75%;
-							}
+				.cert-icon-container {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					flex-direction: row;
+					width: 100%;
+					padding-top: 3.5em;
+					.icon {
+						display: inline-block;
+						width: 33.3%;
+						margin: 0 auto;
+						margin-right: 2em;
+						img {
+							width: 100%;
+						}
+						&:last-of-type {
+							margin-right: auto;
 						}
 					}
+				}
+				#veeva, #oce, #mitouch {
+					display: none;
 				}
 			}
 
 			.close-btn {
 				position: absolute;
-				top: -4.5em;
-				right: -4em;
+				top: -4em;
+				right: -3.5em;
 				color: #FFF;
 				cursor: pointer;
 				span {
-					font-size: 4em;
+					font-size: 3em;
 				}
 			}
 		}
 	}
 	&.animated {
 		.grid {
-			.cert-logo-container {
+			.column {
 				animation: fade-in 1s $easeInOut both;
-				animation-delay: .7s;
+				@include staggeredDelays(3, .5, .5);
 			}
 		}
 	}

@@ -1,24 +1,32 @@
-// FullpageJS library load
-new fullpage('#fullpage', {
-	licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
-	autoScrolling:true,
-	animateAnchor: false,
-	anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
-	menu: '#navigation-menu',
-	// navigation: true,
-	// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
-	// responsiveWidth: 600,
-	scrollBar: false,
-	paddingTop: '4em',
-	slideSelector: null,
-	bigSectionsDestination: 'top',
-	onLeave: function(origin, destination, direction){
-		if (destination.item.classList.contains('animated')) {
-			return;
-		}
-		destination.item.classList.add('animated');
-	},
-});
+// load FullpageJS library
+if (screen && screen.width > 100) {
+	// $("nav").show()
+	var script = document.createElement('script');
+	script.onload =  function () {
+		new fullpage('#fullpage', {
+			licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
+			autoScrolling:true,
+			animateAnchor: false,
+			anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
+			menu: '#navigation-menu',
+			// navigation: true,
+			// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
+			responsiveWidth: 900,
+			scrollBar: false,
+			paddingTop: '4em',
+			slideSelector: null,
+			bigSectionsDestination: 'top',
+			onLeave: function(origin, destination, direction){
+				if (destination.item.classList.contains('animated')) {
+					return;
+				}
+				destination.item.classList.add('animated');
+			},
+		});
+	}
+	script.src = './js/fullpage.min.js';
+	document.body.appendChild(script);
+}
 
 // Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
 $('.slider').bbslider({
@@ -47,7 +55,7 @@ $('.slider').bbslider({
 
 	// close modal animation
 	function closeCertModal() {
-		$('.modal-content, #veeva, #oce, #econtent').fadeOut(300);
+		$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
 		$('#cert-modal').delay(150).css({'animation-name':'circle-out'});
 		$('.cert-logo-container').removeClass('active');
 		$('body').removeClass('dark-bg');
@@ -161,6 +169,8 @@ function howWeWorkHandler(el, id) {
 	}
 
 function validateContactForm(form){
+	form.classList.add('hello')
+	console.log(form.classList);
 	var invalidName = !form.name.value.match(/^[a-z ,.'-]+$/i);
 	document.getElementById('error-name').innerHTML = invalidName ? 'Valid name required' : '&nbsp;';
 	form.name.setAttribute('data-valid', (invalidName ? 'error' :''));
@@ -177,11 +187,25 @@ function validateContactForm(form){
 		document.getElementById('error-message').innerHTML = invalidMessage ? 'No special characters allowed in message body' : '&nbsp;';
 		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
 	}
-	return invalidName === false && invalidEmail === false  && invalidMessage === false;
+	// everything is valid. submit ajax request
+	if (invalidName === false && invalidEmail === false  && invalidMessage === false) {
+		// change button to loading state
+		// submit ajax request
+
+		//success
+		// form.classList.add('success')
+
+		// error
+		// change button to failure state
+		// form.classList.add('failure')
+
+	}
+	return false;
 }
 
 // Block all css transitions until page fully loaded
-$(window).load(function() {
+$(document).ready(function() {
 	$("body").removeClass("preload");
+	// $("nav").show()
 	$("#process").fadeToggle();
 });

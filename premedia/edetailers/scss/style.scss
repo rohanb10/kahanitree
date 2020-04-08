@@ -7,11 +7,11 @@
 	// -webkit-animation-duration: 0s !important;
 }
 
-@import 'colours';
+@import 'variables';
 @import 'grid';
 @import 'animations';
 @import 'mixins';
-@import 'navbar';
+@import 'fullpage-navbar';
 
 @import 'sections/home';
 @import 'sections/edetailers';
@@ -25,6 +25,7 @@
 html, body {
 	background-color: #FFF;
 	font-family: 'Lato', sans-serif;
+	margin: 0;
 }
 
 h1, h2, h3, h4, h5{
@@ -37,9 +38,13 @@ p {
 	line-height: 1.5em;
 }
 
+.section {
+	min-height: 50vh;
+}
+
 .container {
-	max-width: 1000px;
-	padding: 1em 3em;
+	max-width: 1024px;
+	padding: 1em 1em;
 	margin: 0 auto;
 	&.bigger {
 		max-width: 1200px;
@@ -50,11 +55,6 @@ p {
 	&.no-padding {
 		padding: 0;
 	}
-}
-
-// Disable fullpageJS vertical align center
-.no-vert .fp-tableCell {
-	vertical-align: unset;
 }
 
 .column {
@@ -98,7 +98,19 @@ p {
 		color: #000;
 		background-color: $lightBlue;
 	}
-	&:hover, &:focus, &:active {
+	&:hover, &:focus {
 		box-shadow: 0 12px 10px -5px rgba(0, 0, 0, 0.5);
+	}
+	&:active {
+		box-shadow: none;		
+	}
+}
+
+@include media-lg-screen {
+	*.animated {
+		-webkit-transition: none !important;
+		transition: none !important;
+		animation-duration: 0s !important;
+		-webkit-animation-duration: 0s !important;
 	}
 }

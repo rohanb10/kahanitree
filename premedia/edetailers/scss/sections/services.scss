@@ -3,13 +3,18 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
-	background-size: 100%;
 	.column {
 		margin-left: .5em;
 		margin-right: .5em;
 		h3 {
 			margin-top: 0;
 			font-size: 1.5em;
+		}
+		&:first-of-type {
+			margin-left: 0;
+		}
+		&:last-of-type {
+			margin-right: 0;
 		}
 	}
 	.development {
@@ -28,6 +33,7 @@
 		}
 		p {
 			margin-bottom: 10em;
+			hyphens: auto;
 		}
 	}
 	.translation {
@@ -39,7 +45,7 @@
 	}
 	.transcreation {
 		background-color: $lightBlue;
-		margin-bottom: 6em;
+		margin-bottom: 5em;
 		h3 {
 			color: #fff;
 		}

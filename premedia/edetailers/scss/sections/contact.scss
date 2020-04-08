@@ -25,6 +25,8 @@
 		.contact-form {
 			display: block;
 			margin-left: 10em;
+			position: relative;
+			color: white;
 
 			label, input, textarea {
 				transition: all 0.2s $easeInOut;
@@ -36,12 +38,10 @@
 				z-index: 1;
 				display: inline-block;
 				text-transform: uppercase;
-				letter-spacing: 0.05em;
-				font-size: .9em;
+				font-size: .8em;
 			}
 
 			input[type="text"], input[type="number"], input[type="email"], textarea {
-				color: white;
 				background-color: $transparent;
 				border: 0;
 				border-bottom: 2px solid $lightBlue;
@@ -66,13 +66,14 @@
 				&:placeholder-shown + label {
 					cursor: text;
 					transform-origin: left bottom;
-					transform: translate(.85rem, 1.2rem);
+					transform: translate(1.33em, 2em);
+					letter-spacing: 0.15em;
 				}
 				&:not(:placeholder-shown) + label, &:focus + label {
 					transform: translate(0, 0);
 					cursor: pointer;
-					font-size: .8em;
 					color: $lightBlue;
+					letter-spacing: 0;
 				}
 			}
 			input[data-valid="error"], textarea[data-valid="error"] {
@@ -83,11 +84,11 @@
 				margin-top: 1em;
 				border: 2px solid $lightBlue;
 				height: 6em;
-				padding: 1em;
+				padding: .5em 1em;
 				box-sizing: border-box;
 				resize: vertical;
 				&:placeholder-shown + label {
-					transform: translate(.85rem, 2.6rem);
+					transform: translate(1.33em, 3.67em);
 				}
 				&:not(:placeholder-shown) + label, &:focus + label {
 					transform: translate(0, .5rem);
@@ -111,10 +112,45 @@
 						font-style: oblique;
 					}
 				}
-				&:nth-of-type(1){
+				&:first-of-type{
 					.input-container {
 						margin-bottom: .2em;
 					}
+				}
+			}
+			.btn-container {
+				display: flex;
+				align-items: center;
+				.btn {
+					display: inline-block;
+				}
+				.submit-message-failure {
+					margin: 1em 1em 0;
+					display: none;
+				}
+			}
+			.submit-message-success {
+				display: none;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+			}
+			&.success {
+				.btn, input, textarea, label {
+					opacity: 0;
+				}
+				.submit-message-success {
+					display: flex;
+				}
+			}
+			&.failure {
+				.submit-message-failure {
+					display: block;
 				}
 			}
 		}

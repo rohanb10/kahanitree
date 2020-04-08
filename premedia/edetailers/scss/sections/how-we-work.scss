@@ -2,9 +2,6 @@
 	.section-title{
 		margin-bottom: 2em;
 	}
-	hr {
-		width: 12em;
-	}
 	.work-selector {
 		margin: 2em 0 3em;
 		span {
@@ -21,7 +18,7 @@
 					border-color: #000;
 				}
 			}
-			&.column:nth-of-type(1) {
+			&.column:first-of-type {
 				text-align: right;
 			}
 		}
@@ -33,28 +30,40 @@
 			padding: 0 1em;
 			.column {
 				height: 1.5em;
-				padding:0;
+				padding: 0 1em;
 				position: relative;
+				&:first-of-type {
+					padding-left: 0;
+					.line {
+						left: 1em;
+					}
+				}
+				&:last-of-type {
+					padding-right: 0;
+					.line {
+						right: 0;
+					}
+				}
+				z-index: 2;
 			}
 			.dot {
-				height: .9em;
-				width: .9em;
-				border: 1px solid $darkBlue;
+				height: 1em;
+				width: 1em;
 				border-radius: 5em;
-				background-color: $transparent;
-				box-sizing: border-box;
+				background-color: $darkBlue;
 				
 				.line {
+					z-index: 1;
 					position: absolute;
 					height: 2px;
-					top: calc(.45em - 1px);
-					left: .9em;
+					top: calc(.5em - 1px);
+					left: 2em;
 					background-color: #8e8e8e;
-					width: calc(100% - .8em);
+					right: -1em;
 				}
 			}
 		}
-		.column {
+		& > .column {
 			h3 {
 				color: $darkBlue;
 			}
@@ -68,43 +77,7 @@
 		}
 	}
 	&.animated {
-		.work-container .dot {
-			animation: timeline-fill-dot .5s $easeInOut forwards;
-			&.one {
-				animation-delay: 1s;
-			}
-			&.two {
-				animation-delay: 2.5s;
-			}
-			&.three {
-				animation-delay: 4s;
-			}
-			&.four {
-				animation-delay: 5.5s;
-			}
-			&.five {
-				animation-delay: 7s;
-			}
-			.line {
-				animation: timeline-draw-right 1s $easeInOut both;
-				&.one {
-					animation-delay: 1.5s;
-				}
-				&.two {
-					animation-delay: 3s;
-				}
-				&.three {
-					animation-delay: 4.5s;
-				}
-				&.four {
-					animation-delay: 6s;
-				}
-				&.five {
-					animation-delay: 7.5s;
-				}
-			}
-		}
-		.work-container .column {
+		.work-container .column, .work-container .dot {
 			animation: fade-in .5s $easeInOut both;
 			&.one {
 				animation-delay: 1s;
@@ -120,6 +93,24 @@
 			}
 			&.five {
 				animation-delay: 7s;
+			}
+		}
+		.work-container .dot .line {
+			animation: timeline-draw-right 1s $easeInOut both;
+			&.one {
+				animation-delay: 1.5s;
+			}
+			&.two {
+				animation-delay: 3s;
+			}
+			&.three {
+				animation-delay: 4.5s;
+			}
+			&.four {
+				animation-delay: 6s;
+			}
+			&.five {
+				animation-delay: 7.5s;
 			}
 		}
 	}

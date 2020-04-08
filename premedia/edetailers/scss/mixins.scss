@@ -5,3 +5,10 @@
 		}
 	}
 }
+
+// 1024
+@mixin media-lg-screen {
+	@media screen and (max-width: 1024px) {
+		@content;
+	}
+}

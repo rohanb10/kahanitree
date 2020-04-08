@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="./css/jvectormap.2.0.5.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<script type="text/javascript" src="./js/jquery.slimish.min.js"></script>
-	<script type="text/javascript" src="./js/fullpage.min.js"></script>
+	<!-- <script type="text/javascript" src="./js/fullpage.min.js"></script> -->
 	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.keyframes.min.js"></script>
 	<script type="text/javascript" src="./js/jvectormap.2.0.5.min.js"></script>
@@ -36,32 +36,34 @@
 	</nav>
 	<div id="fullpage">
 		<div id="home-section" class="section">
-			<div class="grid container bigger">
-				<div class="column bigger">
-					<div class="slide-container">
-						<div class="frame-container slider">
-							<div class="slide">
-								<img src="./img/slides/slide1.jpg">
+			<div class="container">
+				<div class="grid">
+					<div class="column">
+						<div class="slide-container">
+							<div class="frame-container slider">
+								<div class="slide">
+									<img src="./img/slides/slide1.jpg">
+								</div>
+								<div class="slide">
+									<img src="./img/slides/slide2.jpg">
+								</div>
+								<div class="slide">
+									<img src="./img/slides/slide3.jpg">
+								</div>
 							</div>
-							<div class="slide">
-								<img src="./img/slides/slide2.jpg">
+							<div class="pager-container">
+								<div class="pager"></div>
 							</div>
-							<div class="slide">
-								<img src="./img/slides/slide3.jpg">
-							</div>
-						</div>
-						<div class="pager-container">
-							<div class="pager"></div>
 						</div>
 					</div>
-				</div>
-				<div class="column info-panel">
-					<h1>A Global eDetailing Development Partner to Brands and Agencies</h1>
-					<p>We collaborate seamlessly with companies and local agencies to develop, localise, adapt and distribute visual aids using the platform of your choice.</p>
-					<p>We understand that local agencies often understand the local market best, and recommend that design and strategy is done by them.</p>
-					<button class="btn light-blue" onclick="location.href='#contact'">
-						Request a Demo
-					</button>
+					<div class="column info-panel">
+						<h1>A Global eDetailing Development Partner to Brands and Agencies</h1>
+						<p>We collaborate seamlessly with pharmaceutical companies and local agencies to develop, localise, adapt and distribute visual aids using the platform of your choice.</p>
+						<p>We work across platform - be it Veeva, IQVIA, eWizard or the platform of your choice.</p>
+						<button class="btn light-blue" onclick="location.href='#contact'">
+							Request a Demo
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -98,17 +100,17 @@
 				<div class="grid column-center">
 					<div class="column">
 						<div class="cert-logo-container" onclick="openCertModal(this, 'veeva')">
-							<img src="./img/cert/veeva_logo.png">
+							<img onclick="openCertModal(this, 'veeva')" src="./img/cert/veeva_logo.png">
 						</div>
 					</div>
 					<div class="column">
 						<div class="cert-logo-container" onclick="openCertModal(this, 'oce')">
-							<img src="./img/cert/iqvia_oce_logo.png">
+							<img onclick="openCertModal(this, 'oce')" src="./img/cert/iqvia_oce_logo.png">
 						</div>
 					</div>
 					<div class="column">
-						<div class="cert-logo-container" onclick="openCertModal(this, 'econtent')">
-							<img src="./img/cert/iqvia_econtent_logo.png">
+						<div class="cert-logo-container" onclick="openCertModal(this, 'mitouch')">
+							<img onclick="openCertModal(this, 'mitouch')" src="./img/cert/iqvia_mitouch_logo.png">
 						</div>
 					</div>
 				</div>
@@ -138,18 +140,28 @@
 							<h3><span>IQVIA OCE</span></h3>
 							<p>OCE is an innovative strategy that enables Life Sciences companies to integrate customer-engagement activities across the organization, powered by strong information management.</p>
 							<p>We are certified to to navigate IQVIA’s revolutionary Orchestrated Customer Engagement Platform as well as to create platform-compliant content.</p>
-							<p>We have created OCE visual aids (e-Detailers) for several markets across Europe, Asia Pacific and South Africa.</p>
+							<p>We have created OCE visual aids (e-Detailers) for several markets globally.</p>
+							<div class="cert-icon-container">
+								<div class="icon">
+									<img src="./img/cert/iqvia_oce_logo.png">
+								</div>
+							</div>
 						</div>
-						<div id="econtent">
-							<h3>IQVIA eContent</h3>
+						<div id="mitouch">
+							<h3>IQVIA MiTouch</h3>
 							<p>MI Touch is a platform, similar to Veeva, allowing for delivery via an iPad of HTML based slides from a cloud-based technology solution.</p>
-							<p>We are certified to develop material for MiTouch and have created iDetailers across European markets in the pharmaceutical industry.</p>
+							<p>We are certified to develop material for MiTouch and have created iDetailers across the world in the pharmaceutical industry.</p>
+							<div class="cert-icon-container">
+								<div class="icon">
+									<img src="./img/cert/iqvia_mitouch_logo.png">
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div id="services-section" class="section fp-auto-height-responsive">
+		<div id="services-section" class="section ">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column development">
@@ -172,7 +184,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="how-we-work-section" class="section fp-auto-height-responsive">
+		<div id="how-we-work-section" class="section ">
 			<div class="container bigger">
 				<div class="section-title">
 					<h2><span class="light-blue-underline">How We Work</span></h2>
@@ -200,7 +212,7 @@
 						<p>We’re an open book. You’ll always have complete clarity on what is being done, by who, when and at what cost.</p>
 					</div>
 				</div>
-				<div id="process" class="grid work-container container no-padding bigger">
+				<div id="process" class="grid work-container">
 					<div class="timeline grid">
 						<div class="column"><div class="dot one"><span class="line one"></span></div></div>
 						<div class="column"><div class="dot two"><span class="line two"></span></div></div>
@@ -210,23 +222,23 @@
 					</div>
 					<div class="column one">
 						<h3>The Brief</h3>
-						<p>We start by exploring what you need and how this can be achieved. We work with you to establish a clear brief</p>
+						<p>We start by exploring what you need and how this can be achieved. We work with you to establish a clear brief.</p>
 					</div>
 					<div class="column two">
 						<h3>Planning</h3>
-						<p>We define the project scope and establish the most efficient way to do it</p>
+						<p>We define the project scope and establish the most efficient way to do it.</p>
 					</div>
 					<div class="column three">
 						<h3>Design</h3>
-						<p>We create a visual framework from concept to wireframe to final product</p>
+						<p>We create a visual framework from concept to wireframe to final product.</p>
 					</div>
 					<div class="column four">
 						<h3>Build</h3>
-						<p>We take the visual design and create a product that performs the way you need it to</p>
+						<p>We take the visual design and create a product that performs the way you need it to.</p>
 					</div>
 					<div class="column five">
 						<h3>Launch</h3>
-						<p>We have stringent quality checks and work on staging links before the final go live</p>
+						<p>We have stringent quality checks and work on staging links before the final go live.</p>
 					</div>
 				</div>
 				<div class="btn-container">
@@ -242,7 +254,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="about-section" class="section fp-auto-height-responsive">
+		<div id="about-section" class="section ">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column no-padding">
@@ -332,7 +344,14 @@
 									<label for="message">Message *</label>
 								</div>
 							</div>
-							<input type="submit" class="btn light-blue" name="submit" value="Send">
+							<div class="btn-container">
+								<input type="submit" id="submit-btn" class="btn light-blue" name="submit" value="Send">
+								<div class="submit-message-failure">We are unable to process the form right now. Please contact us directly or try again later</div>
+							</div>
+							<div class="submit-message-success"><div>
+								<p>We have recieved your message.</p>
+								<p>We will reach out to you soon!</p>
+							</div></div>
 						</form>
 					</div>
 				</div>
