@@ -6,6 +6,21 @@
 	}
 }
 
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content; 
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
 // 1024
 @mixin media-lg-screen {
 	@media screen and (max-width: 1024px) {

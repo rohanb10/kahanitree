@@ -1,4 +1,4 @@
-#certifications-section {
+#certifications {
 	background-color: #EFEFEF;
 	position: relative;
 	padding: 0 0 10em;
@@ -49,7 +49,10 @@
 			display: none;
 
 			margin: auto;
-			width: 60%;
+			width: 70%;
+			&.active {
+				display: flex;
+			}
 			.cert-content {
 				padding: 4em;
 				background-color: white;

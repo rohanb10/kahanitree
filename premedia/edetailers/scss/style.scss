@@ -1,17 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato|Varela&display=swap');
 
-.preload * {
-	// -webkit-transition: none !important;
-	// transition: none !important;
-	// animation-duration: 0s !important;
-	// -webkit-animation-duration: 0s !important;
-}
-
 @import 'variables';
+@import 'mixins';
 @import 'grid';
 @import 'animations';
-@import 'mixins';
-@import 'fullpage-navbar';
+@import 'navbar';
 
 @import 'sections/home';
 @import 'sections/edetailers';
@@ -38,8 +31,17 @@ p {
 	line-height: 1.5em;
 }
 
-.section {
-	min-height: 50vh;
+.scroll-snap-container {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	.section {
+		display: flex;
+		min-height: calc(100vh - 3em);
+		align-items: center;
+		padding-top: 3em;
+		scroll-snap-align: start;
+	}
 }
 
 .container {
@@ -91,6 +93,7 @@ p {
 	border: none;
 	cursor: pointer;
 	position: relative;
+	-webkit-appearance: none;
 	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
 	transition: box-shadow .5s $easeInOut;
@@ -103,14 +106,5 @@ p {
 	}
 	&:active {
 		box-shadow: none;		
-	}
-}
-
-@include media-lg-screen {
-	*.animated {
-		-webkit-transition: none !important;
-		transition: none !important;
-		animation-duration: 0s !important;
-		-webkit-animation-duration: 0s !important;
 	}
 }

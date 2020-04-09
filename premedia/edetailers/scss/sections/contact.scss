@@ -1,6 +1,9 @@
-#contact-section {
+#contact {
 	background-color: $darkBlue;
 	color: #fff;
+	.container {
+		width: 100%;
+	}
 	.grid {
 		padding-top: 3em;
 		.column {
@@ -48,6 +51,7 @@
 				box-sizing: border-box;
 				padding: .5em 1em;
 				width: 100%;
+				color: white;
 				-webkit-appearance: none;
 				z-index: 3;
 				font-size: 1em;

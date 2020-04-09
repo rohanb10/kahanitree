@@ -1,57 +1,27 @@
-/*// load FullpageJS library
-if (screen && screen.width > 100) {
-	// $("nav").show()
-	var script = document.createElement('script');
-	script.onload =  function () {
-		new fullpage('#fullpage', {
-			licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
-			autoScrolling:true,
-			animateAnchor: false,
-			anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
-			menu: '#navigation-menu',
-			// navigation: true,
-			// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
-			responsiveWidth: 900,
-			scrollBar: false,
-			paddingTop: '4em',
-			slideSelector: null,
-			bigSectionsDestination: 'top',
-			onLeave: function(origin, destination, direction){
-				if (destination.item.classList.contains('animated')) {
-					return;
-				}
-				destination.item.classList.add('animated');
-			},
-		});
-	}
-	script.src = './js/fullpage.min.js';
-	document.body.appendChild(script);
-}*/
+// remove hash from url
+history.pushState('', '', window.location.pathname);
 
-// script.onload =  function () {
-	new fullpage('#fullpage', {
-		licenseKey:'8C4EBEC6-9FCF4B75-B31BA128-7DF9ADB6',
-		autoScrolling:true,
-		animateAnchor: false,
-		anchors: ['home', 'eDetailers', 'certifications','services', 'how-we-work', 'map','about', 'contact'],
-		menu: '#navigation-menu',
-		// navigation: true,
-		// navigationTooltips: ['Home', 'eDetailers', 'Certifications','Services', 'How We Work', 'Map','About', 'Contact'],
-		responsiveWidth: 900,
-		scrollBar: false,
-		paddingTop: '4em',
-		slideSelector: null,
-		bigSectionsDestination: 'top',
-		onLeave: function(origin, destination, direction){
-			if (destination.item.classList.contains('animated')) {
-				return;
-			}
-			destination.item.classList.add('animated');
-		},
+// observe page position for animations
+const callback = function (entries) {
+	entries.forEach(function (entry) {
+		const {target} = entry;
+		if (entry.intersectionRatio >= 0.05) {
+			document.body.classList = target.classList.contains('dark-bg') ? ['dark-bg'] : [];
+			target.classList.add("animated");
+			$('.nav-item').removeClass('active');
+			$('.nav-item[data-name=' + target.id +']').addClass('active');
+		}
 	});
-// }
+}
 
-// Image slider (BareBonesSlider modified jQuery extension) in the hero/top section 
+const observer = new IntersectionObserver(callback, {
+	threshold: 0.05
+});
+
+document.querySelectorAll('.section').forEach(function (section, index){
+	observer.observe(section)
+});
+
 $('.slider').bbslider({
 	auto: true,
 	timer: 4000,
@@ -61,44 +31,42 @@ $('.slider').bbslider({
 	pagerWrap: '.pager'
 });
 
-// Certifications section
+// Open certification modal + animation
+function openCertModal(element, certName) {
+	const rect = element.getBoundingClientRect();
+	var cords = {x: window.scrollX + (rect.left + rect.right) / 2 , y: window.scrollY + (rect.top + rect.bottom) / 2};
+	createCircleAnimation(cords);
+	$(element).addClass('active');
+	$('#cert-modal').addClass('active').css({'display':'flex', 'animation-name':'circle-in'});
+	$('#'+certName).css({'display':'block'});
+	$('body').addClass('dark-bg');
+	$('.modal-content').delay(600).fadeIn(300);
+	$('.nav-item').fadeOut(100);
+}
 
-	// Open modal animation
-	function openCertModal(element, certName) {
-		const rect = element.getBoundingClientRect();
-		var cords = {x: window.scrollX + (rect.left + rect.right) / 2 , y: window.scrollY + (rect.top + rect.bottom) / 2};
-		createCircleAnimation(cords);
-		$(element).addClass('active');
-		$('#cert-modal').addClass('active').css({'display':'flex', 'animation-name':'circle-in'});
-		$('#'+certName).css({'display':'block'});
-		$('body').addClass('dark-bg');
-		$('.modal-content').delay(600).fadeIn(300);
-		$('.nav-item').fadeOut(100);
-	}
+// close modal animation
+function closeCertModal() {
+	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
+	$('#cert-modal').delay(150).css({'animation-name':'circle-out'});
+	$('.cert-logo-container').removeClass('active');
+	$('body').removeClass('dark-bg');
+	$('.nav-item').delay(300).fadeIn(300);
+}
 
-	// close modal animation
-	function closeCertModal() {
-		$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
-		$('#cert-modal').delay(150).css({'animation-name':'circle-out'});
-		$('.cert-logo-container').removeClass('active');
-		$('body').removeClass('dark-bg');
-		$('.nav-item').delay(300).fadeIn(300);
-	}
-
-	// create css animation keyframes based on the div position relative to the screen
-	function createCircleAnimation(cords) {
-		var xy = cords.x + 'px ' + cords.y + 'px';
-		$.keyframe.define([{
-			name: 'circle-in',
-			from: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
-			to: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
-		}]);
-		$.keyframe.define([{
-			name: 'circle-out',
-			from: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
-			to: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
-		}]);
-	}
+// create css animation keyframes based on the div position relative to the screen
+function createCircleAnimation(cords) {
+	var xy = cords.x + 'px ' + cords.y + 'px';
+	$.keyframe.define([{
+		name: 'circle-in',
+		from: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
+		to: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
+	}]);
+	$.keyframe.define([{
+		name: 'circle-out',
+		from: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
+		to: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
+	}]);
+}
 // Certifications section end
 
 function howWeWorkHandler(el, id) {
@@ -112,7 +80,6 @@ function howWeWorkHandler(el, id) {
 		$('#process').addClass('active').delay(500).fadeIn(500);
 	}
 }
-
 
 // Map / Clients section
 	const COUNTRIES = [
@@ -180,7 +147,6 @@ function howWeWorkHandler(el, id) {
 			},
 			// Intercept the tooltip shown on hover by adding company name
 			onMarkerTipShow: function(e, tip, code){
-				// console.log(tip[0], code);
 				tip[0].innerHTML = markerTooltipBuilder(code);
 			},
 		});
@@ -192,8 +158,6 @@ function howWeWorkHandler(el, id) {
 	}
 
 function validateContactForm(form){
-	form.classList.add('hello')
-	console.log(form.classList);
 	var invalidName = !form.name.value.match(/^[a-z ,.'-]+$/i);
 	document.getElementById('error-name').innerHTML = invalidName ? 'Valid name required' : '&nbsp;';
 	form.name.setAttribute('data-valid', (invalidName ? 'error' :''));
@@ -226,9 +190,6 @@ function validateContactForm(form){
 	return false;
 }
 
-// Block all css transitions until page fully loaded
 $(document).ready(function() {
-	$("body").removeClass("preload");
-	// $("nav").show()
 	$("#process").fadeToggle();
 });

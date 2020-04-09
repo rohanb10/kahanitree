@@ -1,8 +1,7 @@
-body[class^="fp-viewing-"] nav {
+nav {
 	position: fixed;
 	width: 100%;
 	z-index: 9;
-	// display: none;
 	
 	.nav-container {
 		margin: 0 auto;
@@ -23,14 +22,15 @@ body[class^="fp-viewing-"] nav {
 		.right .nav-item {
 			display: inline-block;
 			margin-left: 1.25em;
-			padding: 1em 0 .25em;
+			padding: .25em 0;
 
 			border-bottom: 3px solid $transparent;
-			transition: border-bottom .1s $easeInOut;
-			transition-delay: .6s;
+			transition: all .3s $easeInOut;
+			transition-delay: .5s;
 
 			a {
 				font-size: .9em;
+				cursor: pointer;
 				color: #000;
 				text-decoration: none;
 				transition: color .1s $easeInOut;
@@ -44,7 +44,7 @@ body[class^="fp-viewing-"] nav {
 	}
 }
 
-body.fp-viewing-home, body.fp-viewing-services, body.fp-viewing-contact, body.dark-bg {
+body.dark-bg {
 	nav .nav-container {
 		.left .nav-logo img{
 			filter: brightness(0) invert(1);

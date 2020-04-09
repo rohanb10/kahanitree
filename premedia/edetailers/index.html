@@ -3,19 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>E-Detailing Services | Vakils Premedia</title>
-	<link rel="stylesheet" type="text/css" href="./css/fullpage.min.css">
+
 	<link rel="stylesheet" type="text/css" href="./css/bbslider.css">
 	<link rel="stylesheet" type="text/css" href="./css/jvectormap.2.0.5.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+
 	<script type="text/javascript" src="./js/jquery.slimish.min.js"></script>
-	<script type="text/javascript" src="./js/fullpage.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.keyframes.min.js"></script>
 	<script type="text/javascript" src="./js/jvectormap.2.0.5.min.js"></script>
 	<script type="text/javascript" src="./js/jvector.world.min.js"></script>
 </head>
-<body class="preload">
+<body class="dark-bg">
 	<nav>
 		<div class="nav-container">
 			<div class="left">
@@ -24,18 +25,18 @@
 				</div>
 			</div>
 			<div class="right" id="navigation-menu">
-				<span data-menuanchor="eDetailers" class="nav-item"><a href="#eDetailers">eDetailing</a></span>
-				<span data-menuanchor="certifications" class="nav-item"><a href="#certifications">Certifications</a></span>
-				<span data-menuanchor="services" class="nav-item"><a href="#services">Services</a></span>
-				<span data-menuanchor="how-we-work" class="nav-item"><a href="#how-we-work">How We Work</a></span>
-				<span data-menuanchor="map" class="nav-item"><a href="#map">Clients</a></span>
-				<span data-menuanchor="about" class="nav-item"><a href="#about">About Us</a></span>
-				<span data-menuanchor="contact" class="nav-item"><a href="#contact">Contact</a></span>
+				<span data-name="eDetailers" class="nav-item"><a href="#eDetailers">eDetailing</a></span>
+				<span data-name="certifications" class="nav-item"><a href="#certifications">Certifications</a></span>
+				<span data-name="services" class="nav-item"><a href="#services">Services</a></span>
+				<span data-name="how-we-work" class="nav-item"><a href="#how-we-work">How We Work</a></span>
+				<span data-name="map" class="nav-item"><a href="#map">Clients</a></span>
+				<span data-name="about" class="nav-item"><a href="#about">About Us</a></span>
+				<span data-name="contact" class="nav-item"><a href="#contact">Contact</a></span>
 			</div>
 		</div>
 	</nav>
-	<div id="fullpage">
-		<div id="home-section" class="section">
+	<div class="scroll-snap-container">
+		<div id="home" class="section dark-bg">
 			<div class="container">
 				<div class="grid">
 					<div class="column">
@@ -67,7 +68,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="eDetailers-section" class="section">
+		<div id="eDetailers" class="section">
 			<div class="container">
 				<div class="grid">
 					<div class="column info-panel">
@@ -92,7 +93,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="certifications-section" class="section">
+		<div id="certifications" class="section">
 			<div class="container">
 				<div class="section-title">
 					<h2><span class="light-blue-underline">Certifications</span></h2>
@@ -121,7 +122,7 @@
 					<div class="cert-content">
 						<div id="veeva">
 							<h3><span>Veeva</span></h3>
-							<p>Veeva is a global leader in the supply of cloud based software for the global life sciences industry. We are proud to be certified as a Veeva Level __ Multichannel Content Partner – the highest level of accreditation – making us one of a few select agencies around the world that provide the best in class service across the Veeva ecosystem.</p>
+							<p>Veeva is a global leader in the supply of cloud based software for the global life sciences industry. We are proud to be certified as a Veeva Multichannel Content Partner, making us one of a few agencies around the world that provide the best in class service across the Veeva ecosystem.</p>
 
 							<p>We are certified to develop tablet materials for Veeva CRM, design and develop Rep triggered emails and develop material used in remote detailing.</p>
 							<div class="cert-icon-container">
@@ -161,7 +162,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="services-section" class="section ">
+		<div id="services" class="section dark-bg">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column development">
@@ -184,7 +185,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="how-we-work-section" class="section ">
+		<div id="how-we-work" class="section">
 			<div class="container bigger">
 				<div class="section-title">
 					<h2><span class="light-blue-underline">How We Work</span></h2>
@@ -246,15 +247,15 @@
 				</div>
 			</div>
 		</div>
-		<div id="map-section" class="section">
+		<div id="map" class="section">
 			<div class="container no-max-width no-padding">
-				<h2><span class="light-blue-underline">Our Clients all over globe</span></h2>
+				<h2><span class="light-blue-underline">Our clients all over the globe</span></h2>
 				<div class="map-container">
 					<div id="jvectormap"></div>
 				</div>
 			</div>
 		</div>
-		<div id="about-section" class="section ">
+		<div id="about" class="section">
 			<div class="container bigger">
 				<div class="grid">
 					<div class="column no-padding">
@@ -297,11 +298,9 @@
 				</div>
 			</div>
 		</div>
-		<div  id="contact-section" class="section">
+		<div  id="contact" class="section dark-bg">
 			<div class="container">
 				<h2><span class="light-blue-underline">Let’s work together</span></h2>
-			</div>
-			<div class="container">
 				<div class="grid">
 					<div class="column contact-info">
 						<h3>Talk to Us</h3>
@@ -318,12 +317,12 @@
 							<div class="row">
 								<div class="input-container">
 									<div id="error-name">&nbsp;</div>
-									<input type="text" name="name" placeholder="David Beckham">
+									<input type="text" name="name" placeholder="Tim Cook">
 									<label for="name">Name *</label>
 								</div>
 								<div class="input-container">
 									<div id="error-email">&nbsp;</div>
-									<input type="text" name="email" placeholder="david@gov.uk">
+									<input type="text" name="email" placeholder="tim@apple.com">
 									<label for="email">Email *</label>
 								</div>
 							</div>
@@ -333,14 +332,14 @@
 									<label for="phone">Phone Number</label>
 								</div>									
 								<div class="input-container">
-									<input type="text" name="company" placeholder="Vakils">
+									<input type="text" name="company" placeholder="Apple Inc">
 									<label for="company">Company</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-container full-width">
 									<div id="error-message">&nbsp;</div>
-									<textarea name="message" placeholder="Message"></textarea>
+									<textarea name="message" placeholder="Hi I would like"></textarea>
 									<label for="message">Message *</label>
 								</div>
 							</div>
