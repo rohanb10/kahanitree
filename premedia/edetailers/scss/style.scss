@@ -85,26 +85,33 @@ p {
 }
 
 .btn {
+	position: relative;
 	margin-top: 1em;
-	background-color: $darkBlue;
 	padding: 1em 2em;
 	font-size: 1.2em;
+	
 	color: #FFF;
+	background-color: $darkBlue;
+
 	border: none;
+	border-radius: 5px;
 	cursor: pointer;
-	position: relative;
+
 	-webkit-appearance: none;
 	-webkit-transform: perspective(1px) translateZ(0);
 	transform: perspective(1px) translateZ(0);
-	transition: box-shadow .5s $easeInOut;
+
+	transition: background-color .5s $easeInOut;
+
+	&:hover, &:focus, &:active {
+		background-color: $lightBlue;
+	}
+
 	&.light-blue {
 		color: #000;
 		background-color: $lightBlue;
-	}
-	&:hover, &:focus {
-		box-shadow: 0 12px 10px -5px rgba(0, 0, 0, 0.5);
-	}
-	&:active {
-		box-shadow: none;		
+		&:hover, &:focus, &:active {
+			background-color: #DDDEDE;
+		}
 	}
 }

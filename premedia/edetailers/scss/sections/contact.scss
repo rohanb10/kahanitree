@@ -48,6 +48,7 @@
 				background-color: $transparent;
 				border: 0;
 				border-bottom: 2px solid $lightBlue;
+				border-radius: 0;
 				box-sizing: border-box;
 				padding: .5em 1em;
 				width: 100%;
@@ -61,7 +62,6 @@
 				}
 				&::placeholder {
 					opacity: 0;
-					color: #888;
 					transition: inherit;
 				}
 				&:focus::placeholder {

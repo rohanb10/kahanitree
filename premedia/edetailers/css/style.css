@@ -326,8 +326,7 @@ body.dark-bg nav .nav-container .right .nav-item.active {
         #certifications #cert-modal .modal-content .cert-content h3 {
           font-size: 1.6em;
           color: #3A3A9D;
-          margin: 0 0 1em;
-          letter-spacing: 2px; }
+          margin: 0 0 1em; }
           #certifications #cert-modal .modal-content .cert-content h3 span {
             border-bottom: 5px solid #83D0F4; }
         #certifications #cert-modal .modal-content .cert-content p:last-of-type {
@@ -350,14 +349,18 @@ body.dark-bg nav .nav-container .right .nav-item.active {
               margin-right: auto; }
         #certifications #cert-modal .modal-content .cert-content #veeva, #certifications #cert-modal .modal-content .cert-content #oce, #certifications #cert-modal .modal-content .cert-content #mitouch {
           display: none; }
+        #certifications #cert-modal .modal-content .cert-content #veeva img {
+          max-width: 220px; }
       #certifications #cert-modal .modal-content .close-btn {
         position: absolute;
-        top: -4em;
-        right: -3.5em;
+        top: -3.25em;
+        right: -2.5em;
         color: #FFF;
         cursor: pointer; }
         #certifications #cert-modal .modal-content .close-btn span {
           font-size: 3em; }
+        #certifications #cert-modal .modal-content .close-btn:hover {
+          color: #9a9a9a; }
   #certifications.animated .grid .column {
     animation: fade-in 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
     #certifications.animated .grid .column:nth-of-type(1) {
@@ -668,6 +671,7 @@ body.dark-bg nav .nav-container .right .nav-item.active {
         background-color: rgba(58, 58, 157, 0);
         border: 0;
         border-bottom: 2px solid #83D0F4;
+        border-radius: 0;
         box-sizing: border-box;
         padding: .5em 1em;
         width: 100%;
@@ -679,7 +683,6 @@ body.dark-bg nav .nav-container .right .nav-item.active {
           outline: 0; }
         #contact .grid .contact-form input[type="text"]::placeholder, #contact .grid .contact-form input[type="number"]::placeholder, #contact .grid .contact-form input[type="email"]::placeholder, #contact .grid .contact-form textarea::placeholder {
           opacity: 0;
-          color: #888;
           transition: inherit; }
         #contact .grid .contact-form input[type="text"]:focus::placeholder, #contact .grid .contact-form input[type="number"]:focus::placeholder, #contact .grid .contact-form input[type="email"]:focus::placeholder, #contact .grid .contact-form textarea:focus::placeholder {
           opacity: 1; }
@@ -803,24 +806,25 @@ p {
   margin-bottom: 1.5em; }
 
 .btn {
+  position: relative;
   margin-top: 1em;
-  background-color: #3A3A9D;
   padding: 1em 2em;
   font-size: 1.2em;
   color: #FFF;
+  background-color: #3A3A9D;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  position: relative;
   -webkit-appearance: none;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  transition: box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  .btn:hover, .btn:focus, .btn:active {
+    background-color: #83D0F4; }
   .btn.light-blue {
     color: #000;
     background-color: #83D0F4; }
-  .btn:hover, .btn:focus {
-    box-shadow: 0 12px 10px -5px rgba(0, 0, 0, 0.5); }
-  .btn:active {
-    box-shadow: none; }
+    .btn.light-blue:hover, .btn.light-blue:focus, .btn.light-blue:active {
+      background-color: #DDDEDE; }
 
 /*# sourceMappingURL=style.css.map */

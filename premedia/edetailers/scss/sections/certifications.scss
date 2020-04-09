@@ -63,7 +63,6 @@
 					font-size: 1.6em;
 					color: $darkBlue;
 					margin: 0 0 1em;
-					letter-spacing: 2px;
 					span {
 						border-bottom: 5px solid $lightBlue;
 					}
@@ -85,6 +84,7 @@
 						margin-right: 2em;
 						img {
 							width: 100%;
+
 						}
 						&:last-of-type {
 							margin-right: auto;
@@ -94,16 +94,22 @@
 				#veeva, #oce, #mitouch {
 					display: none;
 				}
+				#veeva img {
+					max-width: 220px;
+				}
 			}
 
 			.close-btn {
 				position: absolute;
-				top: -4em;
-				right: -3.5em;
+				top: -3.25em;
+				right: -2.5em;
 				color: #FFF;
 				cursor: pointer;
 				span {
 					font-size: 3em;
+				}
+				&:hover {
+					color: #9a9a9a;
 				}
 			}
 		}
