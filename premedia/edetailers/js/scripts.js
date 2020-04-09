@@ -38,15 +38,6 @@ function checkNavbarBG(navItem) {
 	setTimeout(() => {navbar.removeClass('no-delay')}, 50);
 }
 
-$('.slider').bbslider({
-	auto: true,
-	timer: 4000,
-	loop: true,
-	duration: 666,
-	pager: true,
-	pagerWrap: '.pager'
-});
-
 // Open certification modal + animation
 function openCertModal(element, certName) {
 	const rect = element.getBoundingClientRect();
@@ -207,4 +198,13 @@ function validateContactForm(form){
 
 $(document).ready(function() {
 	$('#process').fadeToggle();
+	$('.slider').bbslider({
+		auto: true,
+		timer: 4000,
+		loop: true,
+		duration: 666,
+		pager: true,
+		pagerWrap: '.pager'
+	});
+	$('.slider').fadeTo(1,1);
 });
