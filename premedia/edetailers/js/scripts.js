@@ -6,8 +6,12 @@ const callback = function (entries) {
 	entries.forEach(function (entry) {
 		const {target} = entry;
 		if (entry.intersectionRatio >= 0.05) {
-			document.body.classList = target.classList.contains('dark-bg') ? ['dark-bg'] : [];
-			target.classList.add("animated");
+			if (target.classList.contains('dark-bg')) {
+				$('.nav-container').addClass('dark-bg');
+			} else {
+				$('.nav-container').removeClass('dark-bg');
+			}
+			target.classList.add('animated');
 			$('.nav-item').removeClass('active');
 			$('.nav-item[data-name=' + target.id +']').addClass('active');
 		}
@@ -21,6 +25,18 @@ const observer = new IntersectionObserver(callback, {
 document.querySelectorAll('.section').forEach(function (section, index){
 	observer.observe(section)
 });
+
+// remove transition delay when clicking hrefs;
+function checkNavbarBG(navItem) {
+	var navbar = $('.nav-container');
+	var destinationSection = document.getElementById(navItem.href.slice(navItem.href.lastIndexOf('#')+1));
+	navbar.addClass('no-delay');
+	if (destinationSection.classList.contains('dark-bg')) {
+		navbar.addClass('dark-bg');
+	}
+	destinationSection.classList.add('animated');
+	setTimeout(() => {navbar.removeClass('no-delay')}, 50);
+}
 
 $('.slider').bbslider({
 	auto: true,
@@ -39,7 +55,7 @@ function openCertModal(element, certName) {
 	$(element).addClass('active');
 	$('#cert-modal').addClass('active').css({'display':'flex', 'animation-name':'circle-in'});
 	$('#'+certName).css({'display':'block'});
-	$('body').addClass('dark-bg');
+	$('.nav-container').addClass('dark-bg');
 	$('.modal-content').delay(600).fadeIn(300);
 	$('.nav-item').fadeOut(100);
 }
@@ -49,7 +65,7 @@ function closeCertModal() {
 	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
 	$('#cert-modal').delay(150).css({'animation-name':'circle-out'});
 	$('.cert-logo-container').removeClass('active');
-	$('body').removeClass('dark-bg');
+	$('.nav-container').removeClass('dark-bg');
 	$('.nav-item').delay(300).fadeIn(300);
 }
 
@@ -83,26 +99,26 @@ function howWeWorkHandler(el, id) {
 
 // Map / Clients section
 	const COUNTRIES = [
-		{latLng: [ 46.82,   8.23], name: 'Switzerland', details: 'eDetailing, website development, emailers'},
-		{latLng: [  1.35, 103.82], name: 'Singapore', details: 'eDetailing, emailers'},
-		{latLng: [ 25.03, 121.57], name: 'Taiwan', details: 'eDetailing, emailers'},
+		{latLng: [ 46.82,   8.23], name: 'Switzerland', details: 'eDetailing, Website Development, Emailers'},
+		{latLng: [  1.35, 103.82], name: 'Singapore', details: 'eDetailing, Emailers'},
+		{latLng: [ 25.03, 121.57], name: 'Taiwan', details: 'eDetailing, Emailers'},
 		{latLng: [ -33.92, 18.42], name: 'South Africa', details: 'eDetailing'},
-		{latLng: [ 51.51,   0.13], name: 'United Kingdom', details: 'eDetailing, website development'},
-		{latLng: [ 47.51,  14.55], name: 'Austria', details: 'Website development, emailers'},
-		{latLng: [ 19.43, -99.13], name: 'Mexico', details: 'eDetailing, emailers'},
-		{latLng: [ 56.26,   9.50], name: 'Denmark', details: 'Website development'},
+		{latLng: [ 51.51,   0.13], name: 'United Kingdom', details: 'eDetailing, Website Development'},
+		{latLng: [ 47.51,  14.55], name: 'Austria', details: 'Website Development, Emailers'},
+		{latLng: [ 19.43, -99.13], name: 'Mexico', details: 'eDetailing, Emailers'},
+		{latLng: [ 56.26,   9.50], name: 'Denmark', details: 'Website Development'},
 		{latLng: [-22.91, -43.17], name: 'Brazil', details: 'Emailers'},
-		{latLng: [ 52.52,  13.40], name: 'Germany', details: 'Website development'},
+		{latLng: [ 52.52,  13.40], name: 'Germany', details: 'Website Development'},
 		{latLng: [ 22.32, 114.17], name: 'Hong Kong', details: 'eDetailing'},
-		{latLng: [ 46.23,   2.21], name: 'France', details: 'eDetailing, emailers'},
-		{latLng: [ -37.81,144.96], name: 'Australia', details: 'eDetailing, emailers'},
+		{latLng: [ 46.23,   2.21], name: 'France', details: 'eDetailing, Emailers'},
+		{latLng: [ -37.81,144.96], name: 'Australia', details: 'eDetailing, Emailers'},
 		{latLng: [ 53.14,  -7.69], name: 'Ireland', details: 'Emailers'},
 		{latLng: [ 40.42,  -3.70], name: 'Spain', details: 'eDetailing'},
-		{latLng: [ 37.57, 126.98], name: 'South Korea', details: 'eDetailing, emailers'},
-		{latLng: [ 40.06, -74.41], name: 'United States', details: 'eDetailing, website development'}, //NJ
+		{latLng: [ 37.57, 126.98], name: 'South Korea', details: 'eDetailing, Emailers'},
+		{latLng: [ 40.06, -74.41], name: 'United States', details: 'eDetailing, Website Development'}, //NJ
 		{latLng: [ 52.23,  21.01], name: 'Poland', details: 'Emailers'},
-		{latLng: [  4.21, 101.98], name: 'Malaysia', details: 'eDetailing, website development, emailers'},
-		{latLng: [ 50.85,   4.35], name: 'Belgium', details: 'eDetailing, emailers'},
+		{latLng: [  4.21, 101.98], name: 'Malaysia', details: 'eDetailing, Website Development, Emailers'},
+		{latLng: [ 50.85,   4.35], name: 'Belgium', details: 'eDetailing, Emailers'},
 	]
 
 	// Render the map (jVectorMap 2.0.5)
@@ -129,7 +145,7 @@ function howWeWorkHandler(el, id) {
 					'fill': '#3A3A9D',
 					'fill-opacity': 0.8,
 					'stroke': '#83D0F4',
-					'r': 5,
+					'r': 6,
 				},
 				hover: {
 					'fill': '#3A3A9D',
@@ -153,8 +169,7 @@ function howWeWorkHandler(el, id) {
 	});
 
 	function markerTooltipBuilder(code) {
-		var cc = COUNTRIES[code];
-		return '<div class="country-name">'+ cc.name + '</div><div>' + cc.details + '</div>';
+		return '<div class="country-name">'+ COUNTRIES[code].name + '</div><div>' + COUNTRIES[code].details + '</div>';
 	}
 
 function validateContactForm(form){
@@ -191,5 +206,5 @@ function validateContactForm(form){
 }
 
 $(document).ready(function() {
-	$("#process").fadeToggle();
+	$('#process').fadeToggle();
 });

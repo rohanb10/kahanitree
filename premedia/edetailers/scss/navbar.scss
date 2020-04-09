@@ -16,7 +16,7 @@ nav {
 		.left .nav-logo img {
 			height: 2.75em;
 			transition: filter .1s $easeInOut;
-			transition-delay: .6s;
+			transition-delay: .4s;
 		}
 
 		.right .nav-item {
@@ -25,8 +25,8 @@ nav {
 			padding: .25em 0;
 
 			border-bottom: 3px solid $transparent;
-			transition: all .3s $easeInOut;
-			transition-delay: .5s;
+			transition: all .1s $easeInOut;
+			transition-delay: .4s;
 
 			a {
 				font-size: .9em;
@@ -34,27 +34,30 @@ nav {
 				color: #000;
 				text-decoration: none;
 				transition: color .1s $easeInOut;
-				transition-delay: .6s;
+				transition-delay: .4s;
 			}
 
 			&.active {
 				border-color: $darkBlue;
 			}
 		}
-	}
-}
 
-body.dark-bg {
-	nav .nav-container {
-		.left .nav-logo img{
-			filter: brightness(0) invert(1);
-		}
-		.right .nav-item {
-			a {
-				color: #fff;	
+		&.dark-bg {
+			.left .nav-logo img{
+				filter: brightness(0) invert(1);
 			}
-			&.active {
-				border-color: #fff;
+			.right .nav-item {
+				a {
+					color: #fff;	
+				}
+				&.active {
+					border-color: #fff;
+				}
+			}
+		}
+		&.no-delay {
+			.left .nav-logo img, .right .nav-item, .right .nav-item a {
+				transition-delay: 0s;	
 			}
 		}
 	}
