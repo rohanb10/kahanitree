@@ -15,6 +15,7 @@ nav {
 
 		.left .nav-logo img {
 			height: 2.75em;
+			-webkit-transition: filter .1s $easeInOut;
 			transition: filter .1s $easeInOut;
 			transition-delay: .4s;
 		}

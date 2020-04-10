@@ -207,4 +207,5 @@ $(document).ready(function() {
 		pagerWrap: '.pager'
 	});
 	$('.slider').fadeTo(1,1);
+	document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
 });
