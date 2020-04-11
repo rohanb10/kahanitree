@@ -45,6 +45,7 @@
 			}
 
 			input[type="text"], input[type="number"], input[type="email"], textarea {
+				-webkit-appearance: none;
 				background-color: $transparent;
 				border: 0;
 				border-bottom: 2px solid $lightBlue;
@@ -54,7 +55,7 @@
 				width: 100%;
 				color: white;
 				-webkit-appearance: none;
-				z-index: 3;
+				z-index: 2;
 				font-size: 1em;
 
 				&:focus {

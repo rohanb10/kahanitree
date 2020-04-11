@@ -5,7 +5,8 @@ history.pushState('', '', window.location.pathname);
 const callback = function (entries) {
 	entries.forEach(function (entry) {
 		const {target} = entry;
-		if (entry.intersectionRatio >= 0.05) {
+		console.log(entry.intersectionRatio);
+		if (entry.intersectionRatio >= 0.04) {
 			if (target.classList.contains('dark-bg')) {
 				$('.nav-container').addClass('dark-bg');
 			} else {
@@ -19,7 +20,7 @@ const callback = function (entries) {
 }
 
 const observer = new IntersectionObserver(callback, {
-	threshold: 0.05
+	threshold: 0.5
 });
 
 document.querySelectorAll('.section').forEach(function (section, index){
@@ -196,6 +197,12 @@ function validateContactForm(form){
 	return false;
 }
 
+var goop;
+function mobileNavigate(el) {
+	document.location.hash = '#' + el.dataset.name;
+	setTimeout(() => {document.getElementById("hamburger").checked = false;}, 200);
+}
+
 $(document).ready(function() {
 	$('#process').fadeToggle();
 	$('.slider').bbslider({
@@ -207,5 +214,4 @@ $(document).ready(function() {
 		pagerWrap: '.pager'
 	});
 	$('.slider').fadeTo(1,1);
-	document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
 });

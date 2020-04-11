@@ -27,3 +27,23 @@
 		@content;
 	}
 }
+
+$mobile-width: 32em;  // 512px
+$tablet-width: 48em;  // 768px
+$desktop-width: 64em; // 1024px
+
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+		@content;
+	}
+}
+@mixin mobile {
+	@media (max-width: #{$tablet-width}) {
+		@content;
+	}
+}
+@mixin bigger-than-mobile {
+	@media (min-width: #{$tablet-width}) {
+		@content;
+	}
+}

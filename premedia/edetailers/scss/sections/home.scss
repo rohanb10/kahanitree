@@ -47,8 +47,10 @@
 	}
 
 	// Animations (no .animated class because) it does not appear on page load
-	animation: animate-home-bg 1s $easeInOut both;
-	animation-delay: 3s;
+	@include bigger-than-mobile {
+		animation: animate-home-bg 1s $easeInOut both;
+		animation-delay: 3s;
+	}
 
 	.slide-container {
 		animation: fade-in 1s $easeInOut both;
