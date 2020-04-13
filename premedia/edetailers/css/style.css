@@ -393,20 +393,20 @@ nav {
   padding-bottom: 10em; }
   #certifications .section-title {
     margin-bottom: 5em; }
-  #certifications .desktop-buttons .column {
+  #certifications .desktop .column {
     width: 33%; }
-    #certifications .desktop-buttons .column .cert-logo-container {
+    #certifications .desktop .column .cert-logo-container {
       margin: 1em;
       padding: 7em 0;
       border-radius: 15em;
       cursor: pointer; }
-      #certifications .desktop-buttons .column .cert-logo-container img {
+      #certifications .desktop .column .cert-logo-container img {
         max-width: 80%; }
-      #certifications .desktop-buttons .column .cert-logo-container:hover {
+      #certifications .desktop .column .cert-logo-container:hover {
         background-color: #ddd; }
-      #certifications .desktop-buttons .column .cert-logo-container:active, #certifications .desktop-buttons .column .cert-logo-container.active {
+      #certifications .desktop .column .cert-logo-container:active, #certifications .desktop .column .cert-logo-container.active {
         background-color: #3A3A9D; }
-        #certifications .desktop-buttons .column .cert-logo-container:active img, #certifications .desktop-buttons .column .cert-logo-container.active img {
+        #certifications .desktop .column .cert-logo-container:active img, #certifications .desktop .column .cert-logo-container.active img {
           opacity: 0; }
   #certifications #cert-modal {
     position: absolute;
