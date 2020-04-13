@@ -19,34 +19,26 @@ nav {
 			transition: filter .1s $easeInOut;
 			transition-delay: .4s;
 		}
-		&.dark-bg {
-			.left .nav-logo img{
-				filter: brightness(0) invert(1);
-			}
-			#navigation-menu .nav-item {
-				a {
-					color: #fff;	
+		@include bigger-than-mobile {
+			&.dark-bg {
+				.left .nav-logo img{
+					filter: brightness(0) invert(1);
 				}
-				&.active {
-					border-color: #fff;
-				}
-			}
-			#navigation-menu-mobile.right {
-				input:checked ~span {
-					background: $darkBlue;
-				}
-				span {
-					background: white;
+				#navigation-menu .nav-item {
+					a {
+						color: #fff;	
+					}
+					&.active {
+						border-color: #fff;
+					}
 				}
 			}
 		}
 		@include mobile {
-			// background: white;
+			background: white;
+			border-bottom: 2px solid $darkBlue;
 			.left, .right {
 				padding: 0 0;
-			}
-			.right {
-				// padding: 0;
 			}
 		}
 		#navigation-menu {
@@ -129,8 +121,7 @@ nav {
 				margin-bottom: 5px;
 				background: $darkBlue;
 				z-index: 5;
-				transition: all .2s $easeInOut;
-				transition-delay: .3s;
+				transition: all .3s $easeInOut;
 
 				&:first-of-type {
 					transform-origin: 0% 0%;

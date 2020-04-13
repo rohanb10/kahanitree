@@ -5,8 +5,7 @@ history.pushState('', '', window.location.pathname);
 const callback = function (entries) {
 	entries.forEach(function (entry) {
 		const {target} = entry;
-		console.log(entry.intersectionRatio);
-		if (entry.intersectionRatio >= 0.04) {
+		if (entry.intersectionRatio >= 0.05) {
 			if (target.classList.contains('dark-bg')) {
 				$('.nav-container').addClass('dark-bg');
 			} else {
@@ -20,7 +19,7 @@ const callback = function (entries) {
 }
 
 const observer = new IntersectionObserver(callback, {
-	threshold: 0.5
+	threshold: 0.05
 });
 
 document.querySelectorAll('.section').forEach(function (section, index){

@@ -34,7 +34,7 @@
 				<span data-name="contact" class="nav-item"><a onclick="checkNavbarBG(this)" href="#contact">Contact</a></span>
 			</div>
 			<div class="right" id="navigation-menu-mobile">
-				<input id="hamburger" type="checkbox">
+				<input id="hamburger" type="checkbox" checked>
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
@@ -87,7 +87,7 @@
 			<div class="container">
 				<div class="grid">
 					<div class="column info-panel">
-						<h1>eDetailer<span class="light-blue-underline"> Development</span></h1>
+						<h1><span class="light-blue-underline">eDetailer</span><span class="light-blue-underline"> Development</span></h1>
 						<br>
 						<div>
 							<p>We develop visual aid (eDetailing) campaigns that utilise the full potential of your chosen multichannel platform.</p>
@@ -109,11 +109,11 @@
 			</div>
 		</div>
 		<div id="certifications" class="section">
-			<div class="container">
-				<div class="section-title">
-					<h2><span class="light-blue-underline">Certifications</span></h2>
-				</div>
-				<div class="grid column-center">
+			<div class="section-title">
+				<h2><span class="light-blue-underline">Certifications</span></h2>
+			</div>
+			<div class="container desktop">
+				<div class="grid column-center ">
 					<div class="column">
 						<div class="cert-logo-container" onclick="openCertModal(this, 'veeva')">
 							<img onclick="openCertModal(this, 'veeva')" src="./img/cert/veeva_logo.png">
@@ -129,6 +129,42 @@
 							<img onclick="openCertModal(this, 'mitouch')" src="./img/cert/iqvia_mitouch_logo.png">
 						</div>
 					</div>
+				</div>
+			</div>
+			<div class="mobile container">
+				<div>
+					<h3><span>Veeva</span></h3>
+					<p>Veeva is a global leader in the supply of cloud based software for the global life sciences industry. We are proud to be certified as a Veeva Multichannel Content Partner, making us one of a few agencies around the world that provide the best in class service across the Veeva ecosystem.</p>
+
+					<p>We are certified to develop tablet materials for Veeva CRM, design and develop Rep triggered emails and develop material used in remote detailing.</p>
+					<div class="cert-icon-container">
+						<div class="row">
+							<img src="./img/cert/veeva_clm.png">
+							<img src="./img/cert/veeva_engage.png">
+						</div>
+						<img src="./img/cert/veeva_email.png">
+					</div>
+					<hr>
+				</div>
+				<div>
+					
+					<h3><span>IQVIA OCE</span></h3>
+					<p>OCE is an innovative strategy that enables Life Sciences companies to integrate customer-engagement activities across the organization, powered by strong information management.</p>
+					<p>We are certified to to navigate IQVIA’s revolutionary Orchestrated Customer Engagement Platform as well as to create platform-compliant content.</p>
+					<p>We have created OCE visual aids (e-Detailers) for several markets globally.</p>
+					<div class="cert-icon-container wider">
+						<img src="./img/cert/iqvia_oce_logo.png">
+					</div>
+					<hr>
+				</div>
+				<div>
+					<h3>IQVIA MiTouch</h3>
+					<p>MI Touch is a platform, similar to Veeva, allowing for delivery via an iPad of HTML based slides from a cloud-based technology solution.</p>
+					<p>We are certified to develop material for MiTouch and have created iDetailers across the world in the pharmaceutical industry.</p>
+					<div class="cert-icon-container wider">
+						<img src="./img/cert/iqvia_mitouch_logo.png">
+					</div>
+					<hr>
 				</div>
 			</div>
 			<div id="cert-modal">
@@ -179,6 +215,9 @@
 		</div>
 		<div id="services" class="section dark-bg">
 			<div class="container bigger">
+				<div class="section-title">
+					<h2><span class="light-blue-underline">Services</span></h2>
+				</div>
 				<div class="grid">
 					<div class="column development">
 						<h3>Development</h3>

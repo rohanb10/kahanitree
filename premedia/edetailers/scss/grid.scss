@@ -5,6 +5,9 @@
 	&.column-center .column{
 		text-align: center;
 	}
+	@include mobile {
+		display: block;
+	}
 }
 
 .column {
