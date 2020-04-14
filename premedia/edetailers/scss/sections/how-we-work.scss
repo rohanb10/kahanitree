@@ -76,41 +76,69 @@
 			margin-top: 1em;
 		}
 	}
-	&.animated {
-		.work-container .column, .work-container .dot {
-			animation: fade-in .5s $easeInOut both;
-			&.one {
-				animation-delay: 1s;
+	@include mobile {
+		.work-selector {
+			display: flex;
+			margin: 2.5em 0;
+		}
+		.work-container {
+			display: block;
+			.timeline {
+				display: none;
 			}
-			&.two {
-				animation-delay: 2.5s;
-			}
-			&.three {
-				animation-delay: 4s;
-			}
-			&.four {
-				animation-delay: 5.5s;
-			}
-			&.five {
-				animation-delay: 7s;
+			& > .column {
+				height: auto;
+				display: block;
+				h3{
+					margin: 1em 0 0;
+				}
+				p {
+					margin: 0 0 .5em;
+				}
 			}
 		}
-		.work-container .dot .line {
-			animation: timeline-draw-right 1s $easeInOut both;
-			&.one {
-				animation-delay: 1.5s;
+		.btn-container {
+			margin: 2em 0;
+		}
+	}
+
+	@include bigger-than-mobile {
+		&.animated {
+			.work-container .column, .work-container .dot {
+				animation: fade-in .5s $easeInOut both;
+				&.one {
+					animation-delay: 1s;
+				}
+				&.two {
+					animation-delay: 2.5s;
+				}
+				&.three {
+					animation-delay: 4s;
+				}
+				&.four {
+					animation-delay: 5.5s;
+				}
+				&.five {
+					animation-delay: 7s;
+				}
 			}
-			&.two {
-				animation-delay: 3s;
-			}
-			&.three {
-				animation-delay: 4.5s;
-			}
-			&.four {
-				animation-delay: 6s;
-			}
-			&.five {
-				animation-delay: 7.5s;
+			.work-container .dot .line {
+				animation: timeline-draw-right 1s $easeInOut both;
+				&.one {
+					animation-delay: 1.5s;
+				}
+				&.two {
+					animation-delay: 3s;
+				}
+				&.three {
+					animation-delay: 4.5s;
+				}
+				&.four {
+					animation-delay: 6s;
+				}
+				&.five {
+					animation-delay: 7.5s;
+				}
 			}
 		}
 	}

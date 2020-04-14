@@ -1,41 +1,16 @@
 // remove hash from url
 history.pushState('', '', window.location.pathname);
 
-// observe page position for animations
-const callback = function (entries) {
-	entries.forEach(function (entry) {
-		const {target} = entry;
-		if (entry.intersectionRatio >= 0.05) {
-			if (target.classList.contains('dark-bg')) {
-				$('.nav-container').addClass('dark-bg');
-			} else {
-				$('.nav-container').removeClass('dark-bg');
-			}
-			target.classList.add('animated');
-			$('.nav-item').removeClass('active');
-			$('.nav-item[data-name=' + target.id +']').addClass('active');
-		}
-	});
-}
-
-const observer = new IntersectionObserver(callback, {
-	threshold: 0.05
-});
-
-document.querySelectorAll('.section').forEach(function (section, index){
-	observer.observe(section)
-});
-
 // remove transition delay when clicking hrefs;
 function checkNavbarBG(navItem) {
 	var navbar = $('.nav-container');
-	var destinationSection = document.getElementById(navItem.href.slice(navItem.href.lastIndexOf('#')+1));
+	var destinationSection = document.getElementById($(navItem).prop('hash').slice(1));
 	navbar.addClass('no-delay');
 	if (destinationSection.classList.contains('dark-bg')) {
 		navbar.addClass('dark-bg');
 	}
 	destinationSection.classList.add('animated');
-	setTimeout(() => {navbar.removeClass('no-delay')}, 50);
+	setTimeout(() => {navbar.removeClass('no-delay')}, 1000);
 }
 
 // Open certification modal + animation
@@ -196,10 +171,12 @@ function validateContactForm(form){
 	return false;
 }
 
-var goop;
+//close hamburger when link is clicked;
 function mobileNavigate(el) {
 	document.location.hash = '#' + el.dataset.name;
-	setTimeout(() => {document.getElementById("hamburger").checked = false;}, 200);
+	setTimeout(() => {
+		document.getElementById("hamburger").checked = false;
+	}, 250);
 }
 
 $(document).ready(function() {
@@ -213,4 +190,5 @@ $(document).ready(function() {
 		pagerWrap: '.pager'
 	});
 	$('.slider').fadeTo(1,1);
+	checkScrollMethod();
 });

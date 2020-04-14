@@ -34,7 +34,7 @@
 				<span data-name="contact" class="nav-item"><a onclick="checkNavbarBG(this)" href="#contact">Contact</a></span>
 			</div>
 			<div class="right" id="navigation-menu-mobile">
-				<input id="hamburger" type="checkbox" checked>
+				<input id="hamburger" type="checkbox">
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
 				<span class="hamburger-line"></span>
@@ -58,13 +58,13 @@
 						<div class="slide-container">
 							<div class="frame-container slider">
 								<div class="slide">
-									<img src="./img/slides/slide1.jpg">
+									<img rel="preload" src="./img/slides/slide1.jpg">
 								</div>
 								<div class="slide">
-									<img src="./img/slides/slide2.jpg">
+									<img rel="preload" src="./img/slides/slide2.jpg">
 								</div>
 								<div class="slide">
-									<img src="./img/slides/slide3.jpg">
+									<img rel="preload" src="./img/slides/slide3.jpg">
 								</div>
 							</div>
 							<div class="pager-container">
@@ -191,7 +191,7 @@
 						<div id="oce">
 							<h3><span>IQVIA OCE</span></h3>
 							<p>OCE is an innovative strategy that enables Life Sciences companies to integrate customer-engagement activities across the organization, powered by strong information management.</p>
-							<p>We are certified to to navigate IQVIA’s revolutionary Orchestrated Customer Engagement Platform as well as to create platform-compliant content.</p>
+							<p>We are certified to navigate IQVIA’s revolutionary Orchestrated Customer Engagement Platform as well as to create platform-compliant content.</p>
 							<p>We have created OCE visual aids (e-Detailers) for several markets globally.</p>
 							<div class="cert-icon-container">
 								<div class="icon">
@@ -244,11 +244,11 @@
 				<div class="section-title">
 					<h2><span class="light-blue-underline">How We Work</span></h2>
 				</div>
-				<div class="grid column work-selector">
+				<div class="grid work-selector">
 					<span class="column"><span class="active" onclick="howWeWorkHandler(this, 'model')">Our Model</span></span>
 					<span class="column"><span onclick="howWeWorkHandler(this, 'process')">Our Process</span></span>
 				</div>
-				<div id="model" class="grid work-container active container no-padding">
+				<div id="model" class="work-container grid active container no-padding">
 					<div class="timeline grid">
 						<div class="column"><div class="dot one"><span class="line one"></span></div></div>
 						<div class="column"><div class="dot two"><span class="line two"></span></div></div>
@@ -324,28 +324,34 @@
 						</div>
 					</div>
 					<div class="column bigger business-panel">
-						<h3>Our three main areas of business are</h3>
+						<h3>Our three main areas of business</h3>
 						<div class="grid">
 							<div class="column">
 								<div class="about-icon">
 									<img src="./img/it_services.svg">
 								</div>
-								<h3>IT Services</h3>
-								<p>IT services which include eDetailers, website design development and migrations, emailers and custom software.</p>
+								<div>
+									<h3>IT Services</h3>
+									<p>IT services which include eDetailers, website design development and migrations, emailers and custom software.</p>
+								</div>
 							</div>
 							<div class="column">
 								<div class="about-icon">
 									<img class="bigger" src="./img/pharma_artwork.svg">
 								</div>
-								<h3>Pharma Artwork</h3>
-								<p>Pharmaceutical Artwork and Labeling Compliance.</p>
+								<div>
+									<h3>Pharma Artwork</h3>
+									<p>Pharmaceutical Artwork and Labeling Compliance.</p>
+								</div>
 							</div>
 							<div class="column">
 								<div class="about-icon">
 									<img src="./img/premedia.svg">
 								</div>
-								<h3>Premedia Services</h3>
-								<p>Premedia services which included Typesetting, colour retouching, image cutouts, data sheets etc.</p>
+								<div>
+									<h3>Premedia Services</h3>
+									<p>Premedia services which included Typesetting, colour retouching, image cutouts, data sheets etc.</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -357,42 +363,45 @@
 				<h2><span class="light-blue-underline">Let’s work together</span></h2>
 				<div class="grid">
 					<div class="column contact-info">
-						<h3>Talk to Us</h3>
-						<p>info@vakilspremedia.com</p>
+						<h3>Talk to us</h3>
+						<p><a href="mailto:info@vakilspremedia.com">info@vakilspremedia.com</a></p>
 						<p>+91 22 2430 6780</p>
 						<br><br><br><br>
-						<h3>Visit Us</h3>
+						<h3>Visit us</h3>
 						<p><a href="https://goo.gl/maps/3WZwTQobTuJch1Vw8" target="_blank">Industry Manor</a>, 2nd Floor</p>
 						<p>Appasaheb Marathe Marg,</p>
 						<p>Mumbai – 400 025, India</p>
 					</div>
 					<div class="column bigger contact-form-container">
-						<form class="contact-form" action="" onsubmit="return validateContactForm(this)">
+						<form class="contact-form disabled" action="" onsubmit="return validateContactForm(this)">
+							<h3>Send us a message</h3>
 							<div class="row">
 								<div class="input-container">
-									<div id="error-name">&nbsp;</div>
+									<div class="error" id="error-name">&nbsp;</div>
 									<input type="text" name="name" placeholder="Tim Cook">
 									<label for="name">Name *</label>
 								</div>
 								<div class="input-container">
-									<div id="error-email">&nbsp;</div>
+									<div class="error" id="error-email">&nbsp;</div>
 									<input type="text" name="email" placeholder="tim@apple.com">
 									<label for="email">Email *</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-container">
+									<div class="error">&nbsp;</div>
 									<input type="number" name="phone" placeholder="+91 98200 12345">
 									<label for="phone">Phone Number</label>
 								</div>									
 								<div class="input-container">
+									<div class="error">&nbsp;</div>
 									<input type="text" name="company" placeholder="Apple Inc">
 									<label for="company">Company</label>
 								</div>
 							</div>
 							<div class="row">
 								<div class="input-container full-width">
-									<div id="error-message">&nbsp;</div>
+									<div class="error" id="error-message">&nbsp;</div>
 									<textarea name="message" placeholder="Hello there..."></textarea>
 									<label for="message">Message *</label>
 								</div>
@@ -406,11 +415,19 @@
 								<p>We will reach out to you soon!</p>
 							</div></div>
 						</form>
+						<div class="disabled-message"><div>
+							<p>We are unable to process forms right now.</p>
+							<p>Please contact us directly via email.</p>
+						</div></div>
 					</div>
 				</div>
 			</div>
+			<div class="copyright">
+				Copyright &copy; 2020 Vakils Premedia Pvt. Ltd.
+			</div>
 		</div>
 	</div>
+	<script type="text/javascript" src="./js/scroll.js"></script>
 	<script type="text/javascript" src="./js/scripts.js"></script>
 </body>
 </html>

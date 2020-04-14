@@ -19,6 +19,7 @@ html, body {
 	background-color: #FFF;
 	font-family: 'Lato', sans-serif;
 	margin: 0;
+
 }
 
 h1, h2, h3, h4, h5{
@@ -43,19 +44,16 @@ p {
 		scroll-snap-align: start;
 	}
 	@include mobile {
-		scroll-snap-type: y proximity;
-		// scroll-snap-type: none;
+		// scroll-snap-type: y proximity;
+		scroll-snap-type: none;
 		
 		.section {
 			height: initial;
 			// min-height: 100vh;
-			padding-top: 4em;
+			padding-top: 0;
 			align-items: unset;
 			.container {
 				max-width: 24em;
-			}
-			&.animated * {
-				animation: none !important;
 			}
 		}
 	}

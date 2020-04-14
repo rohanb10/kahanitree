@@ -8,9 +8,6 @@
 		h1 {
 			margin-top: 0;
 		}
-		@include mobile {
-			margin: 0;
-		}
 	}
 
 	.slide-container {
@@ -72,6 +69,7 @@
 	}
 
 	@include mobile {
+		padding-top: 3em;
 		.info-panel {
 			margin: 0 auto;
 			.btn {

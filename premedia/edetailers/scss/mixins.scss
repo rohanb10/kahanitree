@@ -28,22 +28,22 @@
 	}
 }
 
-$mobile-width: 32em;  // 512px
-$tablet-width: 48em;  // 768px
-$desktop-width: 64em; // 1024px
+$mobile-width: 512;  // 512px
+$tablet-width: 768;  // 768px
+$desktop-width: 1024; // 1024px
 
 @mixin tablet {
-	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width}) {
+	@media (min-width: #{$tablet-width + 1}px) and (max-width: #{$desktop-width}px) {
 		@content;
 	}
 }
 @mixin mobile {
-	@media (max-width: #{$tablet-width}) {
+	@media (max-width: #{$tablet-width}px) {
 		@content;
 	}
 }
 @mixin bigger-than-mobile {
-	@media (min-width: #{$tablet-width}) {
+	@media (min-width: #{$tablet-width + 1}px) {
 		@content;
 	}
 }

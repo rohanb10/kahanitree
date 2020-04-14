@@ -2,6 +2,8 @@ nav {
 	position: fixed;
 	width: 100%;
 	z-index: 3;
+	top: 0;
+	transition: top .3s $easeInOut;
 	
 	.nav-container {
 		margin: 0 auto;
@@ -18,6 +20,11 @@ nav {
 			-webkit-transition: filter .1s $easeInOut;
 			transition: filter .1s $easeInOut;
 			transition-delay: .4s;
+		}
+		&.no-delay {
+			.left .nav-logo img, #navigation-menu.right .nav-item, #navigation-menu.right .nav-item a {
+				transition-delay: 0s
+			}
 		}
 		@include bigger-than-mobile {
 			&.dark-bg {
@@ -62,11 +69,6 @@ nav {
 
 				&.active {
 					border-color: $darkBlue;
-				}
-			}
-			&.no-delay {
-				.left .nav-logo img, .right .nav-item, .right .nav-item a {
-					transition-delay: 0s;	
 				}
 			}
 			@include mobile {
@@ -120,6 +122,7 @@ nav {
 				height: .25em;
 				margin-bottom: 5px;
 				background: $darkBlue;
+				border-radius: .25em;
 				z-index: 5;
 				transition: all .3s $easeInOut;
 
@@ -166,6 +169,12 @@ nav {
 			@include bigger-than-mobile {
 				display: none;
 			}
+		}
+	}
+	&.scrolling {
+		top: -4em;
+		#navigation-menu-mobile {
+			display: none;
 		}
 	}
 }
