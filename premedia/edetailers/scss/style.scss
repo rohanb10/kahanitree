@@ -35,6 +35,7 @@ p {
 .scroll-snap-container {
 	height: 100vh;
 	overflow-y: auto;
+	-ms-scroll-snap-type: y mandatory;
 	scroll-snap-type: y mandatory;
 	.section {
 		display: flex;
@@ -45,6 +46,7 @@ p {
 	}
 	@include mobile {
 		// scroll-snap-type: y proximity;
+		-ms-scroll-snap-type: none;
 		scroll-snap-type: none;
 		
 		.section {
