@@ -325,8 +325,8 @@ nav {
           border-radius: .5em; }
           #home .slide-container .slider img {
             border-radius: 0; }
-        #home .slide-container .pager-container .pager .bb-link-wrapper {
-          font-size: .8em; } }
+        #home .slide-container .pager-container .pager .bb-link-wrapper a {
+          font-size: .9em; } }
 
 #eDetailers {
   align-items: flex-end; }
@@ -364,6 +364,11 @@ nav {
     #eDetailers .info-panel {
       margin: 0;
       padding: 1em; }
+      #eDetailers .info-panel h2 {
+        text-align: center;
+        margin: 1.5em 0 2em; }
+      #eDetailers .info-panel br {
+        display: none; }
     #eDetailers .image-panel {
       position: relative;
       overflow: hidden;
@@ -500,7 +505,7 @@ nav {
         display: none; }
       #certifications .section-title {
         padding: 0;
-        margin: 0; }
+        margin: 1.5em 0; }
       #certifications .mobile > div {
         margin: 0 auto; }
         #certifications .mobile > div h3 {
@@ -581,8 +586,8 @@ nav {
       #services.animated .column:nth-of-type(4) {
         animation-delay: 1.1s; } }
   @media (max-width: 768px) {
-    #services .section-title {
-      margin-bottom: 3em; }
+    #services .section-title h2 {
+      margin: 1.5em 0 2.5em; }
     #services .development, #services .localisation, #services .translation, #services .transcreation {
       margin: 2em 0;
       padding: 1em;
@@ -655,11 +660,13 @@ nav {
 @media (max-width: 768px) {
   #how-we-work {
     background-color: #EFEFEF; }
+    #how-we-work .section-title h2 {
+      margin: 1.5em 0; }
     #how-we-work br {
       display: block; }
     #how-we-work .work-selector {
       display: flex;
-      margin: 2.5em 0; }
+      margin: 3.5em 0 2.5em; }
     #how-we-work .work-container {
       display: block; }
       #how-we-work .work-container .timeline {
@@ -762,7 +769,7 @@ nav {
       min-height: 70vh;
       position: relative; }
       #map h2 {
-        margin: 1em 0; }
+        margin: 1.5em 0; }
         #map h2 br {
           display: block; }
       #map .light-blue-underline {
@@ -848,12 +855,15 @@ nav {
       max-height: initial; }
     #about .info-panel {
       margin-bottom: 0; }
+      #about .info-panel h2 {
+        text-align: center;
+        margin: .5em 0 2em; }
       #about .info-panel br {
         display: none; }
       #about .info-panel p:last-of-type {
         margin-bottom: 0; }
     #about .business-panel {
-      padding: 2em 0 0; }
+      padding: 3em 0 0; }
       #about .business-panel > h3 {
         text-align: center; }
       #about .business-panel .column {

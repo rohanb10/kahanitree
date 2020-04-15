@@ -47,6 +47,10 @@
 			max-height: initial;
 		}
 		.info-panel {
+			h2 {
+				text-align: center;
+				margin: .5em 0 2em;
+			}
 			br {
 				display: none;
 			}
@@ -56,7 +60,7 @@
 			margin-bottom: 0;
 		}
 		.business-panel {
-			padding: 2em 0 0;
+			padding: 3em 0 0;
 			& > h3 {
 				text-align: center;
 			}

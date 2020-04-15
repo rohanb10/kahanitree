@@ -93,7 +93,7 @@ nav {
 				z-index: 6; /* and place it over the hamburger */
 
 				-webkit-touch-callout: none;
-				&:checked{
+				&:checked {
 					// opacity: 0;
 					transition: all .3s $easeInOut;
 					& ~.hamburger-line {
@@ -162,7 +162,7 @@ nav {
 						border-bottom: 2px solid $transparent;
 						border-color: white;
 					}
-					&.active span{
+					&.active span {
 						border-color: $darkBlue;
 					}
 				}

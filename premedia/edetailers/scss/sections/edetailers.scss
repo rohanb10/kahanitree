@@ -47,6 +47,13 @@
 		.info-panel {
 			margin: 0;
 			padding: 1em;
+			h2 {
+				text-align: center;
+				margin: 1.5em 0 2em;
+			}
+			br {
+				display: none;
+			}
 		}
 		.image-panel {
 			position: relative;

@@ -2,7 +2,7 @@
 	display: flex;
 	flex-wrap: wrap;
 
-	&.column-center .column{
+	&.column-center .column {
 		text-align: center;
 	}
 	@include mobile {

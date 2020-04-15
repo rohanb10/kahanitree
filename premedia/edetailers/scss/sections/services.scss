@@ -66,7 +66,9 @@
 
 	@include mobile {
 		.section-title {
-			margin-bottom: 3em;
+			h2 {
+				margin: 1.5em 0 2.5em;
+			}
 		}
 		.development, .localisation , .translation, .transcreation {
 			margin: 2em 0;
