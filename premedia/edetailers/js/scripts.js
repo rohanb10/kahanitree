@@ -40,13 +40,13 @@ function createCircleAnimation(cords) {
 	var xy = cords.x + 'px ' + cords.y + 'px';
 	$.keyframe.define([{
 		name: 'circle-in',
-		from: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
-		to: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
+		from: {'clip-path': 'circle(  0% at '+ xy + ')', '-webkit-clip-path': 'circle(  0% at '+ xy + ')', '-ms-clip-path': 'circle(  0% at '+ xy + ')'},
+		to:   {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')', '-ms-clip-path': 'circle(120% at '+ xy + ')'},
 	}]);
 	$.keyframe.define([{
 		name: 'circle-out',
-		from: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')'},
-		to: {'clip-path': 'circle(0% at '+ xy + ')', '-webkit-clip-path': 'circle(0% at '+ xy + ')'},
+		from: {'clip-path': 'circle(120% at '+ xy + ')', '-webkit-clip-path': 'circle(120% at '+ xy + ')', '-ms-clip-path': 'circle(120% at '+ xy + ')'},
+		to:   {'clip-path': 'circle(  0% at '+ xy + ')', '-webkit-clip-path': 'circle(  0% at '+ xy + ')', '-ms-clip-path': 'circle(  0% at '+ xy + ')'},
 	}]);
 }
 // Certifications section end
