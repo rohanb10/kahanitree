@@ -36,7 +36,7 @@
 				color: white;
 
 				label, input, textarea {
-					transition: all 0.2s $easeInOut;
+					transition: all .2s $easeInOut;
 					touch-action: manipulation;
 					position: relative;
 				}
@@ -76,7 +76,7 @@
 						cursor: text;
 						transform-origin: left bottom;
 						transform: translate(1.33em, 2em);
-						letter-spacing: 0.15em;
+						letter-spacing: .15em;
 					}
 					&:not(:placeholder-shown) + label, &:focus + label {
 						transform: translate(0, 0);

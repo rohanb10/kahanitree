@@ -1,12 +1,5 @@
 #eDetailers {
 	align-items: flex-end;
-	// preload images hack
-	.slide-container:before {
-		background-image: url('../img/slides/slide1.jpg'), url('../img/slides/slide2.jpg'), url('../img/slides/slide3.jpg');
-		position: absolute;
-		opacity: 0;
-		left: 999em;
-	}
 	.info-panel {
 		margin-right: 1em;
 		background-color: $lightGray;

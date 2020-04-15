@@ -278,14 +278,15 @@ nav {
     width: 100%; }
     #home .slide-container * {
       margin: 0 auto; }
-    #home .slide-container .frame-container {
+    #home .slide-container .slider {
       border: 1vw solid;
       border-image-source: url("../img/slides/slide_frame.png");
       border-image-slice: 30;
       background-color: black;
       border-radius: 1em;
-      box-shadow: 35px 10px 72px -16px rgba(0, 0, 0, 0.44); }
-      #home .slide-container .frame-container img {
+      box-shadow: 35px 10px 72px -16px rgba(0, 0, 0, 0.44);
+      opacity: 0; }
+      #home .slide-container .slider img {
         background-color: black;
         display: block;
         border-radius: .4em; }
@@ -319,21 +320,16 @@ nav {
           margin: 1em 0 2em; }
       #home .slide-container {
         padding-top: 1em; }
-        #home .slide-container .frame-container {
+        #home .slide-container .slider {
           border-width: 2vw;
           border-radius: .5em; }
-          #home .slide-container .frame-container img {
+          #home .slide-container .slider img {
             border-radius: 0; }
         #home .slide-container .pager-container .pager .bb-link-wrapper {
           font-size: .8em; } }
 
 #eDetailers {
   align-items: flex-end; }
-  #eDetailers .slide-container:before {
-    background-image: url("../img/slides/slide1.jpg"), url("../img/slides/slide2.jpg"), url("../img/slides/slide3.jpg");
-    position: absolute;
-    opacity: 0;
-    left: 999em; }
   #eDetailers .info-panel {
     margin-right: 1em;
     background-color: #F4F4F4;
@@ -957,7 +953,7 @@ nav {
           cursor: text;
           transform-origin: left bottom;
           transform: translate(1.33em, 2em);
-          letter-spacing: 0.15em; }
+          letter-spacing: .15em; }
         #contact .grid .contact-form-container .contact-form input[type="text"]:not(:placeholder-shown) + label, #contact .grid .contact-form-container .contact-form input[type="text"]:focus + label, #contact .grid .contact-form-container .contact-form input[type="number"]:not(:placeholder-shown) + label, #contact .grid .contact-form-container .contact-form input[type="number"]:focus + label, #contact .grid .contact-form-container .contact-form input[type="email"]:not(:placeholder-shown) + label, #contact .grid .contact-form-container .contact-form input[type="email"]:focus + label, #contact .grid .contact-form-container .contact-form textarea:not(:placeholder-shown) + label, #contact .grid .contact-form-container .contact-form textarea:focus + label {
           transform: translate(0, 0);
           cursor: pointer;

@@ -180,7 +180,7 @@ function mobileNavigate(el) {
 	}, 250);
 }
 
-$(document).ready(function() {
+$(window).load(function() {
 	$('#process').fadeToggle();
 	$('.slider').bbslider({
 		auto: true,
