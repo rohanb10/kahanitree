@@ -328,79 +328,74 @@ nav {
         #home .slide-container .pager-container .pager .bb-link-wrapper a {
           font-size: .9em; } }
 
-#eDetailers {
+#eDetailers .info-panel {
+  margin-right: 1em;
+  background-color: #F4F4F4;
+  padding: 1em 2em 2em; }
+  #eDetailers .info-panel h2 {
+    margin: .5em 0 2em;
+    color: #3A3A9D; }
+  #eDetailers .info-panel p:last-of-type {
+    margin-bottom: 0; }
+#eDetailers .image-panel {
+  display: flex;
   align-items: flex-end; }
+  #eDetailers .image-panel img:first-of-type {
+    width: calc(60% - 1em);
+    padding-right: 1em; }
+  #eDetailers .image-panel img:last-of-type {
+    width: 40%; }
+#eDetailers .service-panel {
+  background-color: #3A3A9D;
+  margin-top: 1em;
+  color: #FFF; }
+  #eDetailers .service-panel .column hr {
+    height: .125em;
+    width: 3em;
+    margin: 1em auto .25em;
+    background-color: #83D0F4;
+    border: none; }
+@media (max-width: 768px) {
   #eDetailers .info-panel {
-    margin-right: 1em;
-    background-color: #F4F4F4;
-    padding: 1em 2em 2em; }
+    margin: 0;
+    padding: 1em; }
     #eDetailers .info-panel h2 {
-      margin-top: 0;
-      color: #3A3A9D; }
-      @media (min-width: 769px) {
-        #eDetailers .info-panel h2 span:first-of-type {
-          border: none; } }
-    #eDetailers .info-panel p:last-of-type {
-      margin-bottom: 0; }
+      text-align: center;
+      margin: 1.5em 0 2em; }
+    #eDetailers .info-panel br {
+      display: none; }
   #eDetailers .image-panel {
-    display: flex;
-    align-items: flex-end; }
+    position: relative;
+    overflow: hidden;
+    height: 12em;
+    margin-top: 1em; }
     #eDetailers .image-panel img:first-of-type {
-      width: calc(60% - 1em);
-      padding-right: 1em; }
+      display: none; }
     #eDetailers .image-panel img:last-of-type {
-      width: 40%; }
+      position: absolute;
+      width: 100%;
+      bottom: 0; }
   #eDetailers .service-panel {
-    background-color: #3A3A9D;
-    margin-top: 1em;
-    color: #FFF; }
-    #eDetailers .service-panel .column hr {
-      height: .125em;
-      width: 3em;
-      margin: 1em auto .25em;
-      background-color: #83D0F4;
-      border: none; }
-  @media (max-width: 768px) {
-    #eDetailers .info-panel {
-      margin: 0;
-      padding: 1em; }
-      #eDetailers .info-panel h2 {
-        text-align: center;
-        margin: 1.5em 0 2em; }
-      #eDetailers .info-panel br {
-        display: none; }
-    #eDetailers .image-panel {
-      position: relative;
-      overflow: hidden;
-      height: 12em;
-      margin-top: 1em; }
-      #eDetailers .image-panel img:first-of-type {
-        display: none; }
-      #eDetailers .image-panel img:last-of-type {
-        position: absolute;
-        width: 100%;
-        bottom: 0; }
-    #eDetailers .service-panel {
-      display: flex; }
-      #eDetailers .service-panel .column {
-        flex: 0 50%;
-        padding: 1em 0 .5em; }
-        #eDetailers .service-panel .column hr {
-          width: auto;
-          margin: .75em 3em; } }
-  @media (min-width: 769px) {
-    #eDetailers.animated .info-panel {
-      animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-      animation-delay: .5s; }
-    #eDetailers.animated .image-panel img {
-      animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-      #eDetailers.animated .image-panel img:nth-of-type(1) {
-        animation-delay: 1.3s; }
-      #eDetailers.animated .image-panel img:nth-of-type(2) {
-        animation-delay: 1.5s; }
-    #eDetailers.animated .service-panel {
-      animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-      animation-delay: 2s; } }
+    display: flex; }
+    #eDetailers .service-panel .column {
+      flex: 0 50%;
+      padding: 1em 0 .5em; }
+      #eDetailers .service-panel .column hr {
+        width: auto;
+        margin: .75em 3em; } }
+@media (min-width: 769px) {
+  #eDetailers.animated .info-panel {
+    animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: .5s; }
+  #eDetailers.animated .image-panel img {
+    animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+    #eDetailers.animated .image-panel img:nth-of-type(1) {
+      animation-delay: 1.3s; }
+    #eDetailers.animated .image-panel img:nth-of-type(2) {
+      animation-delay: 1.5s; }
+  #eDetailers.animated .service-panel {
+    animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 2s; } }
 
 #certifications {
   background-color: #EFEFEF;

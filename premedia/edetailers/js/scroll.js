@@ -1,10 +1,11 @@
 // Use IntersectionObserver for desktop scrolling (add .active class to navbar)
 // observe page position for animations
 if (!isIE){
+	// Callback for IntersectionObserver event
 	const callback = function (entries) {
 		entries.forEach(function (entry) {
 			const {target} = entry;
-			if (entry.intersectionRatio >= 0.05) {
+			if (entry.intersectionRatio >= 0.01) {
 				if (target.classList.contains('dark-bg')) {
 					$('.nav-container').addClass('dark-bg');
 				} else {
@@ -17,10 +18,10 @@ if (!isIE){
 		});
 	}
 	const observer = new IntersectionObserver(callback, {
-		threshold: 0.05
+		threshold: 0.01
 	});
 
-	// Use interval for mobile scrolling (hide navbar)
+	// Scroll down to hide navbar, scroll up to show
 	var lastScrollTop = 0; var delta = 5;
 	var nav = $('nav')
 	var navbarHeight = nav.outerHeight();
@@ -48,9 +49,9 @@ if (!isIE){
 		}, 250);
 	}
 
-	var isMobile;
+	// Check whether to load desktop or mobile handlers for navbar
 	function checkScrollMethod() {
-		if(window.innerWidth > 768 && (isMobile === undefined || isMobile === true)){
+		if(window.innerWidth > 768){
 			$('.section').css('height', window.innerHeight);
 			document.querySelectorAll('.section').forEach(function (section, index){
 				observer.observe(section)
@@ -58,19 +59,13 @@ if (!isIE){
 			//destroy scroll listener
 			$('.scroll-snap-container').unbind();
 			clearInterval(scrollInterval);
-
-			isMobile = false;
 			return false;
-		} else if (isMobile === undefined || isMobile === false){
+		} else {
 			$('.scroll-snap-container').scroll(function(){
 				scrolling = true;
 			});
 			scrollInterval = setScrollingInterval();
-
-			// destroy IntersectionObserver
 			observer.disconnect()
-
-			isMobile = true;
 			return true;
 		}
 	}
@@ -79,6 +74,5 @@ if (!isIE){
 	window.onresize = function(){
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(checkScrollMethod, 1000)
-
 	}
 }

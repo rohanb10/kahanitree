@@ -1,18 +1,12 @@
 #eDetailers {
-	align-items: flex-end;
+	// align-items: flex-end;
 	.info-panel {
 		margin-right: 1em;
 		background-color: $lightGray;
 		padding: 1em 2em 2em;
 		h2 {
-			margin-top: 0;
+			margin: .5em 0 2em;
 			color: $darkBlue;
-			// hide underline of top word on large screens
-			@include bigger-than-mobile {
-				span:first-of-type {
-					border: none;
-				}
-			}
 		}
 		p:last-of-type {
 			margin-bottom: 0;

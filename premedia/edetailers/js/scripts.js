@@ -24,6 +24,14 @@ function openCertModal(element, certName) {
 	$('.nav-container').addClass('dark-bg');
 	$('.modal-content').delay(600).fadeIn(300);
 	$('.nav-item').fadeOut(100);
+	document.addEventListener('keydown', escapeToClose);
+}
+
+// Escape key closes modal
+function escapeToClose(e) {
+	if (e.keyCode == 27) {
+		closeCertModal();
+	}
 }
 
 // close modal animation
@@ -33,6 +41,7 @@ function closeCertModal() {
 	$('.cert-logo-container').removeClass('active');
 	$('.nav-container').removeClass('dark-bg');
 	$('.nav-item').delay(300).fadeIn(300);
+	document.removeEventListener('keydown', escapeToClose);
 }
 
 // create css animation keyframes based on the div position relative to the screen
@@ -134,9 +143,10 @@ function howWeWorkHandler(el, id) {
 		});
 	});
 
-	function markerTooltipBuilder(code) {
-		return '<div class="country-name">'+ COUNTRIES[code].name + '</div><div>' + COUNTRIES[code].details + '</div>';
-	}
+//Customise the tooltip for the map
+function markerTooltipBuilder(code) {
+	return '<div class="country-name">'+ COUNTRIES[code].name + '</div><div>' + COUNTRIES[code].details + '</div>';
+}
 
 function validateContactForm(form){
 	var invalidName = !form.name.value.match(/^[a-z ,.'-]+$/i);
