@@ -40,7 +40,7 @@ p {
 	scroll-snap-type: y mandatory;
 	.section {
 		display: flex;
-		// height: calc(100vh - 3em);
+		height: 100vh;
 		align-items: center;
 		justify-content: center;
 		scroll-snap-align: start;
@@ -136,7 +136,7 @@ p {
 	}
 }
 
-.bad-browser-warning {
+#bad-browser-warning {
 	display: none;
 	position: fixed;
 	bottom: 1em;
@@ -146,14 +146,14 @@ p {
 	font-size: .9em;
 	div {
 		margin: 0 auto;
-		background-color: #FFE168;
-		border: 1px solid #F2BF00;
+		background-color: rgba(50, 50, 50, .8);
+		border: 2px solid rgba(50,50,50,1);
 		border-radius: 3px;
 		max-width: 500px;
 		text-align: center;
 		p {
 			display: block;
-			// padding: .5em;
+			color: white;
 			margin: 0;
 		}
 	}

@@ -1085,6 +1085,7 @@ p {
   scroll-snap-type: y mandatory; }
   .scroll-snap-container .section {
     display: flex;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     scroll-snap-align: start; }
@@ -1154,7 +1155,7 @@ p {
     .btn.light-blue:hover, .btn.light-blue:focus, .btn.light-blue:active {
       background-color: #DDDEDE; }
 
-.bad-browser-warning {
+#bad-browser-warning {
   display: none;
   position: fixed;
   bottom: 1em;
@@ -1162,17 +1163,18 @@ p {
   right: .5em;
   opacity: .9;
   font-size: .9em; }
-  .bad-browser-warning div {
+  #bad-browser-warning div {
     margin: 0 auto;
-    background-color: #FFE168;
-    border: 1px solid #F2BF00;
+    background-color: rgba(50, 50, 50, 0.8);
+    border: 2px solid #323232;
     border-radius: 3px;
     max-width: 500px;
     text-align: center; }
-    .bad-browser-warning div p {
+    #bad-browser-warning div p {
       display: block;
+      color: white;
       margin: 0; }
-  .bad-browser-warning.show {
+  #bad-browser-warning.show {
     display: block; }
 
 @media (max-width: 768px) {

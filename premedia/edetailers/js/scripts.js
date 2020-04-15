@@ -191,8 +191,4 @@ $(document).ready(function() {
 	});
 	$('.slider').fadeTo(1,1);
 	checkScrollMethod();
-	var ua = window.navigator.userAgent.toLowerCase();
-	if (ua.indexOf('trident') > -1 || ua.indexOf('edge') > -1 || ua.indexOf('msie') > -1){
-		$('.bad-browser-warning').addClass('show');
-	}
 });

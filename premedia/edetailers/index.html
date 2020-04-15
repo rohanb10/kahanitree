@@ -10,6 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="./css/jvectormap.2.0.5.css">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 
+	<script type="text/javascript">
+		var ua = window.navigator.userAgent.toLowerCase();
+		var isIE = true;
+		if (ua.indexOf('trident') > -1 || ua.indexOf('edge') > -1 || ua.indexOf('msie') > -1){
+			document.getElementById('bad-browser-warning').classList.add('show');
+		}
+	</script>
 	<script type="text/javascript" src="./js/jquery.slimish.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.bbslider.custom.min.js"></script>
 	<script type="text/javascript" src="./js/jquery.keyframes.min.js"></script>
@@ -427,7 +434,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="bad-browser-warning">
+	<div id="bad-browser-warning">
 		<div>
 			<p>This website is not optimised for your browser.</p>
 			<p>Please use Chrome, Firefox, Safari or their mobile versions.</p>
