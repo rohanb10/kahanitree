@@ -176,6 +176,7 @@ function mobileNavigate(el) {
 	document.location.hash = '#' + el.dataset.name;
 	setTimeout(() => {
 		document.getElementById("hamburger").checked = false;
+		$('nav').addClass('scrolling');
 	}, 250);
 }
 

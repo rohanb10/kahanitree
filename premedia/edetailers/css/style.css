@@ -323,7 +323,9 @@ nav {
           border-width: 2vw;
           border-radius: .5em; }
           #home .slide-container .frame-container img {
-            border-radius: 0; } }
+            border-radius: 0; }
+        #home .slide-container .pager-container .pager .bb-link-wrapper {
+          font-size: .8em; } }
 
 #eDetailers {
   align-items: flex-end; }
@@ -336,11 +338,11 @@ nav {
     margin-right: 1em;
     background-color: #F4F4F4;
     padding: 1em 2em 2em; }
-    #eDetailers .info-panel h1 {
+    #eDetailers .info-panel h2 {
       margin-top: 0;
       color: #3A3A9D; }
       @media (min-width: 769px) {
-        #eDetailers .info-panel h1 span:first-of-type {
+        #eDetailers .info-panel h2 span:first-of-type {
           border: none; } }
     #eDetailers .info-panel p:last-of-type {
       margin-bottom: 0; }
@@ -590,7 +592,8 @@ nav {
       padding: 1em;
       border-radius: 5px; }
       #services .development h3, #services .localisation h3, #services .translation h3, #services .transcreation h3 {
-        margin-bottom: .5em; }
+        margin-bottom: .4em;
+        font-size: 1.2em; }
       #services .development p, #services .localisation p, #services .translation p, #services .transcreation p {
         margin: 0; } }
 
@@ -651,23 +654,29 @@ nav {
   text-align: center; }
   #how-we-work .btn-container .btn {
     margin-top: 1em; }
+#how-we-work br {
+  display: none; }
 @media (max-width: 768px) {
-  #how-we-work .work-selector {
-    display: flex;
-    margin: 2.5em 0; }
-  #how-we-work .work-container {
-    display: block; }
-    #how-we-work .work-container .timeline {
-      display: none; }
-    #how-we-work .work-container > .column {
-      height: auto;
+  #how-we-work {
+    background-color: #EFEFEF; }
+    #how-we-work br {
       display: block; }
-      #how-we-work .work-container > .column h3 {
-        margin: 1em 0 0; }
-      #how-we-work .work-container > .column p {
-        margin: 0 0 .5em; }
-  #how-we-work .btn-container {
-    margin: 2em 0; } }
+    #how-we-work .work-selector {
+      display: flex;
+      margin: 2.5em 0; }
+    #how-we-work .work-container {
+      display: block; }
+      #how-we-work .work-container .timeline {
+        display: none; }
+      #how-we-work .work-container > .column {
+        height: auto;
+        display: block; }
+        #how-we-work .work-container > .column h3 {
+          margin: 1em 0 0; }
+        #how-we-work .work-container > .column p {
+          margin: 0 0 .5em; }
+    #how-we-work .btn-container {
+      margin: 2em 0; } }
 @media (min-width: 769px) {
   #how-we-work.animated .work-container .column, #how-we-work.animated .work-container .dot {
     animation: fade-in 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
@@ -697,7 +706,10 @@ nav {
 #map {
   text-align: center; }
   #map h2 {
-    color: #3A3A9D; }
+    color: #3A3A9D;
+    display: inline-block; }
+    #map h2 br {
+      display: none; }
   #map .map-container {
     width: 75vw;
     height: 75vh;
@@ -753,9 +765,16 @@ nav {
     #map {
       min-height: 70vh;
       position: relative; }
+      #map h2 {
+        margin: 1em 0; }
+        #map h2 br {
+          display: block; }
+      #map .light-blue-underline {
+        border: none; }
       #map .map-container {
-        margin-top: 20vh;
-        width: 100%;
+        margin: 20vh 0;
+        width: 90vw;
+        max-width: 100%;
         height: 30vh; } }
 
 .jvectormap-tip {
@@ -1029,7 +1048,7 @@ nav {
       border: none; }
       #contact .grid .column.contact-info h2 {
         text-align: center;
-        margin-bottom: 0; }
+        margin: 1.5em 0; }
       #contact .grid .column.contact-info br {
         display: none; }
     #contact .grid .column.contact-form-container {
@@ -1179,7 +1198,7 @@ p {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 1.7em; }
+    font-size: 1.5em; }
 
   h2, h3 {
     margin-top: 0; } }

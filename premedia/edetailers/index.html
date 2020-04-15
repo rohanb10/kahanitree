@@ -73,8 +73,7 @@
 					</div>
 					<div class="column info-panel">
 						<h1>A Global eDetailing Development Partner for Brands and Agencies</h1>
-						<p>We collaborate seamlessly with pharmaceutical companies and local agencies to develop, localise, adapt and distribute visual aids using the platform of your choice.</p>
-						<p>We understand that local agencies often understand the local market best, and recommend that they do the design and strategy.</p>
+						<p>We collaborate seamlessly with pharmaceutical companies and local agencies to develop, localise, adapt and distribute visual aids using Veeva, IQVIA'S OCE, Mi Touch, eWizard or the platform of your choice.</p>
 						<button class="btn light-blue" onclick="location.href='#contact'">
 							Request a Demo
 						</button>
@@ -86,7 +85,7 @@
 			<div class="container">
 				<div class="grid">
 					<div class="column info-panel">
-						<h1><span class="light-blue-underline">eDetailer</span><span class="light-blue-underline"> Development</span></h1>
+						<h2><span class="light-blue-underline">eDetailer</span><span class="light-blue-underline"> Development</span></h2>
 						<br>
 						<div>
 							<p>We develop visual aid (eDetailing) campaigns that utilise the full potential of your chosen multichannel platform.</p>
@@ -302,7 +301,7 @@
 		</div>
 		<div id="map" class="section">
 			<div class="container no-max-width no-padding">
-				<h2><span class="light-blue-underline">Our clients all over the globe</span></h2>
+				<h2 class="light-blue-underline"><span>Where Our Clients<br> Are Located</span></h2>
 				<div class="map-container">
 					<div id="jvectormap"></div>
 				</div>
@@ -434,9 +433,10 @@
 	</div>
 	<script type="text/javascript">
 		var ua = window.navigator.userAgent.toLowerCase();
-		var isIE = true;
+		var isIE = false;
 		if (ua.indexOf('trident') > -1 || ua.indexOf('edge') > -1 || ua.indexOf('msie') > -1){
 			document.getElementById('bad-browser-warning').classList.add('show');
+			isIE = true;
 		}
 	</script>
 	<script type="text/javascript" src="./js/scroll.js"></script>

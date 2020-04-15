@@ -76,7 +76,14 @@
 			margin-top: 1em;
 		}
 	}
+	br {
+		display: none;
+	}
 	@include mobile {
+		background-color: #EFEFEF;
+		br {
+			display: block;
+		}
 		.work-selector {
 			display: flex;
 			margin: 2.5em 0;

@@ -11,7 +11,7 @@
 		margin-right: 1em;
 		background-color: $lightGray;
 		padding: 1em 2em 2em;
-		h1{
+		h2 {
 			margin-top: 0;
 			color: $darkBlue;
 			// hide underline of top word on large screens
@@ -23,7 +23,7 @@
 		}
 		p:last-of-type {
 			margin-bottom: 0;
-		}
+		} 
 	}
 	.image-panel {
 		display: flex;
