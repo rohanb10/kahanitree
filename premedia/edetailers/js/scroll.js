@@ -49,7 +49,8 @@ function setScrollingInterval() {
 
 var isMobile;
 function checkScrollMethod() {
-	if(window.innerWidth > 768 && (isMobile === undefined || isMobile === true)){ 
+	if(window.innerWidth > 768 && (isMobile === undefined || isMobile === true)){
+		$('.section').css('height', window.innerHeight);
 		document.querySelectorAll('.section').forEach(function (section, index){
 			observer.observe(section)
 		});

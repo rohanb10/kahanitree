@@ -23,10 +23,12 @@
 		}
 	}
 	@include mobile {
-		// min-height: 100vh;
+		min-height: 70vh;
+		position: relative;
 		.map-container {
+			margin-top: 20vh;
 			width: 100%;
-			height: 50vh;
+			height: 30vh;
 		}
 	}
 }
@@ -48,6 +50,8 @@
 		font-size: .9em;
 		color: #3A3A9D;
 	}
+}
+@include mobile {
 }
 /* ZOOM CONTROLS
 .jvectormap-container:hover {

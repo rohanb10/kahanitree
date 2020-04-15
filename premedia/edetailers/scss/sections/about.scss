@@ -1,11 +1,20 @@
 #about {
+	justify-content: space-between;
+	.grid {
+		max-height: 600px;
+	}
 	.info-panel {
+		h2 {
+			margin: 0;
+		}
 		padding: 1em;
 		background-color: $darkBlue;
 		color: #fff;
+		margin-bottom: 5em;
 	}
 	.business-panel {
-		padding-top: 12em;
+		align-self: flex-end;
+		// padding-top: 12em;
 		padding-left: 3em;
 		.about-icon {
 			height: 4em;
@@ -20,8 +29,11 @@
 			color: $darkBlue;
 		}
 		.column {
-			padding: 1em;
+			padding: 1em 1em 0;
 			margin: 0;
+			p {
+				margin-bottom: 0;
+			}
 			&:first-of-type {
 				padding-left: 0;
 			}
@@ -31,6 +43,9 @@
 		}
 	}
 	@include mobile {
+		.grid {
+			max-height: initial;
+		}
 		.info-panel {
 			br {
 				display: none;
@@ -38,6 +53,7 @@
 			p:last-of-type {
 				margin-bottom: 0;
 			}
+			margin-bottom: 0;
 		}
 		.business-panel {
 			padding: 2em 0 0;

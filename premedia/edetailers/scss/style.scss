@@ -35,13 +35,14 @@ p {
 .scroll-snap-container {
 	height: 100vh;
 	overflow-y: auto;
+	overflow-x: hidden;
 	-ms-scroll-snap-type: y mandatory;
 	scroll-snap-type: y mandatory;
 	.section {
 		display: flex;
-		height: calc(100vh - 3em);
+		// height: calc(100vh - 3em);
 		align-items: center;
-		padding-top: 3em;
+		justify-content: center;
 		scroll-snap-align: start;
 	}
 	@include mobile {
@@ -51,7 +52,6 @@ p {
 		
 		.section {
 			height: initial;
-			// min-height: 100vh;
 			padding-top: 0;
 			align-items: unset;
 			.container {
@@ -133,6 +133,32 @@ p {
 		&:hover, &:focus, &:active {
 			background-color: #DDDEDE;
 		}
+	}
+}
+
+.bad-browser-warning {
+	display: none;
+	position: fixed;
+	bottom: 1em;
+	left: .5em;
+	right: .5em;
+	opacity: .9;
+	font-size: .9em;
+	div {
+		margin: 0 auto;
+		background-color: #FFE168;
+		border: 1px solid #F2BF00;
+		border-radius: 3px;
+		max-width: 500px;
+		text-align: center;
+		p {
+			display: block;
+			// padding: .5em;
+			margin: 0;
+		}
+	}
+	&.show {
+		display: block;
 	}
 }
 

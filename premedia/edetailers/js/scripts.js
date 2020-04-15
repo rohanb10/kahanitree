@@ -29,7 +29,7 @@ function openCertModal(element, certName) {
 // close modal animation
 function closeCertModal() {
 	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
-	$('#cert-modal').delay(150).css({'animation-name':'circle-out'});
+	$('#cert-modal').delay(150).css({'animation-name':'circle-out'}).delay(700).toggle(1);
 	$('.cert-logo-container').removeClass('active');
 	$('.nav-container').removeClass('dark-bg');
 	$('.nav-item').delay(300).fadeIn(300);
@@ -191,4 +191,7 @@ $(document).ready(function() {
 	});
 	$('.slider').fadeTo(1,1);
 	checkScrollMethod();
+	if (/MSIE|Trident/.test(window.navigator.userAgent)){
+		$('.bad-browser-warning').addClass('show');
+	}
 });
