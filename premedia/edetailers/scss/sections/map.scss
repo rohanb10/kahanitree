@@ -19,6 +19,10 @@
 	}
 
 	@include bigger-than-mobile {
+		.jvectormap-marker {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
 		&.animated {
 			.jvectormap-marker {
 				animation: fade-in .2s $easeInOut both;
@@ -40,7 +44,7 @@
 			border: none;
 		}
 		.map-container {
-			margin: 20vh 0;
+			margin: 10vh 0;
 			width: 90vw;
 			max-width: 100%;
 			height: 30vh;
@@ -57,10 +61,10 @@
 	padding: .5em;
 	font-size: initial;
     margin: 5em;
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
 
 	.country-name {
-		font-family: 'Varela';
+		font-family: 'Varela', sans-serif;
 		text-transform: uppercase;
 		font-size: .9em;
 		color: #3A3A9D;

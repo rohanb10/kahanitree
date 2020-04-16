@@ -113,7 +113,14 @@
 	}
 
 	@include bigger-than-mobile {
+		.container {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
 		&.animated {
+			.container {
+				opacity: 1;
+			}
 			.work-container .column, .work-container .dot {
 				animation: fade-in .5s $easeInOut both;
 				&.one {

@@ -14,7 +14,6 @@
 	}
 	.business-panel {
 		align-self: flex-end;
-		// padding-top: 12em;
 		padding-left: 3em;
 		.about-icon {
 			height: 4em;
@@ -94,7 +93,14 @@
 		}
 	}
 	@include bigger-than-mobile {
+		.container {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
 		&.animated {
+			.container {
+				opacity: 1;
+			}
 			.info-panel {
 				animation: fade-in 1s $easeInOut both;
 				animation-delay: .5s;

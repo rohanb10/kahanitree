@@ -115,15 +115,23 @@
 			}
 		}
 	}
-	&.animated {
-		.grid {
-			.column {
-				animation: fade-in 1s $easeInOut both;
-				@include staggeredDelays(3, .5, .5);
+	
+	@include bigger-than-mobile {
+		.container {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
+		&.animated {
+			.container {
+				opacity: 1;
+			}
+			.grid {
+				.column {
+					animation: fade-in 1s $easeInOut both;
+					@include staggeredDelays(3, .5, .5);
+				}
 			}
 		}
-	}
-	@include bigger-than-mobile {
 		.mobile {
 			display: none;
 		}

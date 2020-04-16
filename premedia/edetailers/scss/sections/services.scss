@@ -56,7 +56,14 @@
 	}
 
 	@include bigger-than-mobile {
+		.container {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
 		&.animated {
+			.container {
+				opacity: 1;
+			}
 			.column {
 				animation: slide-in-up .7s $easeInOut both;
 				@include staggeredDelays(4, .15, .5);
