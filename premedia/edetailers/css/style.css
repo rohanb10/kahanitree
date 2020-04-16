@@ -379,23 +379,23 @@ nav {
         width: auto;
         margin: .75em 3em; } }
 @media (min-width: 769px) {
-  #eDetailers {
+  #eDetailers .container {
     opacity: 0;
     transition: opacity .1s linear; }
-    #eDetailers.animated {
-      opacity: 1; }
-      #eDetailers.animated .info-panel {
-        animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        animation-delay: .5s; }
-      #eDetailers.animated .image-panel img {
-        animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-        #eDetailers.animated .image-panel img:nth-of-type(1) {
-          animation-delay: 1.3s; }
-        #eDetailers.animated .image-panel img:nth-of-type(2) {
-          animation-delay: 1.5s; }
-      #eDetailers.animated .service-panel {
-        animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        animation-delay: 2s; } }
+  #eDetailers.animated .container {
+    opacity: 1; }
+  #eDetailers.animated .info-panel {
+    animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: .5s; }
+  #eDetailers.animated .image-panel img {
+    animation: fade-in-left 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+    #eDetailers.animated .image-panel img:nth-of-type(1) {
+      animation-delay: 1.3s; }
+    #eDetailers.animated .image-panel img:nth-of-type(2) {
+      animation-delay: 1.5s; }
+  #eDetailers.animated .service-panel {
+    animation: slide-in-up 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation-delay: 2s; } }
 
 #certifications {
   background-color: #EFEFEF;
@@ -1131,6 +1131,8 @@ p {
     align-items: center;
     justify-content: center;
     scroll-snap-align: start; }
+    .scroll-snap-container .section.rendered .container {
+      opacity: 1 !important; }
   @media (max-width: 768px) {
     .scroll-snap-container {
       -ms-scroll-snap-type: none;

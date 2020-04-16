@@ -44,6 +44,11 @@ p {
 		align-items: center;
 		justify-content: center;
 		scroll-snap-align: start;
+		// Fallback in case animations don't work
+		&.rendered .container {
+			opacity: 1 !important;
+
+		}
 	}
 	@include mobile {
 		// scroll-snap-type: y proximity;

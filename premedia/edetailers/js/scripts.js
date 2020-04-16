@@ -162,7 +162,6 @@ function mobileNavigate(el) {
 
 // After page completes loading
 $(window).load(function() {
-	$('#process').fadeToggle();
 	$('.slider').bbslider({
 		auto: true,
 		timer: 4000,
@@ -171,7 +170,8 @@ $(window).load(function() {
 		pager: true,
 		pagerWrap: '.pager'
 	});
-	$('.slider').fadeTo(1,1);
 	this.checkScrollMethod();
+	$('#process').fadeToggle();
+	$('.slider').fadeTo(1,1);
 	this.renderMap();
 });

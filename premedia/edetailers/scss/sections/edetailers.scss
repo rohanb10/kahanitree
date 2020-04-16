@@ -77,10 +77,14 @@
 	}
 
 	@include bigger-than-mobile {
-		opacity: 0;
-		transition: opacity .1s linear;
+		.container {
+			opacity: 0;
+			transition: opacity .1s linear;
+		}
 		&.animated {
-			opacity: 1;
+			.container{
+				opacity: 1;
+			}
 			.info-panel {
 				animation: fade-in-left 1s $easeInOut both;
 				animation-delay: .5s;
