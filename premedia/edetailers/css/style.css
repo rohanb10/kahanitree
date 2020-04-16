@@ -725,7 +725,7 @@ nav {
       display: none; }
   #map .map-container {
     width: 75vw;
-    height: 75vh;
+    height: 50vh;
     margin: 0 auto; }
     #map .map-container #jvectormap {
       width: 100%;
@@ -926,6 +926,14 @@ nav {
   position: relative; }
   #contact .container {
     width: 100%; }
+  #contact .copyright {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 1em;
+    font-size: .8em; }
   #contact .grid .column {
     padding: 0; }
   #contact .grid h3 {
@@ -1097,15 +1105,6 @@ nav {
   @media (min-width: 769px) {
     #contact .contact-form h3 {
       display: none; } }
-
-.copyright {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  bottom: 0;
-  left: 0;
-  padding-bottom: 1em;
-  font-size: .8em; }
 
 html, body {
   background-color: #FFF;

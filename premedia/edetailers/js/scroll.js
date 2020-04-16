@@ -110,6 +110,7 @@ if (!isIE){
 
 			return false;
 		} else {
+			$('.section').css('height', 'initial');
 			$('.scroll-snap-container').unbind();
 
 			$('.scroll-snap-container').on('scroll', throttle(function() {

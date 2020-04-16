@@ -172,6 +172,6 @@ $(window).load(function() {
 		pagerWrap: '.pager'
 	});
 	$('.slider').fadeTo(1,1);
-	checkScrollMethod();
-	renderMap();
+	this.checkScrollMethod();
+	this.renderMap();
 });
