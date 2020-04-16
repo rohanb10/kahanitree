@@ -36,7 +36,7 @@ nav {
 			}
 		}
 		@include mobile {
-			background: white;
+			background: #fff;
 			border-bottom: 2px solid $darkBlue;
 			.left, .right {
 				padding: 0 0;
@@ -138,7 +138,7 @@ nav {
 				border-left: 2px solid $darkBlue;
 				box-shadow: -15px 0px 50px -8px rgba(0,0,0,.5);
 
-				background: white;
+				background: #fff;
 				list-style-type: none;
 				-webkit-font-smoothing: antialiased;
 
@@ -152,7 +152,7 @@ nav {
 					span {
 						padding: 0 .25em .25em;
 						border-bottom: 2px solid $transparent;
-						border-color: white;
+						border-color: #fff;
 					}
 					&.active span {
 						border-color: $darkBlue;

@@ -19,13 +19,13 @@
 			border: 1vw solid;
 			border-image-source: url('../img/slides/slide_frame.png');
 			border-image-slice: 30;
-			background-color: black;
+			background-color: #000;
 			border-radius: 1em;
 			box-shadow: 35px 10px 72px -16px rgba(0,0,0,.44);
 			opacity: 0;
 
 			img {
-				background-color: black;
+				background-color: #000;
 				display:block;
 				border-radius: .4em;
 			}

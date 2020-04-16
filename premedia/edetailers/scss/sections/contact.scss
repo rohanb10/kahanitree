@@ -24,7 +24,7 @@
 			margin: 0;
 		}
 		.contact-info {
-			border-right: 2px solid white;
+			border-right: 2px solid #fff;
 			h2 {
 				margin: 0 0 2em;
 			}
@@ -33,7 +33,7 @@
 				margin: .5em 0;
 			}
 			a {
-				color: white;
+				color: #fff;
 			}
 		}
 		.contact-form-container {
@@ -42,7 +42,7 @@
 				display: block;
 				margin-left: 10em;
 				position: relative;
-				color: white;
+				color: #fff;
 
 				label, input, textarea {
 					transition: all .2s $easeInOut;
@@ -66,7 +66,7 @@
 					box-sizing: border-box;
 					padding: .5em 1em;
 					width: 100%;
-					color: white;
+					color: #fff;
 					-webkit-appearance: none;
 					z-index: 2;
 					font-size: 1em;
