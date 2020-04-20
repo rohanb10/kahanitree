@@ -1124,7 +1124,8 @@ p {
   overflow-y: auto;
   overflow-x: hidden;
   -ms-scroll-snap-type: y mandatory;
-  scroll-snap-type: y mandatory; }
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always; }
   .scroll-snap-container .section {
     display: flex;
     height: 100vh;

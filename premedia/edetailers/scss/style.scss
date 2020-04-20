@@ -38,6 +38,7 @@ p {
 	overflow-x: hidden;
 	-ms-scroll-snap-type: y mandatory;
 	scroll-snap-type: y mandatory;
+	scroll-snap-stop: always;
 	.section {
 		display: flex;
 		height: 100vh;
