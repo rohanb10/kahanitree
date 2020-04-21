@@ -37,14 +37,14 @@ p {
 	overflow-y: auto;
 	overflow-x: hidden;
 	// -ms-scroll-snap-type: y mandatory;
-	scroll-snap-type: y proximity;
+	// scroll-snap-type: y proximity;
 	// scroll-snap-stop: always;
 	.section {
 		display: flex;
 		height: 100vh;
 		align-items: center;
 		justify-content: center;
-		scroll-snap-align: start;
+		// scroll-snap-align: start;
 		// Fallback in case animations don't work
 		&.rendered .container {
 			opacity: 1 !important;

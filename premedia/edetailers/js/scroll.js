@@ -105,11 +105,7 @@ if (!isIE){
 						$('.nav-item').removeClass('active');
 						$('.nav-item[data-name=' + sectionIDs[i] +']').addClass('active');
 						// Change to dark navbar if applicable
-						if (section.hasClass('dark-bg')) {
-							$('.nav-container').addClass('dark-bg');
-						} else {
-							$('.nav-container').removeClass('dark-bg');
-						}
+						changeNavbarColor(section);
 						break;
 					}
 				}
@@ -126,6 +122,13 @@ if (!isIE){
 			scrollInterval = setScrollingInterval();
 
 			return true;
+		}
+	}
+	function changeNavbarColor(section) {
+		if (section.hasClass('dark-bg')) {
+			$('.nav-container').addClass('dark-bg');
+		} else {
+			$('.nav-container').removeClass('dark-bg');
 		}
 	}
 

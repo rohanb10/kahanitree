@@ -16,9 +16,9 @@ function openCertModal(element, certName) {
 	$(element).addClass('active');
 	$('#cert-modal').addClass('active').css({'display':'flex', 'animation-name':'circle-in'});
 	$('#'+certName).css({'display':'block'});
-	$('.nav-container').addClass('dark-bg');
+	$('#certifications').addClass('dark-bg');
+	changeNavbarColor($('#certifications'));
 	$('.modal-content').delay(600).fadeIn(300);
-	$('.nav-item').fadeOut(100);
 	document.addEventListener('keydown', escapeToClose);
 }
 
@@ -27,8 +27,8 @@ function closeCertModal() {
 	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
 	$('#cert-modal').delay(150).css({'animation-name':'circle-out'}).delay(700).toggle(1);
 	$('.cert-logo-container').removeClass('active');
-	$('.nav-container').removeClass('dark-bg');
-	$('.nav-item').delay(300).fadeIn(300);
+	$('#certifications').removeClass('dark-bg');
+	changeNavbarColor($('#certifications'));
 	document.removeEventListener('keydown', escapeToClose);
 }
 
