@@ -1,5 +1,5 @@
 // remove hash from url
-history.pushState('', '', window.location.pathname);
+// history.pushState('', '', window.location.pathname);
 
 // Escape key closes modal
 function escapeToClose(e) {
