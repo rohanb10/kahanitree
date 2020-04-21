@@ -49,13 +49,13 @@ function createCircleAnimation(cords) {
 
 function howWeWorkHandler(el, id) {
 	$('.work-selector span').removeClass('active');
-	$(el).addClass('active');
+	$(el).delay(300).addClass('active');
 	if (id === 'model') {
-		$('#process').removeClass('active').fadeOut(500);
-		$('#model').addClass('active').delay(500).fadeIn(500);
+		$('#process').fadeOut(300);
+		$('#model').css('display','flex').hide().delay(300).fadeIn(300);
 	} else {
-		$('#model').removeClass('active').fadeOut(500);
-		$('#process').addClass('active').delay(500).fadeIn(500);
+		$('#model').fadeOut(300);
+		$('#process').css('display','flex').hide().delay(300).fadeIn(300);
 	}
 }
 
@@ -171,7 +171,6 @@ $(window).load(function() {
 		pagerWrap: '.pager'
 	});
 	this.checkScrollMethod();
-	$('#process').fadeToggle();
 	$('.slider').fadeTo(1,1);
 	this.renderMap();
 });

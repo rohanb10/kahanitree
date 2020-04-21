@@ -1,8 +1,11 @@
 if (!isIE){
 
 	// jQuery extension to check if element is on screen
-	$.fn.isInViewport = function() {
-		return ($(this).offset().top + $(this).outerHeight()) > $(window).scrollTop() && $(this).offset().top < ($(window).scrollTop() + $(window).height())
+	$.fn.isOnScreen = function() {
+		var elementBottom = $(this).offset().top + $(this).outerHeight();
+		var navbarHeight = $('.nav-logo').offset().top + $('.nav-logo').outerHeight();
+		console.log($(this).selector, elementBottom, elementBottom > navbarHeight)
+		return elementBottom > navbarHeight;
 	};
 
 	var now = Date.now || function() {
@@ -92,13 +95,14 @@ if (!isIE){
 			clearInterval(scrollInterval);
 
 			$('.scroll-snap-container').on('scroll', throttle(function() {
-				$('.nav-item').removeClass('active');
 				for (var i = 0; i < sectionIDs.length; i++) {
-					var section = $(sectionIDs[i])
-					if(section.isInViewport()) {
+					var section = $(sectionIDs[i]);
+					// If section has already been rendered, end loop for performance;
+					if (section.isOnScreen()) {
 						// Start animations for .section
 						section.addClass('animated');
 						// Make navbar class active
+						$('.nav-item').removeClass('active');
 						$('.nav-item[data-name=' + sectionIDs[i] +']').addClass('active');
 						// Change to dark navbar if applicable
 						if (section.hasClass('dark-bg')) {
@@ -109,7 +113,7 @@ if (!isIE){
 						break;
 					}
 				}
-			}, 100));
+			}, 200));
 
 			return false;
 		} else {
