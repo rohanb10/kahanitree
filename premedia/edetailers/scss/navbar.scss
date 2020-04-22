@@ -3,8 +3,9 @@ nav {
 	width: 100%;
 	z-index: 3;
 	top: 0;
-	transition: top .3s $easeInOut;
-	
+	background: #fff;
+	border-bottom: 2px solid $darkBlue;
+	transition: background-color .1s $easeInOut, top .3s $easeInOut;
 	.nav-container {
 		margin: 0 auto;
 		max-width: 1024px;
@@ -19,21 +20,6 @@ nav {
 			height: 2.75em;
 			-webkit-transition: filter .1s $easeInOut;
 			transition: filter .1s $easeInOut;
-		}
-		@include bigger-than-mobile {
-			&.dark-bg {
-				.left .nav-logo img{
-					filter: brightness(0) invert(1);
-				}
-				#navigation-menu .nav-item {
-					a {
-						color: #fff;	
-					}
-					&.active {
-						border-color: #fff;
-					}
-				}
-			}
 		}
 		@include mobile {
 			background: #fff;
@@ -165,10 +151,31 @@ nav {
 			}
 		}
 	}
-	&.scrolling {
-		top: -4em;
-		#navigation-menu-mobile {
-			display: none;
+	@include bigger-than-mobile {
+		&.dark-bg {
+			background: $darkBlue;
+			.nav-container .left .nav-logo img{
+				filter: brightness(0) invert(1);
+			}
+			.nav-container #navigation-menu .nav-item {
+				a {
+					color: #fff;	
+				}
+				&.active {
+					border-color: #fff;
+				}
+			}
+		}
+		&.grey-bg {
+			background: #EFEFEF;
+		}
+	}
+	@include mobile {
+		&.scrolling {
+			top: -4em;
+			#navigation-menu-mobile {
+				display: none;
+			}
 		}
 	}
 }

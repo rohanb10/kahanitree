@@ -125,10 +125,13 @@ if (!isIE){
 		}
 	}
 	function changeNavbarColor(section) {
-		if (section.hasClass('dark-bg')) {
-			$('.nav-container').addClass('dark-bg');
-		} else {
-			$('.nav-container').removeClass('dark-bg');
+		var nav = $('nav')
+		if (section.hasClass('dark-bg') && !nav.hasClass('dark-bg')) {
+			nav.removeClass('grey-bg').addClass('dark-bg');
+		} else if (section.hasClass('grey-bg') && !nav.hasClass('grey-bg') && !$('#cert-modal').hasClass('active')) {
+			nav.removeClass('dark-bg').addClass('grey-bg');
+		} else if (!section.hasClass('dark-bg') && !section.hasClass('grey-bg')) {
+			nav.removeClass('dark-bg grey-bg');
 		}
 	}
 
