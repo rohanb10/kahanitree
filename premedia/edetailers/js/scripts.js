@@ -151,15 +151,6 @@ function validateContactForm(form){
 	return false;
 }
 
-//close hamburger when link is clicked;
-function mobileNavigate(el) {
-	document.location.hash = el.dataset.name;
-	document.getElementById("hamburger").checked = false;
-	setTimeout(function() {
-		$('nav').addClass('scrolling');
-	}, 300);
-}
-
 // After page completes loading
 $(window).load(function() {
 	$('.slider').bbslider({

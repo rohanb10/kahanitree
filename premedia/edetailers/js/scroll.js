@@ -1,12 +1,50 @@
 if (!isIE){
+	var sectionIDs = ['#home', '#eDetailers','#certifications','#services','#how-we-work','#map','#about','#contact'];
 
 	// jQuery extension to check if element is on screen
 	$.fn.isOnScreen = function() {
 		var elementBottom = $(this).offset().top + $(this).outerHeight();
 		var navbarHeight = $('.nav-logo').offset().top + $('.nav-logo').outerHeight();
-		console.log($(this).selector, elementBottom, elementBottom > navbarHeight)
+		// console.log($(this).selector, elementBottom, elementBottom > navbarHeight)
 		return elementBottom > navbarHeight;
 	};
+
+	function animateNextSection (currentSectionIndex) {
+		if (currentSectionIndex + 1 >= sectionIDs.length) {
+			return false;
+		}
+		var currentSection = $(sectionIDs[currentSectionIndex]);
+		var nextSection = $(sectionIDs[currentSectionIndex + 1]);
+		var trigger = currentSection.scrollTop() + currentSection.outerHeight()/2;
+		var nextTop = nextSection.offset().top;
+		// console.log(currentSection.selector, trigger, nextSection.selector, nextTop);
+		if  (trigger > nextTop){
+			nextSection.addClass('animated');
+			return true;
+		}
+		return false;
+	};
+
+	// close hamburger when link is clicked;
+	function mobileNavigate(el) {
+		document.location.hash = el.dataset.name;
+		document.getElementById("hamburger").checked = false;
+		setTimeout(function() {
+			$('nav').addClass('scrolling');
+		}, 300);
+	}
+
+	// animate all sections above clicked nav-link
+	function desktopNavigate(el) {
+		var currentSectionIndex = sectionIDs.indexOf(el.dataset.name)
+		if ($(sectionIDs[currentSectionIndex]).hasClass('animated')) {
+			return;
+		} else {
+			for (var i = 0; i <= currentSectionIndex; i++) {
+				$(sectionIDs[i]).addClass('animated');
+			}
+		}
+	}
 
 	var now = Date.now || function() {
 		return new Date().getTime();
@@ -83,7 +121,6 @@ if (!isIE){
 	}
 
 	// Check whether to load desktop or mobile scroll handlers for navbar
-	var sectionIDs = ['#home', '#eDetailers','#certifications','#services','#how-we-work','#map','#about','#contact'];
 	function checkScrollMethod() {
 		if(window.innerWidth > 768){
 			$('.section').css('height', window.innerHeight);
@@ -97,15 +134,20 @@ if (!isIE){
 			$('.scroll-snap-container').on('scroll', throttle(function() {
 				for (var i = 0; i < sectionIDs.length; i++) {
 					var section = $(sectionIDs[i]);
-					// If section has already been rendered, end loop for performance;
+
+					// Change navbar when directly over section
 					if (section.isOnScreen()) {
-						// Start animations for .section
-						section.addClass('animated');
-						// Make navbar class active
 						$('.nav-item').removeClass('active');
 						$('.nav-item[data-name=' + sectionIDs[i] +']').addClass('active');
-						// Change to dark navbar if applicable
 						changeNavbarColor(section);
+						break;
+					}
+				}
+				// Start animations for section when more than halfway past the last one
+				for (var i = 0; i < sectionIDs.length - 1; i++) {
+					var nextSection = $(sectionIDs[i+1])
+					if (nextSection && !nextSection.hasClass('animated')) {
+						animateNextSection(i);
 						break;
 					}
 				}
