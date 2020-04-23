@@ -35,14 +35,16 @@ if (!isIE){
 	}
 
 	// animate all sections above clicked nav-link
-	function desktopNavigate(el) {
-		var currentSectionIndex = sectionIDs.indexOf(el.dataset.name)
-		if ($(sectionIDs[currentSectionIndex]).hasClass('animated')) {
-			return;
-		} else {
+	function desktopNavigate(el, location = null) {
+		var sectionName = el === null ? location : el.dataset.name;
+		var currentSectionIndex = sectionIDs.indexOf(sectionName);
+		if (!$(sectionIDs[currentSectionIndex]).hasClass('animated')) {
 			for (var i = 0; i <= currentSectionIndex; i++) {
 				$(sectionIDs[i]).addClass('animated');
 			}
+		}
+		if (location) {
+			window.location = location;
 		}
 	}
 
@@ -166,6 +168,7 @@ if (!isIE){
 			return true;
 		}
 	}
+
 	function changeNavbarColor(section) {
 		var nav = $('nav')
 		if (section.hasClass('dark-bg') && !nav.hasClass('dark-bg')) {

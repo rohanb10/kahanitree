@@ -1,5 +1,7 @@
 #map {
 	text-align: center;
+	height: initial !important;
+	padding: 5em 0 0;
 	h2 {
 		color: $darkBlue;
 		display: inline-block;
@@ -9,7 +11,7 @@
 	}
 	.map-container {
 		width: 75vw;
-		height: 50vh;
+		height: 55vh;
 		margin: 0 auto;
 		#jvectormap {
 			width: 100%;

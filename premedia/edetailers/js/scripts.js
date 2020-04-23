@@ -7,11 +7,10 @@ function escapeToClose(e) {
 		closeCertModal();
 	}
 }
-
 // Open certification modal + animation
 function openCertModal(element, certName) {
 	const rect = element.getBoundingClientRect();
-	var cords = {x: window.scrollX + (rect.left + rect.right) / 2 , y: window.scrollY + (rect.top + rect.bottom) / 2};
+	var cords = {x: (rect.left + rect.right) / 2 , y: element.offsetTop + (element.offsetHeight / 2)};
 	createCircleAnimation(cords);
 	$(element).addClass('active');
 	$('#cert-modal').addClass('active').css({'display':'flex', 'animation-name':'circle-in'});
