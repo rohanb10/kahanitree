@@ -172,12 +172,6 @@ function validateContactForm(form){
 				}
 			}, 2000)
 		});
-		//success
-		// form.classList.add('success')
-
-		// error
-		// change button to failure state
-
 	}
 	return false;
 }
@@ -192,7 +186,7 @@ $(window).on('load', function() {
 		pager: true,
 		pagerWrap: '.pager'
 	});
-	this.checkScrollMethod();
 	$('.slider').fadeTo(1,1);
-	this.renderMap();
+	renderMap();
+	checkScrollMethod();
 });
