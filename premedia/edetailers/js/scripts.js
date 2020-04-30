@@ -11,7 +11,7 @@ function escapeToClose(e) {
 function openCertModal(element, certName) {
 	if (isIE) {
 		$('#certifications').addClass('dark-bg');
-		$('#cert-modal, .modal-content, #' + certName )css({'display':'block'});
+		$('#cert-modal, .modal-content, #' + certName ).css({'display':'block'});
 		return;
 	}
 	const rect = element.getBoundingClientRect();
@@ -30,7 +30,7 @@ function openCertModal(element, certName) {
 function closeCertModal() {
 	if (isIE) {
 		$('#certifications').removeClass('dark-bg');
-		$('#cert-modal, .modal-content, #veeva, #oce, #mitouch')css({'display':'none'});
+		$('#cert-modal, .modal-content, #veeva, #oce, #mitouch').css({'display':'none'});
 		return;
 	}
 	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
