@@ -58,13 +58,14 @@ function createCircleAnimation(cords) {
 
 function howWeWorkHandler(el, id) {
 	$('.work-selector span').removeClass('active');
+	var displayType = window.innerWidth <= 768 ? 'block' : 'flex';
 	$(el).delay(300).addClass('active');
 	if (id === 'model') {
 		$('#process').fadeOut(300);
-		$('#model').css('display','flex').hide().delay(300).fadeIn(300);
+		$('#model').css('display', displayType).hide().delay(300).fadeIn(300);
 	} else {
 		$('#model').fadeOut(300);
-		$('#process').css('display','flex').hide().delay(300).fadeIn(300);
+		$('#process').css('display', displayType).hide().delay(300).fadeIn(300);
 	}
 }
 
