@@ -9,6 +9,11 @@ function escapeToClose(e) {
 }
 // Open certification modal + animation
 function openCertModal(element, certName) {
+	if (isIE) {
+		$('#certifications').addClass('dark-bg');
+		$('#cert-modal, .modal-content, #' + certName )css({'display':'block'});
+		return;
+	}
 	const rect = element.getBoundingClientRect();
 	var cords = {x: (rect.left + rect.right) / 2 , y: element.offsetTop + (element.offsetHeight / 2)};
 	createCircleAnimation(cords);
@@ -23,6 +28,11 @@ function openCertModal(element, certName) {
 
 // close certification modal + animation
 function closeCertModal() {
+	if (isIE) {
+		$('#certifications').removeClass('dark-bg');
+		$('#cert-modal, .modal-content, #veeva, #oce, #mitouch')css({'display':'none'});
+		return;
+	}
 	$('.modal-content, #veeva, #oce, #mitouch').fadeOut(300);
 	$('#cert-modal').removeClass('active').delay(150).css({'animation-name':'circle-out'}).delay(700).toggle(1);
 	$('.cert-logo-container').removeClass('active');

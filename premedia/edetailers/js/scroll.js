@@ -128,7 +128,9 @@ if (!isIE){
 			$('.section').css('height', window.innerHeight);
 
 			// remove pre-rendered classes so animations are possible
-			$('.section').removeClass('rendered')
+			if (!isIE){
+				$('.section').removeClass('rendered');
+			}
 
 			$('.scroll-snap-container').unbind();
 			clearInterval(scrollInterval);
