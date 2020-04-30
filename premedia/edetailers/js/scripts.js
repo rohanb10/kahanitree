@@ -128,30 +128,52 @@ function validateContactForm(form){
 
 	var invalidMessage = !form.message.value.match(/^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/);
 	if (form.message.value.length < 5) {
-		document.getElementById('error-message').innerHTML = invalidMessage ? 'Message required' : '&nbsp;';
-		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
+		document.getElementById('error-message').innerHTML = 'Message required';
+		form.message.setAttribute('data-valid', 'error');
+		invalidMessage = true;
 	} else {
 		document.getElementById('error-message').innerHTML = invalidMessage ? 'No special characters allowed in message body' : '&nbsp;';
 		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
 	}
 	// everything is valid. submit ajax request
-	if (invalidName === false && invalidEmail === false  && invalidMessage === false) {
+	if (!invalidName && !invalidEmail  && !invalidMessage) {
 		// change button to loading state
+		document.getElementById('submit-btn').value = 'Sending';
 		// submit ajax request
-
+		$.ajax({
+			type: 'POST',
+			url: 'submit.php',
+			data: {
+				name: form.name.value.trim(),
+				email: form.email.value.trim(),
+				phone: form.phone.value.trim(),
+				company: form.company.value.trim(),
+				message: form.message.value.trim(),
+			},
+			dataType:'JSON',
+		}).done(function (sent) {
+			console.log(sent);
+			setTimeout(function() {
+				if (!sent) {
+					form.classList.add('failure');
+					document.getElementById('submit-btn').value = 'Try Again';	
+				} else {
+					form.classList.add('success');	
+				}
+			}, 2000)
+		});
 		//success
 		// form.classList.add('success')
 
 		// error
 		// change button to failure state
-		// form.classList.add('failure')
 
 	}
 	return false;
 }
 
 // After page completes loading
-$(window).load(function() {
+$(window).on('load', function() {
 	$('.slider').bbslider({
 		auto: true,
 		timer: 4000,

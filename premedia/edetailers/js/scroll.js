@@ -140,7 +140,7 @@ if (!isIE){
 					// Change navbar when directly over section
 					if (section.isOnScreen()) {
 						$('.nav-item').removeClass('active');
-						$('.nav-item[data-name=' + sectionIDs[i] +']').addClass('active');
+						$('.nav-item[data-name="' + sectionIDs[i] +'"]').addClass('active');
 						changeNavbarColor(section);
 						break;
 					}

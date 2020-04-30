@@ -57,7 +57,7 @@
 					font-size: .8em;
 				}
 
-				input[type="text"], input[type="number"], input[type="email"], textarea {
+				input[type="text"], input[type="tel"], input[type="email"], textarea {
 					-webkit-appearance: none;
 					background-color: $transparent;
 					border: 0;
@@ -171,36 +171,6 @@
 						display: block;
 					}
 				}
-				&.disabled {
-					filter: blur(4px) ;
-					.btn, input, textarea, label, .error {
-						touch-events: none;
-						pointer-events: none;
-					}
-				}
-			}
-			.disabled-message {
-				display: none;
-			}
-			.contact-form.disabled + .disabled-message {
-				position: absolute;
-				z-index: 1;
-				width: calc(100% - 10em);
-				height: 100%;
-				top: 0;
-				left: 10em;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				div {
-					padding: 1em;
-					border-radius: 5px;
-					background-color: rgba(0,0,0, .4);
-					text-align: center;
-					p {
-						margin: 0;
-					}
-				}
 			}
 		}
 	}
@@ -238,15 +208,6 @@
 					.btn-container {
 						display: block;
 						text-align: center;
-						.btn {
-						}
-					}
-					.contact-form.disabled + .disabled-message {
-						width: 100%;
-						left: 0;
-						div {
-							background-color: rgba(0,0,0, .5);
-						}
 					}
 				}
 			}
