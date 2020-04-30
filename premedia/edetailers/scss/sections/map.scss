@@ -31,6 +31,11 @@
 				@include staggeredDelays(20, .2, .5);
 			}
 		}
+		&.rendered {
+			.jvectormap-marker {
+				opacity: 1;
+			}
+		}
 	}
 
 	@include mobile {
