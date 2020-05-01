@@ -137,6 +137,10 @@ function validateContactForm(form){
 	document.getElementById('error-email').innerHTML = invalidEmail ? 'Valid email required' : '&nbsp;';
 	form.email.setAttribute('data-valid', (invalidEmail ? 'error' :''));
 
+	var invalidPhone = form.phone.value.length > 0 && !form.phone.value.match(/^[0-9 ()-.+]+$/) && form.phone.value.length > 6;
+	document.getElementById('error-phone').innerHTML = invalidPhone ? 'Valid phone no. required' : '&nbsp;';
+	form.phone.setAttribute('data-valid', (invalidPhone ? 'error' :''));
+
 	var invalidMessage = !form.message.value.match(/^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/);
 	if (form.message.value.length < 5) {
 		document.getElementById('error-message').innerHTML = 'Message required';
@@ -147,7 +151,7 @@ function validateContactForm(form){
 		form.message.setAttribute('data-valid', (invalidMessage ? 'error' :''));	
 	}
 	// everything is valid. submit ajax request
-	if (!invalidName && !invalidEmail  && !invalidMessage) {
+	if (!invalidName && !invalidEmail  && !invalidMessage && !invalidPhone) {
 		// change button to loading state
 		document.getElementById('submit-btn').value = 'Sending';
 		// submit ajax request
@@ -162,16 +166,16 @@ function validateContactForm(form){
 				message: form.message.value.trim(),
 			},
 			dataType:'JSON',
-		}).done(function (sent) {
-			console.log(sent);
-			setTimeout(function() {
-				if (!sent) {
-					form.classList.add('failure');
-					document.getElementById('submit-btn').value = 'Try Again';	
-				} else {
-					form.classList.add('success');	
-				}
-			}, 2000)
+			done: function (sent) {
+				setTimeout(function() {
+					if (!sent) {
+						form.classList.add('failure');
+						document.getElementById('submit-btn').value = 'Try Again';	
+					} else {
+						form.classList.add('success');	
+					}
+				}, 2000);
+			}
 		});
 	}
 	return false;
