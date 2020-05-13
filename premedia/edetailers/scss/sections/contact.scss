@@ -60,15 +60,14 @@
 				input[type="text"], input[type="tel"], input[type="email"], textarea {
 					-webkit-appearance: none;
 					background-color: $transparent;
-					border: 0;
-					border-bottom: 2px solid $lightBlue;
+					border: none;
+					border-bottom: 2px solid $lightBlue !important;
 					border-radius: 0;
 					box-sizing: border-box;
 					padding: .5em 1em;
 					width: 100%;
-					color: #fff;
-					-webkit-appearance: none;
-					z-index: 2;
+					color: #fff !important;
+					z-index: 5;
 					font-size: 1em;
 
 					&:focus {

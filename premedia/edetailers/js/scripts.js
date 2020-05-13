@@ -141,7 +141,7 @@ function validateContactForm(form){
 	document.getElementById('error-phone').innerHTML = invalidPhone ? 'Valid phone no. required' : '&nbsp;';
 	form.phone.setAttribute('data-valid', (invalidPhone ? 'error' :''));
 
-	var invalidMessage = !form.message.value.match(/^[a-zA-Z0-9?$@#()'!,+\-=_:.&€£*%\s]+$/);
+	var invalidMessage = !form.message.value.match(/^[a-zA-Z0-9?$@#()'"{}[\]?<>`!,+\-=_:.&€£*%\s]+$/);
 	if (form.message.value.length < 5) {
 		document.getElementById('error-message').innerHTML = 'Message required';
 		form.message.setAttribute('data-valid', 'error');
