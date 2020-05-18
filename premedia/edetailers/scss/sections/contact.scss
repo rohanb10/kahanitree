@@ -55,42 +55,27 @@
 					display: inline-block;
 					text-transform: uppercase;
 					font-size: .8em;
+					cursor: pointer;
+					color: $lightBlue;
 				}
 
 				input[type="text"], input[type="tel"], input[type="email"], textarea {
 					-webkit-appearance: none;
 					background-color: $transparent;
 					border: none;
-					border-bottom: 2px solid $lightBlue !important;
+					border-bottom: 2px solid $lightBlue;
 					border-radius: 0;
 					box-sizing: border-box;
 					padding: .5em 1em;
 					width: 100%;
-					color: #fff !important;
+					color: #fff;
 					z-index: 5;
 					font-size: 1em;
 
 					&:focus {
 						outline: 0;
-					}
-					&::placeholder {
-						opacity: 0;
-						transition: inherit;
-					}
-					&:focus::placeholder {
-						opacity: 1;
-					}
-					&:placeholder-shown + label {
-						cursor: text;
-						transform-origin: left bottom;
-						transform: translate(1.33em, 2em);
-						letter-spacing: .15em;
-					}
-					&:not(:placeholder-shown) + label, &:focus + label {
-						transform: translate(0, 0);
-						cursor: pointer;
-						color: $lightBlue;
-						letter-spacing: 0;
+						border-bottom-color: #fff;
+						border-color: #fff;
 					}
 				}
 				input[data-valid="error"], textarea[data-valid="error"] {
@@ -104,13 +89,6 @@
 					padding: .5em 1em;
 					box-sizing: border-box;
 					resize: vertical;
-					&:placeholder-shown + label {
-						transform: translate(1.33em, 3.67em);
-					}
-					&:not(:placeholder-shown) + label, &:focus + label {
-						transform: translate(0, .5rem);
-						cursor: pointer;
-					}
 				}
 				.row {
 					display: flex;
