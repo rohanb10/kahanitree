@@ -1,0 +1,80 @@
+.navbar {
+	@media (max-width: 768px) {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0,0,0,.5) 100%);
+	}
+	button {
+		outline: none;
+		border: none;
+		font-size: 2em;
+		line-height: 1.2em;
+	}
+}
+#navigation {
+	height: 100%;
+	width: 25em;
+	max-width: 100%;
+	left: -25em;
+	color: #0056B3;
+	overflow-x: hidden;
+	transition: left .3s ease-in-out;
+
+	&.nav-open {
+		left: 0;
+	}
+	button {
+		position: absolute;
+		padding: .1em .5em;
+		font-size: 3em;
+		line-height: 1em;
+		color: inherit;
+	}
+	.nav-link {
+		position: relative;
+		font-family: Gotham;
+		text-transform: uppercase;
+	}
+	& > .nav > .nav-link {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		padding: 1.25em 1em;
+
+		&.active {
+			background-color: #1757A6;
+			color: #FFF;
+			pointer-events: none;
+			touch-actions: none;
+		}
+		&[aria-expanded=true] {
+			background-color: #f9f9f9;
+		}
+
+		&[data-toggle=collapse]:before, &[data-toggle=collapse]:after {
+			content: '\2014';
+			position: absolute;
+			right: .5em;
+			top: .5em;
+			font-weight: 100;
+			font-size: 1.5em;
+			transition: transform .3s ease-in-out;
+		}
+		&[data-toggle=collapse]:before {
+			transform: rotate(90deg);
+		}
+		&[data-toggle=collapse][aria-expanded=true]:before {
+			transform: rotate(0);
+		}
+	}
+	.collapse, .collapsing {
+		background-color: #f9f9f9;
+		.nav {
+			padding-left: 2em;
+			.nav-link {
+				font-size: .83em;
+				line-height: 16px;
+				font-weight: 300;
+			}
+		}
+	}
+
+}

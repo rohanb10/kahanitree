@@ -1,0 +1,21 @@
+@import "navigation";
+
+@import "homepage";
+
+html, body {
+	margin: 0;
+	overflow-x: hidden;
+}
+
+.bg-theme-dark-blue {
+	background-color: #031736;
+}
+.bg-theme-blue {
+	background-color: #1757A6;
+}
+.font-theme-blue {
+	color: #1757A6;
+}
+.rupee:before {
+	content: '\20B9';
+}

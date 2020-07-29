@@ -1,0 +1,116 @@
+.homepage-wrapper {
+	h1, h2, h3, h4, h5 {
+		font-family: Roboto Condensed;
+	}
+	.subtitle {
+		font-family: Gotham;
+		font-weight: 500;
+		font-size: .75em;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+	.key {
+		color: #000;
+		font-size: .8em;
+		margin-bottom: 1em;
+	}
+	.bg-img-bottom-right {
+		background-position: 100% 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	#hero {
+		background-image: url("../img/P&G-Header.jpg");
+		background-size: cover;
+		.subtitle {
+			font-size: .83em;
+			letter-spacing: 0.2em;
+		}
+		@media (max-width: 768px) {
+			background-size: contain
+		}
+	}
+	#live_enterprise {
+		& > .row > div {
+			position: relative;
+			@media (max-width: 768px) {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					background-image: linear-gradient(0, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.5) 100%),
+				}
+			}
+		}
+		#instincts {
+			background-color: #00AB8B;
+			background-image: url("../img/That's-Live-Enterprise-1.jpg");
+		}
+		#responding {
+			background-color: #6E7275;
+			background-image: url("../img/That's-Live-Enterprise-2.jpg");
+		}
+		#talent {
+			background-color: #307DBD;
+			background-image: url("../img/That's-Live-Enterprise-3.jpg");
+		}
+		#checkmate {
+			background-color: #D0913A;
+			background-image: url("../img/That's-Live-Enterprise-4.jpg");
+		}
+	}
+	#people {
+		.row > div {
+			position: relative;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			.arrow {
+				font-size: 2.5em;
+				max-height: 0px;
+				overflow-y: hidden;
+				transition: max-height .3s ease-in-out;
+			}
+			&:nth-of-type(1) {
+				background-image: url("../img/Chairman's-Message.jpg");
+			}
+			&:nth-of-type(2) {
+				background-image: url("../img/Letter-to-the-shareholder.jpg");
+			}
+			&:hover {
+				&:nth-of-type(1) {
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/Chairman's-Message.jpg");
+				}
+				&:nth-of-type(2) {
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/Letter-to-the-shareholder.jpg");
+				}
+				.arrow {
+					max-height: 3em;
+				}
+			}
+			@media (max-width: 576px) {
+				&:nth-of-type(1) {
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/Chairman's-Message.jpg");
+				}
+				&:nth-of-type(2) {
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/Letter-to-the-shareholder.jpg");
+				}
+			}
+		}
+	}
+	#trends #figures {
+		& > div:nth-of-type(1) {
+			background-color: #00AB8B;
+		}
+		& > div:nth-of-type(2) {
+			background-color: #6D7275;
+		}
+		& > div:nth-of-type(4) {
+			background-color: #DA8F1C;
+		}
+	}
+}
