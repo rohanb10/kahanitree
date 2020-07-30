@@ -1,12 +1,9 @@
 .homepage-wrapper {
 	max-height: 100vh;
     overflow-y: scroll;
-	scroll-snap-type: y mandatory;
+	// scroll-snap-type: y mandatory;
 	.scroll-stop {
 		scroll-snap-align: start;
-	}
-	h1, h2, h3, h4, h5 {
-		font-family: Roboto Condensed;
 	}
 	.key {
 		font-size: .8em;

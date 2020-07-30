@@ -1,0 +1,30 @@
+.intuition-wrapper {
+	div[data-article-id="one"], div[data-article-id="two"] {
+		cursor: pointer;
+		background-color: #F5F6F5;
+	}
+	div[data-article-id="one"].active, div[data-article-id="two"].active {
+		background-color: #D7E9DB;;
+	}
+	p {
+		margin: 1em 0;
+		line-height: 28px;
+	}
+	.image-container:first-of-type {
+		height: 20em;
+		padding: 1em;
+		margin: 2em 0;
+		background-color: #D7E9DB;
+		position: relative;
+		.floating-image {
+			position: absolute;
+			transform: translate(-50%, -50%);
+			top: 50%;
+			right: -50%;
+			width: 50%;
+		}
+	}
+	.author ~ img {
+		height: 4em;
+	}
+}

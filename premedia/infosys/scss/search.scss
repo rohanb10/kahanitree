@@ -1,0 +1,44 @@
+#search-modal {
+	.modal-body {
+		padding: 0;
+		margin: 1em;
+	}
+	form {
+		max-width: 100%;
+		width: 40em;
+		background-color: #FFF;
+		position: sticky;
+		top: 0;
+		margin: 0 auto 2em;
+		.form-group {
+			width: 75%;
+			margin-bottom: .5em;
+			@media (min-width: 576px) {
+				margin-left: 1rem;
+				margin-right: 1em;
+			}
+
+		}
+		input {
+			width: 100%;
+		}
+	}
+	#tipue_search_results_count {
+		text-align: right;
+	}
+	#tipue_search_image_modal {
+		display: none;
+	}
+	.tipue_search_result {
+		padding: 1em 1em .5em;
+		@media (max-width:992px) {
+			padding: 1em 0 .5em;
+		}
+	}
+	.tipue_search_content_title a {
+		color: blue;
+	}
+	.tipue_search_content_bold {
+		font-weight: bold;
+	}
+}

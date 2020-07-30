@@ -62,11 +62,13 @@
 		line-height: 19px;
 		padding: 1.25em 1em;
 
-		&.active {
+		&.active, &.active[aria-expanded=true] {
 			background-color: #1757A6;
 			color: #FFF;
-			pointer-events: none;
-			touch-actions: none;
+			&:not([data-toggle=collapse]) {
+				pointer-events: none;
+				touch-actions: none;
+			}
 		}
 		&[aria-expanded=true] {
 			background-color: #f9f9f9;
@@ -76,7 +78,7 @@
 			content: '\2014';
 			position: absolute;
 			right: .5em;
-			top: .5em;
+			top: .75em;
 			font-weight: 100;
 			font-size: 1.5em;
 			transition: transform .3s ease-in-out;
@@ -96,6 +98,11 @@
 				font-size: .83em;
 				line-height: 16px;
 				font-weight: 300;
+				&.active {
+					text-decoration: underline;
+					pointer-events: none;
+					touch-actions: none;
+				}
 			}
 		}
 	}
