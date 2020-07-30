@@ -1,12 +1,35 @@
 .navbar {
-	@media (max-width: 768px) {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0) 15%, rgba(0,0,0,.5) 100%);
+	&:not(.bg-theme-blue){
+		background: linear-gradient(45deg, rgba(0, 0, 0, 0) 90%, rgba(0,0,0,.5) 100%);
+		@media (max-width: 768px) {
+			background: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, rgba(0,0,0,.5) 100%);
+		}
+	}
+	&.bg-theme-blue {
+		// background: inherit;
 	}
 	button {
 		outline: none;
 		border: none;
 		font-size: 2em;
 		line-height: 1.2em;
+	}
+	img {
+		height: 2.5em;
+		width: auto;
+		padding: 0 1em;
+	}
+	.search {
+		line-height: 2.5em;
+		position: relative;
+		&:hover:before {
+			content: 'Search';
+			color: #fff;
+		}
+		img {
+			height: 1.5em;
+			margin-bottom: .5em;
+		}
 	}
 }
 #navigation {
@@ -76,5 +99,13 @@
 			}
 		}
 	}
-
+}
+.navbar-padding {
+	height: 3.5em;
+}
+.breadcrumb {
+	font-size: .85em;
+	padding: .75em 2em;
+	background-color: initial;
+	box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
 }
