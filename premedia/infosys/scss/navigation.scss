@@ -1,6 +1,5 @@
 .navbar {
 	&:not(.bg-theme-blue){
-		background: linear-gradient(45deg, rgba(0, 0, 0, 0) 90%, rgba(0,0,0,.5) 100%);
 		@media (max-width: 768px) {
 			background: linear-gradient(45deg, rgba(0, 0, 0, 0) 60%, rgba(0,0,0,.5) 100%);
 		}
