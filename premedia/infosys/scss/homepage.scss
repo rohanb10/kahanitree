@@ -15,7 +15,7 @@
 		background-repeat: no-repeat;
 	}
 	#hero {
-		background-image: url("../img/P&G-Header.jpg");
+		background-image: url("../img/HD/P&G-Header.jpg");
 		background-size: cover;
 		.subtitle {
 			font-size: .83em;
@@ -42,19 +42,19 @@
 		}
 		#instincts {
 			background-color: #00AB8B;
-			background-image: url("../img/That's-Live-Enterprise-1.jpg");
+			background-image: url("../img/HD/That's-Live-Enterprise-1.jpg");
 		}
 		#responding {
 			background-color: #6E7275;
-			background-image: url("../img/That's-Live-Enterprise-2.jpg");
+			background-image: url("../img/HD/That's-Live-Enterprise-2.jpg");
 		}
 		#talent {
 			background-color: #307DBD;
-			background-image: url("../img/That's-Live-Enterprise-3.jpg");
+			background-image: url("../img/HD/That's-Live-Enterprise-3.jpg");
 		}
 		#checkmate {
 			background-color: #D1913A;
-			background-image: url("../img/That's-Live-Enterprise-4.jpg");
+			background-image: url("../img/HD/That's-Live-Enterprise-4.jpg");
 		}
 	}
 	#people {
@@ -70,23 +70,23 @@
 				transition: max-height .3s ease-in-out;
 			}
 			&:nth-of-type(1) {
-				background-image: url("../img/Chairman's-Message.jpg");
+				background-image: url("../img/HD/Chairman's-Message.jpg");
 				@media (max-width: 768px) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/Chairman's-Message.jpg");
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/HD/Chairman's-Message.jpg");
 				}
 			}
 			&:nth-of-type(2) {
-				background-image: url("../img/Letter-to-the-shareholder.jpg");
+				background-image: url("../img/HD/Letter-to-the-shareholder.jpg");
 				@media (max-width: 768px) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/Letter-to-the-shareholder.jpg");
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/HD/Letter-to-the-shareholder.jpg");
 				}
 			}
 			&:hover {
 				&:nth-of-type(1) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/Chairman's-Message.jpg");
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/HD/Chairman's-Message.jpg");
 				}
 				&:nth-of-type(2) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/Letter-to-the-shareholder.jpg");
+					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/HD/Letter-to-the-shareholder.jpg");
 				}
 				.arrow {
 					max-height: 3em;
