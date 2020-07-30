@@ -70,27 +70,13 @@
 				transition: max-height .3s ease-in-out;
 			}
 			&:nth-of-type(1) {
-				background-image: url("../img/HD/Chairman's-Message.jpg");
-				@media (max-width: 768px) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/HD/Chairman's-Message.jpg");
-				}
+				background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.8)), url("../img/HD/Chairman's-Message.jpg");
 			}
 			&:nth-of-type(2) {
-				background-image: url("../img/HD/Letter-to-the-shareholder.jpg");
-				@media (max-width: 768px) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 25%, rgba(0,0,0,.8) 100%), url("../img/HD/Letter-to-the-shareholder.jpg");
-				}
+				background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.8)), url("../img/HD/Letter-to-the-shareholder.jpg");
 			}
-			&:hover {
-				&:nth-of-type(1) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/HD/Chairman's-Message.jpg");
-				}
-				&:nth-of-type(2) {
-					background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0,0,0,.5) 100%), url("../img/HD/Letter-to-the-shareholder.jpg");
-				}
-				.arrow {
-					max-height: 3em;
-				}
+			&:hover .arrow {
+				max-height: 3em;
 			}
 		}
 	}

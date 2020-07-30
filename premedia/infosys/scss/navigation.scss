@@ -54,14 +54,7 @@
 		position: relative;
 		font-family: Gotham;
 		text-transform: uppercase;
-	}
-	& > .nav > .nav-link {
-		font-weight: 400;
-		font-size: 16px;
-		line-height: 19px;
-		padding: 1.25em 1em;
-
-		&.active, &.active[aria-expanded=true] {
+		&.active {
 			background-color: #1757A6;
 			color: #FFF;
 			&:not([data-toggle=collapse]) {
@@ -69,8 +62,18 @@
 				touch-actions: none;
 			}
 		}
+	}
+	& > .nav > .nav-link {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 19px;
+		padding: 1.25em 1em;
+
 		&[aria-expanded=true] {
 			background-color: #f9f9f9;
+			&.active {
+				background-color: #1757A6;	
+			}
 		}
 
 		&[data-toggle=collapse]:before, &[data-toggle=collapse]:after {
@@ -92,15 +95,14 @@
 	.collapse, .collapsing {
 		background-color: #f9f9f9;
 		.nav {
-			padding-left: 2em;
 			.nav-link {
+				padding-left: 4em;
 				font-size: .83em;
 				line-height: 16px;
 				font-weight: 300;
 				&.active {
-					text-decoration: underline;
-					pointer-events: none;
-					touch-actions: none;
+					background-color: rgba(23, 87, 166, .25);
+					color: inherit;
 				}
 			}
 		}

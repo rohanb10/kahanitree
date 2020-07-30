@@ -28,8 +28,14 @@ End Tipue Search
 */
 
 $(document).ready(function(){
-	$('.navbar button, #navigation button').click(function() {
-		$('#navigation, body').toggleClass('nav-open')
+	$('.navbar button').click(function(e) {
+		$('#navigation, body').addClass('nav-open');
+		$('body > div:not(.navbar)').click(function(e){
+			$('#navigation button').click();
+		})
+	});
+	$('#navigation button').click(function() {
+		$('#navigation, body').removeClass('nav-open');
 	});
 	$('.article-control').click(function(){
 		$('div[data-article-body]').addClass('d-none');
