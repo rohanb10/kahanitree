@@ -1,10 +1,12 @@
 .homepage-wrapper {
-	max-height: 100vh;
-    overflow-y: scroll;
-	scroll-snap-type: y mandatory;
-	.scroll-stop {
-		scroll-snap-align: start;
-	}
+    @media (min-width: 768px) {
+    	max-height: 100vh;
+    	overflow-y: scroll;
+    	scroll-snap-type: y mandatory;
+		.scroll-stop {
+			scroll-snap-align: start;
+		}
+    }
 	.key {
 		font-size: .8em;
 		margin-bottom: 1em;
