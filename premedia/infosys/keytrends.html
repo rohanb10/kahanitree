@@ -3,8 +3,9 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, width=device-width, height=device-height">
-	<title>Downloads | Annual Report 2020</title>
+	<title>Key Trends | Annual Report 2020</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/chartist.min.css">
 	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
@@ -39,60 +40,59 @@
 					</div>
 				</div>
 				<a class="nav-link" href="#">Awards and Recognition</a>
-				<a class="nav-link" href="keytrends.html">Key Trends</a>
+				<a class="nav-link active" href="keytrends.html">Key Trends</a>
 				<a class="nav-link" href="#">Year at a Glance</a>
-				<a class="nav-link active" href="downloads.html">Downloads</a>
+				<a class="nav-link" href="downloads.html">Downloads</a>
 			</nav>
 		</div>
 	</div>
 	<div class="navbar-padding"></div>
 	<nav class="d-none d-md-block">
 		<ol class="breadcrumb">
-			<li class="breadcrumb-item active" aria-current="page">Downloads</li>
+			<li class="breadcrumb-item active" aria-current="page">Key Trends</li>
 		</ol>
 	</nav>
 	<div class="container">
 		<div class="row no-gutters">
-			<div class="downloads-wrapper col-md-10 col-lg-8">
-				<div class="category-label mt-md-5 mt-2">Downloads</div>
-				<h1 class="bg-theme-blue text-white p-3 my-3">Downloads</h1>
-				<div class="downloads-table">
-					<a href="#" class="download-item">
-						<h4>Board's Report</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Annexures to the Board’s report</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Management’s discussion and analysis</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Corporate governance report</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>CEO and CFO certification</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Standalone financial statements</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Consolidated financial statements</h4>
-						<div href="#"></div>
-					</a>
-					<a href="#" class="download-item">
-						<h4>Business responsibility report</h4>
-						<div href="#"></div>
-					</a>
-				</div>
+			<div class="col-md-10 col-lg-8">
+				<div class="category-label mt-md-5 mt-2">2019-2020</div>
+				<h1 class="bg-theme-blue text-white p-3 my-3">Key Trends</h1>
+			</div>
+		</div>
+		<div class="graphs text-center row">
+			<div class="col-md-6 my-4">
+				<h4 class="mb-0">Revenues
+					<button onClick="$('#revenue svg').addClass('animate')" class="btn">(show)</button>
+				</h4>
+				<div class="graph-subtitle mb-3">(in crores)</div>
+				<div id="revenue" class="ct-chart ct-perfect-fifth"></div>
+			</div>
+			<div class="col-md-6 my-4">
+				<h4 class="mb-0">Profit
+					<button onClick="$('#profit svg').addClass('animate')" class="btn">(show)</button>
+				</h4>
+				<div class="graph-subtitle mb-3">(in %)</div>
+				<div id="profit" class="ct-chart ct-perfect-fifth"></div>
+			</div>
+		</div>
+		<div class="graphs text-center row">
+			<div class="col-md-6 my-4">
+				<h4 class="mb-0">Digital Revenues
+					<button onClick="$('#digital-revenue svg').addClass('animate')" class="btn">(show)</button>
+				</h4>
+				<div class="graph-subtitle mb-3">(in crores)</div>
+				<div id="digital-revenue" class="ct-chart ct-perfect-fifth"></div>
+			</div>
+			<div class="col-md-6 my-4">
+				<h4 class="mb-0">Number of clients
+					<button onClick="$('#clients svg').addClass('animate')" class="btn">(show)</button>
+				</h4>
+				<div class="graph-subtitle mb-3">&nbsp;</div>
+				<div id="clients" class="ct-chart ct-perfect-fifth"></div>
 			</div>
 		</div>
 	</div>
+	<div id="tooltip"></div>
 	<div class="footer bg-theme-blue mt-5 text-white py-5 px-2">
 		<div class="container">
 			<div class="row">
@@ -126,8 +126,10 @@
 			</div>
 		</div>
 	</div>
+	<script src="js/chartist.min.js"></script>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+	<script src="js/keytrends.js"></script>
 </body>
 </html>

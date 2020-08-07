@@ -1,0 +1,141 @@
+@keyframes fade-in {
+	to {opacity: 1}
+}
+@keyframes dash {
+	to {stroke-dashoffset: 0}
+}
+.graph-subtitle {
+	font-size: .75em;
+	color: #888;
+}
+
+.ct-grid, foreignObject, .ct-point, .ct-area, #digital-revenue .ct-label {
+	opacity: 0;
+}
+.ct-point, .ct-bar {
+	cursor: pointer;
+}
+.ct-bar {
+	stroke-dasharray: 300;
+	stroke-dashoffset: 300;
+	stroke-width: 40px;
+}
+.ct-series-b .ct-bar {
+	stroke: #EEC759;
+}
+.ct-line {
+	stroke-dasharray: 550;
+	stroke-dashoffset: 550;
+}
+#digital-revenue .ct-series {
+	.ct-slice-donut {
+		stroke-dasharray: 125;
+		stroke-dashoffset: 125;
+		transition: stroke-dashoffset .4s ease-in-out;
+	}
+	&:nth-of-type(2) .ct-slice-donut {
+		stroke-dasharray: 175;
+		stroke-dashoffset: 175;
+		transition-delay: .6s;
+	}
+	&:nth-of-type(3) .ct-slice-donut {
+		stroke-dasharray: 200;
+		stroke-dashoffset: 200;
+		transition-delay: 1.2s;
+	}
+}
+#tooltip {
+	position: absolute;
+	display: inline-block;
+	opacity: 0;
+	min-width: 5em;
+	padding: .5em;
+	background: #1757A6;
+	color: #eee;
+	font-weight: 700;
+	text-align: center;
+	z-index: 1;
+	transition: opacity .3s ease-in-out;
+	transform: translate(-50%, -120%);
+	&.tooltip-show {
+		opacity: 1;
+	}
+	span {
+		white-space: nowrap;
+	}
+}
+.ct-area, .ct-line, .chartist-tooltip {
+	pointer-events: none;
+	touch-actions: none;
+}
+
+#digital-revenue .animate {
+		.ct-series {
+			.ct-slice-donut {
+				stroke-dashoffset: 250;
+			}
+			&:nth-of-type(2) .ct-slice-donut {
+				stroke-dashoffset: 350;
+			}
+			&:nth-of-type(3) .ct-slice-donut {
+				stroke-dashoffset: 400;
+			}
+		}
+		.ct-label {
+			animation: fade-in .3s ease-in-out both;
+			animation-delay: 2s;
+		}
+	}
+
+.animate {
+	.ct-grids .ct-grid {
+		animation: fade-in 100ms ease-in-out both;
+		@for $x from 1 through 20 {
+			&:nth-child(#{$x}) {
+				animation-delay: 100ms * ($x - 1);
+			}
+		}
+	}
+	.ct-series {
+		&.ct-series-a .ct-bar {
+			animation: dash 200ms ease-in-out both;
+			@for $x from 1 through 6 {
+				&:nth-child(#{$x}) {
+					animation-delay: 100ms * ($x - 1) + 1000ms;
+				}
+			}
+		}
+		&.ct-series-b .ct-bar {
+			animation: dash 200ms ease-in-out both;
+			@for $x from 1 through 6 {
+				&:nth-child(#{$x}) {
+					animation-delay: 100ms * ($x - 1) + 1500ms;
+				}
+			}
+		}
+		.ct-point {
+			animation: fade-in 100ms ease-in-out both;
+			@for $x from 1 through 10 {
+				&:nth-child(#{$x}) {
+					animation-delay: 200ms * ($x - 1) + 1000ms;
+				}
+			}
+		}
+		.ct-line {
+			animation: dash 1s ease-in-out both;
+			animation-delay: 2s;
+		}
+		.ct-area {
+			animation: fade-in .3s ease-in-out both;
+			animation-delay: 2.5s;
+		}
+	}
+	.ct-labels foreignObject {
+		animation: fade-in 100ms ease-in-out both;
+		@for $x from 1 through 20 {
+			&:nth-child(#{$x}) {
+				animation-delay: 50ms * ($x - 1) + 2000ms;
+			}
+		}
+	}
+}

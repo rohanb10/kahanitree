@@ -7,17 +7,15 @@
 		padding: 1em 1.5em;
 		margin: .5em 0;
 		width: 100%;
+		color: #1757A6;
 		h4 {
 			margin: 0;
 			max-width: 85%;
 		}
-		a {
+		div {
 			position: relative;
 			width: 2.5em;
 			height: 2.5em;
-			background: #FFFFFF;
-			border: 1px solid #cfcfcf;
-			box-sizing: border-box;
 			&:after {
 				position: absolute;
 				top: 0;
@@ -33,6 +31,9 @@
 				content: '\2913';
 				color: #1757A6;
 			}
+		}
+		&:hover {
+			background-color: #e6e6e6;
 		}
 		@media (max-width: 768px) {
 			padding: 1em .75em;
