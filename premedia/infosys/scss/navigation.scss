@@ -1,11 +1,5 @@
 .navbar {
 	transition: transform .3s linear;
-	&:not(.scrolling-up) {
-		transform: translateY(-75px);
-		button {
-			transform: translateY(75px);
-		}
-	}
 	button {
 		outline: none;
 		border: none;
@@ -31,6 +25,14 @@
 		img {
 			height: 1.5em;
 			margin-bottom: .5em;
+		}
+	}
+}
+body:not(.nav-open) {
+	.navbar.hide-on-scroll:not(.scrolling-up) {
+		transform: translateY(-75px);
+		button {
+			transform: translateY(75px);
 		}
 	}
 }

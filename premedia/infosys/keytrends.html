@@ -59,23 +59,65 @@
 				<h1 class="bg-theme-blue text-white p-3 my-3">Key Trends</h1>
 			</div>
 		</div>
-		<div class="graphs text-center row">
-			<div class="col-md-6 my-4">
-				<h4 class="mb-0">Revenues
-					<button onClick="$('#revenue svg').addClass('animate')" class="btn">(show)</button>
-				</h4>
+		<div class="container">
+		<div class="row no-gutters">
+			<div class="col-md-10 col-lg-8 my-lg-2">
+				<h1 class="font-theme-blue my-2">Key Trends demonstrate continued<br class="d-none d-lg-block"> Business Success</h1>
+				<div class="py-3 blockquote">
+					In 2019, Infosys achieved excellent operating results. I am delighted about the launches of our services, the launch of the Infosys Live Enterprise Suite and the acquisition of Simplus, one of the fastest growing Salesforce Platinum Partners in the USA and Australia. 
+				</div>
+				<div class="d-flex my-3 flex-row-reverse align-items-center justify-content-end mx-auto">
+					<div class>
+						<div class="category-label mb-1">Nandan M Nilekani</div>
+						<div>Chairman</div>
+					</div>
+					<div class="px-3"></div>
+					<div class="nandan rounded-circle" alt="..."></div>
+				</div>
+			</div>
+		</div>
+		<div class="row no-gutters mt-5">
+			<div class="col-md-10 col-lg-8">
+				<h3>Key Trends at a Glance</h3>
+				<p class="py-4">The financial year ending March 31, 2020 was an exceptional year for Infosys. The trust of our clients and the dedication of our employees helped us achieve extraordinary results.  Our revenues grew by 9.8% in constant currency. Our digital work grew by 38%. And it comprises 42% of our overall revenue in Q4. Our large transformation deals were at US$ 9 billion. Our earnings per share grew by 8.3% in US dollar terms. We had operating cash flow  of US$ 2.6 billion, which grew at 15.4% for the year. And we ended the year with US$ 3.6 billion in cash on our balance sheet. The Company announced dividend payout of US$ 1.1 billion for the year. At the end of the year we had over 2,42,000 employees.</p>
+			</div>
+		</div>
+		<div class="row no-gutters my-5">
+			<div class="col-md-8 col-lg-6 text-center">
+				<h4 class="mb-0">Revenues</h4>
 				<div class="graph-subtitle mb-3">(in crores)</div>
 				<div id="revenue" class="ct-chart ct-perfect-fifth"></div>
 			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3 d-flex justify-content-end flex-column pb-4">
+				<p class="annotation">(1) Based on IFRS consolidated financial statements</p>
+			</div>
+		</div>
+		<div class="row no-gutters my-5">
+			<div class="col-md-8 col-lg-6 text-center">
+				<h4 class="mb-0">Profit</h4>
+				<div class="graph-subtitle mb-3">(in crores)</div>
+				<div id="profit" class="ct-chart ct-perfect-fifth"></div>
+			</div>
+			<div class="col-md-1"></div>
+			<div class="col-md-3 d-flex justify-content-end flex-column pb-4">
+				<p class="annotation">(1) Based on IFRS consolidated financial statements</p>
+				<p class="annotation">(2) During the year ended March 31, 2019 and 2018, on account of the conclusion of advance pricing arrangements in overseas jurisdictions, the Company had reversed income tax expense provision of ` 94 crore (US$ 14 million) and ` 1,432 crore (US$ 225 million) respectively, which pertained to previous periods.</p>
+				<p class="annotation">(3) During the year ended March 31, 2018, the Company’s wholly-owned subsidiaries, Kallidus and Skava (together referred to as “Skava”) and Panaya, were classified as “Held for Sale”, resulting in a reduction of fair value in respect of Panaya amounting to ` 118 crore (US$ 18 million). During the year ended March 31, 2019, a further reduction of ` 270 crore (US$ 39 million) was recorded in respect of Panaya. On reclassification of Panaya and Skava from “Held for Sale” during the year ended March 31, 2019, the Company recognized an adjustment in respect of excess of carrying amount over recoverable amount of ` 451 crore (US$ 65 million) in respect of Skava.</p>
+				<p class="annotation">(4) Attributable to owners of the Company</p>
+			</div>
+		</div>
+		<div class="py-4"></div>
+		<!-- <div class="graphs text-center row">
 			<div class="col-md-6 my-4">
 				<h4 class="mb-0">Profit
 					<button onClick="$('#profit svg').addClass('animate')" class="btn">(show)</button>
 				</h4>
-				<div class="graph-subtitle mb-3">(in %)</div>
+				<div class="graph-subtitle mb-3">(in )</div>
 				<div id="profit" class="ct-chart ct-perfect-fifth"></div>
 			</div>
-		</div>
-		<div class="graphs text-center row">
+		</div> -->
+		<!-- <div class="graphs text-center row">
 			<div class="col-md-6 my-4">
 				<h4 class="mb-0">Digital Revenues
 					<button onClick="$('#digital-revenue svg').addClass('animate')" class="btn">(show)</button>
@@ -90,7 +132,7 @@
 				<div class="graph-subtitle mb-3">&nbsp;</div>
 				<div id="clients" class="ct-chart ct-perfect-fifth"></div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div id="tooltip"></div>
 	<div class="footer bg-theme-blue mt-5 text-white py-5 px-2">
@@ -131,5 +173,8 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
 	<script src="js/keytrends.js"></script>
+	<script type="text/javascript">
+		console.log('hi2');
+	</script>
 </body>
 </html>

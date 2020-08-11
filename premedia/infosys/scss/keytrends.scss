@@ -9,6 +9,37 @@
 	color: #888;
 }
 
+.blockquote {
+	position: relative;
+	&:before {
+		font-family: 'Roboto Condensed';
+		content: '\201C';
+		position: absolute;
+		font-size: 4em;
+		opacity: .4;
+		top: -1rem;
+		left: -2rem;
+		@media (min-width: 768px) {
+			left: -3rem;
+		}
+	}
+}
+
+
+.nandan {
+	height: 4em;
+	width: 4em;
+	background: url('../img/HD/Nandan-Nilekani.jpg') no-repeat;
+	background-position: 15% 90%;
+	background-size: cover;
+}
+.annotation {
+	color: #999;
+	width: 100%;
+	font-size: .5625em;
+	margin: .75em 0 0;
+}
+
 .ct-grid, foreignObject, .ct-point, .ct-area, #digital-revenue .ct-label {
 	opacity: 0;
 }
@@ -16,17 +47,12 @@
 	cursor: pointer;
 }
 .ct-bar {
-	stroke-dasharray: 300;
-	stroke-dashoffset: 300;
 	stroke-width: 40px;
 }
 .ct-series-b .ct-bar {
 	stroke: #EEC759;
 }
-.ct-line {
-	stroke-dasharray: 550;
-	stroke-dashoffset: 550;
-}
+
 #digital-revenue .ct-series {
 	.ct-slice-donut {
 		stroke-dasharray: 125;
@@ -48,20 +74,35 @@
 	position: absolute;
 	display: inline-block;
 	opacity: 0;
-	min-width: 5em;
-	padding: .5em;
+	min-width: 6em;
+	border-radius: .25em;
 	background: #1757A6;
+	border-top-color: #1757A6;
 	color: #eee;
 	font-weight: 700;
 	text-align: center;
 	z-index: 1;
 	transition: opacity .3s ease-in-out;
-	transform: translate(-50%, -120%);
+	transform: translate(-30%, -130%);
 	&.tooltip-show {
 		opacity: 1;
 	}
 	span {
+		display: inline-block;
+		padding: .25em 1em;
 		white-space: nowrap;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border: transparent;
+		border-width: 10px;
+		border-style: solid;
+		border-top-color: inherit;
+		top: 95%;
+		left: 22%;
 	}
 }
 .ct-area, .ct-line, .chartist-tooltip {
@@ -70,31 +111,44 @@
 }
 
 #digital-revenue .animate {
-		.ct-series {
-			.ct-slice-donut {
-				stroke-dashoffset: 250;
-			}
-			&:nth-of-type(2) .ct-slice-donut {
-				stroke-dashoffset: 350;
-			}
-			&:nth-of-type(3) .ct-slice-donut {
-				stroke-dashoffset: 400;
-			}
+	.ct-series {
+		.ct-slice-donut {
+			stroke-dashoffset: 250;
 		}
-		.ct-label {
-			animation: fade-in .3s ease-in-out both;
-			animation-delay: 2s;
+		&:nth-of-type(2) .ct-slice-donut {
+			stroke-dashoffset: 350;
+		}
+		&:nth-of-type(3) .ct-slice-donut {
+			stroke-dashoffset: 400;
 		}
 	}
+	.ct-label {
+		animation: fade-in .3s ease-in-out both;
+		animation-delay: 2s;
+	}
+}
+
+#revenue .ct-bar {
+	stroke: #307EC3;
+}
+
+#profit {
+	.ct-point {
+		stroke: #e8913a;
+		stroke-width: 15px;
+	}
+	.ct-line {
+		stroke: #e8913a;
+	}
+	.ct-area {
+		fill: #e8913a;
+	}
+}
+
 
 .animate {
 	.ct-grids .ct-grid {
-		animation: fade-in 100ms ease-in-out both;
-		@for $x from 1 through 20 {
-			&:nth-child(#{$x}) {
-				animation-delay: 50ms * ($x - 1);
-			}
-		}
+		animation: fade-in .5s ease-in-out both;
 	}
 	.ct-series {
 		&.ct-series-a .ct-bar {

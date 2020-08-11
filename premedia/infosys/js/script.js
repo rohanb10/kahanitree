@@ -30,6 +30,7 @@ End Tipue Search
 $(document).ready(function(){
 	$('.navbar button').click(function(e) {
 		$('#navigation, body').addClass('nav-open');
+		$('.hide-on-scroll').addClass('scrolling-up');
 		$('body > div:not(.navbar)').click(function(e){
 			$('#navigation button').click();
 		})
