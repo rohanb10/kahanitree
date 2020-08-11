@@ -37,6 +37,14 @@ $(document).ready(function(){
 	$('#navigation button').click(function() {
 		$('#navigation, body').removeClass('nav-open');
 	});
+	if ($('.hide-on-scroll').length > 0) {
+		var scrollY = 0;
+		$(window).scroll(function() {
+			var currentY = $(window).scrollTop();
+			$('.hide-on-scroll').toggleClass('scrolling-up', currentY < scrollY || scrollY < 60)
+			scrollY = currentY;
+		});
+	}
 	$('.article-control').click(function(){
 		$('div[data-article-body]').addClass('d-none');
 		$(`div[data-article-body=${$(this).data('article-id')}]`).removeClass('d-none');

@@ -92,7 +92,7 @@
 		animation: fade-in 100ms ease-in-out both;
 		@for $x from 1 through 20 {
 			&:nth-child(#{$x}) {
-				animation-delay: 100ms * ($x - 1);
+				animation-delay: 50ms * ($x - 1);
 			}
 		}
 	}
