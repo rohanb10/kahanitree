@@ -27,6 +27,43 @@ $(document).ready(function(){
 End Tipue Search
 */
 
+function countUpNum(el, i) {
+	var num = $(el).data('num');
+	var countUp = new CountUp($(el).attr('id'), num, {
+		useEasing: false,
+		duration: 2,
+		decimalPlaces: num.toString().indexOf('.') > -1 ? 2 : 0,
+		formattingFn: function (n) {
+			n = n.toString();
+			if (n.indexOf('.') > -1){
+				return n + (n.substring(n.indexOf('.') + 1).length === 1 ? '0' : '');
+			}
+			return parseFloat(n).toLocaleString('en-IN');
+		}
+	});
+	$(el).delay(i*250).queue(function(){countUp.start()});
+}
+
+function setUpCountUp() {
+	if (('#figures').length === 0) return;
+	var windowY = $(window).height()
+	if ($(window).width() > 768) {
+		$('.homepage-wrapper').scroll(function(e) {
+			if ($('#figures > div:nth-of-type(2)').offset().top < windowY) {
+				$('#figures h1').each(function(i) {countUpNum(this, i)})
+				$('.homepage-wrapper').unbind('scroll');
+			}
+		})
+	} else {
+		$(window).scroll(function() {
+			if ($('#figures > div:nth-of-type(2)').offset().top - windowY/2 < $(window).scrollTop()) {
+				$('#figures h1').each(function(i) {countUpNum(this, i)})
+				$(window).unbind('scroll');
+			}
+		})
+	}
+}
+
 $(document).ready(function(){
 	$('.navbar button').click(function(e) {
 		$('#navigation, body').addClass('nav-open');
@@ -53,4 +90,5 @@ $(document).ready(function(){
 		$('.article-control').removeClass('active');
 		$(this).addClass('active');
 	})
+	setUpCountUp();
 });

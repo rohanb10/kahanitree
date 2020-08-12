@@ -1,5 +1,6 @@
 .homepage-wrapper {
     @media (min-width: 768px) {
+    	position: relative;
     	max-height: 100vh;
     	overflow-y: scroll;
     	scroll-snap-type: y mandatory;
@@ -12,8 +13,8 @@
 		margin-bottom: 1em;
 	}
 	.bg-img-bottom-right {
-		background-position: 100% 100%;
-		background-size: contain;
+		background-position: 100% 50%;
+		background-size: auto 100%;
 		background-repeat: no-repeat;
 	}
 	#hero {
@@ -30,7 +31,28 @@
 	#live_enterprise {
 		& > .row > div {
 			position: relative;
+			cursor: pointer;
+			transition: background-size 1s ease-in-out;
+			&:after {
+				content: '\27F6';
+				position: absolute;
+				font-size: 2.5em;
+				bottom: 1em;
+				left: 1.6em;
+				opacity: 0;
+				transition: opacity .3s ease-in-out
+			}
+			&:hover {
+				background-size: auto 110%;
+				&:after {
+					opacity: 1;
+				}
+			}
 			@media (max-width: 768px) {
+				&:after {
+					left: .5em;
+					bottom: .25em;
+				}
 				&:before {
 					content: '';
 					position: absolute;
