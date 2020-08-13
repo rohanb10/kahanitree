@@ -6,6 +6,13 @@
 	div[data-article-id="one"].active, div[data-article-id="two"].active {
 		background-color: #D7E9DB;;
 	}
+	div[data-article-body] {
+		// display: none;
+		// transition: opacity .5s ease-in-out;
+	}
+	div[data-article-body].active {
+		// display: block;
+	}
 	p {
 		margin: 1em 0;
 		line-height: 28px;
