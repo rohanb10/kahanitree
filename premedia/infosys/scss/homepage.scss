@@ -1,13 +1,13 @@
 .homepage-wrapper {
-    @media (min-width: 768px) {
-    	position: relative;
-    	max-height: 100vh;
-    	overflow-y: scroll;
-    	scroll-snap-type: y mandatory;
-		.scroll-stop {
-			scroll-snap-align: start;
-		}
-    }
+  //   @media (min-width: 768px) {
+  //   	position: relative;
+  //   	max-height: 100vh;
+  //   	overflow-y: scroll;
+  //   	scroll-snap-type: y mandatory;
+		// .scroll-stop {
+		// 	scroll-snap-align: start;
+		// }
+  //   }
 	.key {
 		font-size: .8em;
 		margin-bottom: 1em;
@@ -25,6 +25,7 @@
 			letter-spacing: 0.2em;
 		}
 		@media (max-width: 768px) {
+			background-position: 100% 100%;
 			background-size: contain
 		}
 	}
