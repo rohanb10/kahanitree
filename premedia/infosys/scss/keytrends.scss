@@ -53,6 +53,10 @@
 	stroke: #EEC759;
 }
 
+svg {
+	overflow: visible;
+}
+
 #digital-revenue .ct-series {
 	.ct-slice-donut {
 		stroke-dasharray: 125;

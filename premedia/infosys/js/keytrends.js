@@ -1,4 +1,3 @@
-console.log('hi');
 var revenue = new Chartist.Bar('#revenue', {
 	labels: ['2016', '2017', '2018', '2019', '2020'],
 	series: [[62411, 68484, 70522, 82675, 90791]],
@@ -7,6 +6,7 @@ var revenue = new Chartist.Bar('#revenue', {
 		showGrid: false,
 	},
 	axisY: {
+		position: 'start',
 		labelInterpolationFnc: function(value) {return '₹' + (value/1000) + 'k'}
 	},
 	low: 50000,
@@ -16,7 +16,6 @@ var revenue = new Chartist.Bar('#revenue', {
 	connectTooltip('#revenue .ct-bar', 'money', '#e8913a')
 }).on('draw', function(el) {
 	setupStrokeAnimations(el);
-	// $('#revenue svg').addClass('animate');
 })
 
 new Chartist.Line('#profit', {
@@ -24,16 +23,15 @@ new Chartist.Line('#profit', {
 	series: [[12491, 14353, 16029, 15404, 16594]]
 }, {
 	axisY: {
+		position: 'start',
 		labelInterpolationFnc: function(value) {return '₹' + (value / 1000) + 'k'}
 	},
 	showArea: true,
 	fullWidth: true,
 }).on('created', function() {
 	connectTooltip('#profit .ct-point', 'money', '#1757A6')
-	// setupStrokeAnimations('#profit');
 }).on('draw', function(el) {
 	setupStrokeAnimations(el);
-	// $('#profit svg').addClass('animate');
 });
 
 function setupStrokeAnimations(el) {
@@ -42,32 +40,6 @@ function setupStrokeAnimations(el) {
 		$(el.element._node).css({strokeDasharray: length, strokeDashoffset: length})
 	}
 }
-
-/*
-new Chartist.Pie('#digital-revenue', {
-	labels: [2018, 2019, 2020],
-	series: [25.2, 31.2, 39.2]
-}, {
-	donut: true,
-	donutWidth: 50,
-	startAngle: 270,
-	total: 192,
-	showLabel: true,
-});
-new Chartist.Bar('#clients', {
-	labels: [2016, 2017, 2018, 2019, 2020],
-	series: [[1078, 1143, 1184, 1254, 1383],
-			 [14, 19, 20, 25, 28]]
-}, {
-	axisX: {
-		showGrid: false,
-	},
-	stackBars: true,
-	low: 1050,
-}).on('created', function() {
-	connectTooltip('#clients .ct-bar', 'stacked')
-});
-*/
 
 function connectTooltip(selector, numType, bgColor = '#1757A6') {
 	var data = $(selector);

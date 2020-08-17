@@ -16,7 +16,7 @@ body {
 	
 	&:after {
 		content: '';
-		z-index: 10;
+		z-index: 5;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -27,8 +27,11 @@ body {
 		pointer-events: none;
 		touch-actions: none;
 	}
+	&.nav-open, &.search-open {
+		overflow: hidden;
+	}
 }
-body.nav-open:after {
+body.nav-open:after, body.search-open:after {
 	background-color: rgba(0,0,0,.5);
 }
 
