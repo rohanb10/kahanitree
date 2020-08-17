@@ -1,5 +1,10 @@
 .navbar {
-	transition: transform .3s linear;
+	transition: all .3s linear;
+	padding: 0 1rem 0;
+	& > div > a {
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+	}
 	button {
 		outline: none;
 		border: none;
@@ -10,10 +15,7 @@
 	img {
 		height: 2.5em;
 		width: auto;
-		padding-left: 1em;
-		@media (min-width: 768px) {
-			padding: 0 1em;
-		}
+		padding: 0 1em;
 	}
 	.search {
 		line-height: 2.5em;
@@ -30,9 +32,12 @@
 }
 body:not(.nav-open) {
 	.navbar.hide-on-scroll:not(.scrolling-up) {
-		transform: translateY(-75px);
+		// transform: translateY(-75px);
+		// background-color: rgba(23, 87, 166, 0);
+		top: -75px;
 		button {
 			transform: translateY(75px);
+			background-color: rgba(23, 87, 166, 1);
 		}
 	}
 }

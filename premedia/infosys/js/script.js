@@ -10,6 +10,7 @@ var tipuesearch_stop_words=["a","above","after","again","against","all","am","an
 var tipuesearch = {"pages": []};
 $(document).ready(function(){
 	$('.search').click(function() {
+		$('body').addClass('search-open');
 		$('body').append('<div id="search-modal" class="modal fade"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="exampleModalLabel">Search this website</h5><button class="close" data-dismiss="modal"><span>&times;</span></button></div><div class="modal-body"><form class="form-inline"><span class="form-group"><input type="search" id="tipue_search_input" class="form-control" placeholder="eg. balance sheet, auditors report ..."></span><button id="tipue_search_submit" class="btn btn-primary mb-2">Search</button></form><div id="tipue_search_content"></div></div></div></div></div>')
 		$('#search-modal').modal();
 
@@ -68,9 +69,9 @@ $(document).ready(function(){
 	});
 	if ($('.hide-on-scroll').length > 0) {
 		var scrollY = 0;
-		$(window).scroll(function() {
+		$(window).bind('scroll', function() {
 			var currentY = $(window).scrollTop();
-			$('.hide-on-scroll').toggleClass('scrolling-up', currentY < scrollY || scrollY < 60)
+			$('.hide-on-scroll').toggleClass('scrolling-up', currentY < scrollY)
 			scrollY = currentY;
 		});
 	}
