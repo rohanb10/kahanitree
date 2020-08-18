@@ -73,6 +73,9 @@ body:not(.nav-open) {
 		font-family: Gotham;
 		color: #1757A6;
 		text-transform: uppercase;
+		box-sizing: border-box;
+		animation-duration: 1.5s;
+		animation-timing-function: cubic-bezier(.5, 0, .75, 0);;
 		&:hover {
 			background-color: #f4f4f4;
 		}
@@ -136,6 +139,11 @@ body:not(.nav-open) {
 		button {
 			padding: .1em 1rem;
 		}
+	}
+}
+@keyframes highlight {
+	from {
+		background-color: rgba(107, 176, 215, .7);
 	}
 }
 .navbar-padding {
