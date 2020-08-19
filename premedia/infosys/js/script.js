@@ -75,7 +75,8 @@ function setUpCountUp() {
 	})
 }
 
-function showClickableLinks() {
+function showClickableLinks(e) {
+	e.preventDefault();
 	$('.navbar .nav-link ').each(function(nl) {
 		if($(this).attr('href') !== '#' && !$(this).attr('data-toggle') && !$(this).hasClass('active')) {
 			var that = this;

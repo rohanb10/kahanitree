@@ -75,3 +75,10 @@ h1, h2, h3, h4, h5 {
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
 }
+.footer p {
+	font-size: .75em;
+	margin-bottom: 0;
+	@media (min-width: 768px) {
+		text-align: center;
+	}
+}
