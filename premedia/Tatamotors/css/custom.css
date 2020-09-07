@@ -1,0 +1,241 @@
+body {font-family: 'Roboto', sans-serif;}
+
+.navbar-nav
+{margin: auto;position: relative;}
+
+.navbar-nav .nav-link {
+    display: block;
+    position: relative;
+    height: 44px;
+    padding: 0 1.5rem;
+    -webkit-transition: color .3s;
+    transition: color .3s;
+    color: #343b43;
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    line-height: 44px;
+    text-transform: initial;
+    text-decoration: none;
+}
+
+.bm-img {width: 40px !important; max-width: 100px;}
+
+
+.cprof {background: #cadbed url('../img/companyprofile-bg2.jpg') no-repeat !important; height: 600px; background-size: 100% !important; }
+
+.top-left-border::before
+{
+	position: absolute;
+	left: -10px;	
+	content: ".";
+	width: 200px;
+	height: 200px;
+	border-left: solid 2px #f00;
+	border-top: solid 2px #f00;
+	margin-top: -25px;
+	
+}
+
+/*Search*/
+input, select { font-size: 100%; }
+#tipue_search_results_count {
+  text-align: right;
+}
+.tipue_search_result {
+  padding: 1em 0;
+}
+.tipue_search_content_title {
+    font-size: 1.2em;
+}
+.tipue_search_content_title a {
+  color: blue;
+}
+.tipue_search_content_bold {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 420px) {
+    .text-white {color: #256fb2 !important;}
+    .border-dark2,.border-dark3 {border: 0px !important;}
+    .cprof {padding-top: 250px  !important;}
+    .bm-img {width: 60px !important;}
+}
+
+@media screen and (max-width: 1000px) {
+    .home h4.hh4 {color: #fff !important;}
+}
+
+.home h6.hh6 {color: #2f7fb8;}
+.home h4.hh4 {color: #222;}
+
+.navbar-brand>img {width: auto;}
+.navbar-buttons {box-shadow: none; border: none;}
+.navbar-buttons>li>a {border: none;}
+.navbar .subheading {color: #fff;color: #fff;font-weight: 800;font-size: 1.25em;text-decoration: underline;letter-spacing: 1px;padding-top: 1rem;padding-bottom: .5rem;}
+.card::after {display: none;}
+
+.home h6 {color: #fff;}
+.home h4 {font-weight: 600; color: #fff;}
+.navbar-nav .nav-item.active .nav-link::before {display: none;}
+.rk-more {color: #ae38e4; text-decoration: none; font-weight: 700;}
+.cm {color: #0056a5; margin-bottom: 0px; font-weight: 700;}
+.chm {border-top: solid 2px #666; border-bottom: solid 2px #666; margin-top: 20px; margin-bottom: 20px; padding-top: 20px; padding-bottom: 20px;}
+.chm2 {border-top: solid 2px #666; border-bottom: solid 2px #666; margin-top: 0px; margin-bottom: 20px; padding-top: 20px; padding-bottom: 20px;}
+.blog-card .post-title::after {display: none;}
+.card-footer a {text-decoration: none; color: #2b2b2b;}
+.blog-card .card-footer {display: block;}
+.card-footer {text-align: center;}
+.blog-card {min-height: 450px;}
+.nl {background: #414141;}
+.nl h2, .nl h4 {color: #fff;}
+.dropdown-menu {background: rgb(25,116,181);background: linear-gradient(90deg, rgba(25,116,181,1) 0%, rgba(13,58,91,1) 100%);border: 0px;}
+.dropdown-menu a {color: #fff !important;}
+.mega-dropdown .widget.widget-custom-menu ul>li>a:hover {color: #fff !important; text-decoration: underline;}
+.mega-dropdown .widget.widget-custom-menu ul>li>a {padding: .25rem 0 .75rem}
+
+.mega-dropdown .column { width: 265px; }
+.widget-custom-menu>ul>li, .widget-categories>ul>li {border: 0px;}
+
+
+
+
+.navbar-default .navbar-nav > li > a {
+    text-transform: none;
+    padding-left: 0;
+    padding-right: 52px;
+    font-weight: 700;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.co-md:before, .fh-md:before, .sr-md:before, .fs-md:before{
+ position: absolute;
+ left: 10%;
+ top: -10px;
+ content: "";
+ display: inline-block;
+ width: 0;
+ height: 0;
+ border-style: solid;
+ border-color: transparent transparent #1870af transparent;
+ border-width: 0 10px 10px 10px;
+}
+
+.nl img {
+ width: 275px !important;
+}
+
+.navbar-wrapper .mega-dropdown-toggle {
+    position: relative !important;
+}
+
+.nl:after {
+	content: attr(data-name);
+	display: block;
+	color: #fff;
+	text-align: center;
+}
+
+.ss .team-card-style-3, .team-card-style-4 {
+    margin-right: .15rem !important;
+    margin-left: .15rem !important;
+
+}
+
+.breadcrumb {padding-top: 50px; padding-bottom: 50px;}
+.breadcrumb .breadcrumb-item::before {
+    display: none;
+}
+
+.breadcrumb .breadcrumb-item+.breadcrumb-item {
+    margin-left: -0.25rem;	
+}
+
+.breadcrumb .breadcrumb-item>a {
+ color: #707070;
+}
+
+.bg-secondary {background: #fff !important;}
+
+.right-nav {
+    position: sticky !important;
+    top: 100px !important;
+    animation: dropdown-slide-down .25s !important;
+}
+
+.right-nav ul{
+	padding-left: 0
+}
+
+
+
+.dropdown-item, li.dropdown-item>a {font-weight: 100; font-size: 1.05em;}
+.ln-head {font-weight: 600 !important;}
+.cname {font-size: 1.5em;}
+.portfolio-card:not(.card) {height: 400px;}
+.animated-digits .animated-digits-digit {font-size: 2rem;}
+.sm-text {font-size: 1.5rem; font-weight: 600; }
+
+
+@media screen and (max-width: 1300px) {
+    .navbar-nav .nav-link {
+
+        padding: 0 1rem;
+        font-size: 0.85rem;
+    }
+
+    .co-md:before{left: 7%;}
+
+    .fh-md:before{left: 45%;}
+
+    .sr-md:before{left: 39%;}
+
+    .fs-md:before{left: 55%;}	
+}
+
+
+@media screen and (min-width: 1200px) {
+    .ss {padding-left: 0px; padding-right: 0px;}
+}
+
+
+
+
+
+@media (min-width: 1180px) and (max-width: 1400px)
+{
+    .navbar-nav .nav-link {padding-left: 1rem !important; padding-right: 1rem !important;}
+}
+
+
+
+.nl-img {height: 100px;}
+
+.title-2 {
+    padding: 10px 20px 10px 10px;
+    font-size: 0.95em;
+    color: #FFF;
+    line-height: 1;
+    font-weight: 600;
+    border-bottom: solid 3px #000;
+    margin: 0px;	
+    background: #000 url('../img/bg-block.png') no-repeat top right;
+}
+
+
+.finance{background: url('../img/tata-motors-finance-2.jpg') no-repeat; height: 800px; background-size: 100%; font-size: 1.1em;}
+@media (max-width: 1199.92px) {.finance {background: none;height:auto;}}
+/*.performance-review{background: url('../img/performance-review.jpg') no-repeat; height: 600px; background-size: 100%; font-size: 1.1em; color: #fff;}*/
+div.progress-bar.grey {color: #000; background-color: #bcbcbc}
+.business-model {background: #a5c3e2;}
+.business-model h6 {font-size: 1em;}
+.progress {background: none; color: #fff;}
+.progress-bar {-webkit-box-shadow: none !important; box-shadow: none !important;}
+.grey {background: #ccc !important; color: #000;}
+.page-nos {text-align: center;}
+.heading-sm {font-size: .7em;}
+.bnr-text {color: #fff !important;}
+.border-dark2 {border-left: solid 1px #000;}
+.border-dark3 {width: 100%; border-color: #000 !important; margin-bottom: 30px;}
