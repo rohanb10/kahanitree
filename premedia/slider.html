@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+	<link href="https://fonts.googleapis.com/css2?family=Vollkorn:wght@400;700;900&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			margin: 0;
+			font-family: 'Vollkorn';
+			font-size: 4em;
+			font-weight: bolder;
+		}
+		div.tns-item {
+			font-size: 3rem;
+			opacity: .2;
+		}
+		.word.active {
+			opacity: 1;
+		}
+		p {
+			font-size: 1rem;
+			font-weight: normal;
+		}
+		button {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1>Vakils</h1>
+	<div class="my-slider">
+	  <div class="word">Lorem</div>
+	  <div class="word">Ipsum</div>
+	  <div class="word">Something</div>
+	  <div class="word">Else.</div>
+	  <div class="word">Hello</div>
+	  <div class="word">Goodbye</div>
+	  <div class="word">Spaghetti</div>
+	  <div class="word">It's almost lunch time</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+	<script type="text/javascript">
+		var slider = tns({
+			container: '.my-slider',
+			items: 1,
+			nav: false,
+			autoplay: true,
+			controls: false,
+			gutter: 100,
+			autoWidth: true,
+  			edgePadding: 200,
+  			swipeAngle: false,
+  			speed: 400,
+  			autoplayTimeout: 2000,
+		});
+		slider.events.on('transitionEnd', _ => {
+			var info = slider.getInfo(),
+			indexPrev = info.indexCached,
+			indexCurrent = info.index;
+
+			// update style based on index
+			info.slideItems[indexPrev].classList.remove('active');
+			info.slideItems[indexCurrent].classList.add('active');
+		});
+	</script>
+</body>
+</html>
