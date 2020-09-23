@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Certification test</title>
+	<style type="text/css">
+		.cert-container {
+			width: 40%;
+			position: relative;
+		}
+		img {
+			max-height: 3em;
+		}
+		.cert-btn-bg,.cert-btn-fg {
+			top: 1em;
+			left: 1em;
+			position: absolute;
+			width: 100%;
+			text-align: center;
+		}
+		.cert-btn-fg {
+			pointer-events: none;
+		}
+		.btn-container {
+			padding: 1em .5em;
+		}
+		.cert-btn-fg {
+			z-index: 2;
+			transition: clip-path .5s ease-in-out;
+		}
+		.cert-btn-fg.iqvia {
+			clip-path: polygon(0 0%, 100% 0%, 100% 25%, 0 25%);
+		}
+		.cert-btn-fg.oce {
+			clip-path: polygon(0 25%, 100% 25%, 100% 50%, 0 50%);
+		}
+		.cert-btn-fg.remote {
+			clip-path: polygon(0 50%, 100% 50%, 100% 75%, 0 75%);
+		}
+		.cert-btn-fg.veeva {
+			clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+		}
+		.cert-btn-fg .btn-container:not(.active){
+			opacity: .15;
+			filter: grayscale(1);
+		}
+		.cert-btn-bg {
+			z-index: 1;
+		}
+		.cert-btn-bg .btn-container{
+			opacity: .4;
+			filter: grayscale(1);
+			transition: all .3s ease-in-out
+		}
+		.cert-btn-bg .btn-container:hover {
+			opacity: .55;
+		}
+		.container {
+			display: flex;
+			width: 80em;
+			margin: 10em auto;
+		}
+		.scroll-container {
+			position: relative;
+			width: 60%;
+			height: 20em;
+			overflow-y: hidden;
+		}
+		.text-container {
+			position: absolute;
+			width: 100%;
+			transition: top .5s ease-in-out;
+		}
+		.text {
+			font-family: sans-serif;
+			padding: 4em;
+			height: 12em;
+		}
+		.text-container.iqvia {
+			top: 0;
+		}
+		.text-container.oce {
+			top: -20em;
+		}
+		.text-container.remote {
+			top: -40em;
+		}
+		.text-container.veeva {
+			top: -60em;
+		}
+		.text:not(.active) {
+			opacity: .1;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="cert-container">
+			<div class="cert-btn-fg">
+				<div class="btn-container iqvia">
+					<img src="iqvia.png">
+				</div>
+				<div class="btn-container oce">
+					<img src="oce.png">
+				</div>
+				<div class="btn-container remote">
+					<img src="remote.png">
+				</div>
+				<div class="btn-container veeva">
+					<img src="veeva.png">
+				</div>
+			</div>
+			<div class="cert-btn-bg">
+				<div class="btn-container" onclick="makeActive('iqvia')">
+					<img src="iqvia.png">
+				</div>
+				<div class="btn-container" onclick="makeActive('oce')">
+					<img src="oce.png">
+				</div>
+				<div class="btn-container" onclick="makeActive('remote')">
+					<img src="remote.png">
+				</div>
+				<div class="btn-container" onclick="makeActive('veeva')">
+					<img src="veeva.png">
+				</div>
+			</div>
+		</div>
+		<div class="scroll-container">
+			&nbsp;
+			<div class="text-container">
+				<div class="text" id="iqvia">
+					<h1>IQVIA</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
+				<div class="text" id="oce">
+					<h1>OCE</h1>
+					<p>How does the system generate all this custom content? It actually skims Wikipedia pages related to your search, copy-and-pasting information and reformatting it just for you. That means it’s not the sort of text you’d ever want to claim as your company’s own. But then again, it’s perfect for creating a layout that’s not trapped in a two-millennia-old anachronism.</p>
+				</div>
+				<div class="text" id="remote">
+					<h1>Remote detailing</h1>
+					<p>They’ve created a free text generator that replaces lorem ipsum with useful, topical prose that you can build in list or paragraph form, and in plain text or HTML. So if you’re creating a cooking site, you can generate text about hamburgers or tacos. And if you’re creating a political app, you can generate text about democracy or past presidents. It may not matter, but at the same time, if you’ve ever had to squint past the weird Latin to really fo</p>
+				</div>
+				<div class="text" id="veeva">
+					<h1>Veeva</h1>
+					<p>Lorem ipsum. To most of us, it’s a passage of meaningless Latin that fills websites or brochure layouts with text while waiting on writers to fill it with real copy. And in fact, lorem ipsum was designed as nonsense from the beginning. Its use rose to prominence as early as the 1500s, when an unknown printer created a test passage for a printing press by scrambling The Extremes of Good and Evil, written by C</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		function makeActive(which, auto) {
+			console.log(which);
+			var currentBtn = document.querySelector('.btn-container.active');
+			var currentText = document.querySelector('.text.active');
+			var nextBtn = document.querySelector(`.btn-container.${which}`);
+			var nextText = document.querySelector(`.text#${which}`);
+
+			if (currentBtn === nextBtn) return;
+			console.log(nextBtn, nextText);
+			nextBtn.classList.add('active');
+			nextText.classList.add('active');
+
+			if (currentBtn)document.querySelector(`.cert-btn-fg`).addEventListener('transitionend', _ => {
+				currentBtn.classList.remove('active')
+				currentText.classList.remove('active')
+			}, {once: true})
+
+			document.querySelector(`.cert-btn-fg`).className = 'cert-btn-fg '+ which;
+			document.querySelector(`.text-container`).className = 'text-container '+ which;
+			if (!auto) clearInterval(timer);
+		}
+		var timer, currentIndex = 0;
+		function setAuto() {
+			timer = setInterval(_ => {
+				var certs = ['iqvia', 'oce', 'remote', 'veeva'];
+				var nextIndex = currentIndex+1 >=  certs.length ? 0 : currentIndex + 1;
+				makeActive(certs[nextIndex], true);
+				currentIndex = nextIndex;
+			}, 3000)
+		}
+		makeActive('iqvia');
+		setAuto()
+	</script>
+</body>
+</html>
