@@ -1,0 +1,43 @@
+.flex-center {
+	justify-content: center;
+	align-items: center;
+}
+
+.active.no-touching {
+	touch-action: unset;
+	pointer-events: unset;
+}
+.no-touching {
+	touch-action: none;
+	pointer-events: none;
+}
+
+.bg-darker {
+	background-color: $gray-900;
+}
+
+#menu {
+	z-index: 10;
+	opacity: 0;
+	top: 45px;
+	bottom: 0;
+	width: 100vw;
+	height: calc(100vh - 45px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	transition: all .5s ease-in-out;
+	&.active {
+		opacity: 1
+	}
+}
+a {
+	text-decoration: none;
+}
+
+.hamburger {
+	z-index: 12;
+	cursor: pointer;
+}
+.section {
+	min-height: 100vh;
+}
