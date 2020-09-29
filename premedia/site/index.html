@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="menu" class="position-fixed d-flex bg-dark no-touching flex-center">
-		<div class="container px-2 px-lg-3 h-100">
+		<div class="container px-2 px-lg-3 h-sm-100">
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-4 p-3 mb-md-4">
 					<h2 class="text-danger display-5 mb-4">What we do</h3>
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 	</div>
-	<header class="navbar fixed-top bg-dark container text-white">
+	<header class="navbar fixed-top bg-dark px-5 text-white">
 		<div class="navbar-section">
 			<h2 class="mb-0">Vakils</h2>
 		</div>
@@ -51,15 +51,41 @@
 			<div class="position-relative hamburger" onclick="toggleMenu()">menu</div>
 		</div>
 	</header>
-	<div class="section py-5 bg-dark d-flex">
-		<div class="container d-flex flex-column justify-content-between align-self-stretch">
-			<div></div>
-			<div>
-				<h2 class="display-1 text-white">We are a global</h2>
-				<div class="display-1 text-danger">Development</div>
-				<h2 class="display-1 text-white">Partner for Brands & Agencies</h2>
+	<div class="snap-container vh-100">
+		<div class="snap-point">
+			<div class="section bg-dark d-flex ">
+				<div class="container d-flex flex-column justify-content-between align-self-stretch">
+					<div></div>
+					<div>
+						<h2 class="display-1 text-white">We are a global</h2>
+						<div class="display-1 text-danger">Development</div>
+						<h2 class="display-1 text-white">Partner for Brands & Agencies</h2>
+					</div>
+					<div>hi</div>
+				</div>
 			</div>
-			<div>hi</div>
+			<div class="section half bg-warning d-flex flex-center">
+				<div class="container text-center">
+					<p class="lead w-50 mx-auto">
+						We are experts at bringing brands to life across digital channels. We specialise in development. Our eDetailers, website,s and emailers are specifically developed with conversion first and foremost, providing the best standards for marketing campaigns.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div id="services" class="snap-point snap-container mandatory">
+			<div class="section half bg-danger snap-point"></div>
+			<div class="section half"></div>
+			<div class="section half bg-primary snap-point"></div>
+			<div class="section half"></div>
+			<div class="section half bg-secondary snap-point"></div>
+			<div class="section half"></div>
+		</div>
+		<div class="">
+			<div class="section map" style="background-color: lavender"><h1>Map</h1></div>
+			<div class="section bg-info"><h1>Case studies</h1></div>
+			<div class="section"><h1>About</h1></div>
+			<div class="section half bg-primary"><h1>form</h1></div>
+			<div class="section half bg-dark"><h1>footer</h1></div>
 		</div>
 	</div>
 	<script type="text/javascript">

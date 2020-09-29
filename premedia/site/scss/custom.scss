@@ -30,6 +30,11 @@
 		opacity: 1
 	}
 }
+@include media-breakpoint-down(sm) { 
+	.h-sm-100 {
+		height: 100%;
+	}
+}
 a {
 	text-decoration: none;
 }
@@ -39,5 +44,23 @@ a {
 	cursor: pointer;
 }
 .section {
+	padding: 45px 0;
 	min-height: 100vh;
+	&.half {
+		min-height: 50vh;
+	}
+}
+#services {
+	height: 100vh;
+	overflow-y: scroll;
+}
+.snap-container {
+	scroll-snap-type: y proximity;
+	overflow-y: scroll;
+	&.mandatory {
+		scroll-snap-type: y mandatory;
+	}
+	.snap-point {
+		scroll-snap-align: start;
+	}
 }
