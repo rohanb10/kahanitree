@@ -3,6 +3,7 @@
 <head>
 	<title>Vakils Premedia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Playfair+Display:wght@400&display=swap&subset=latin" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/style.min.css">
 </head>
 <body>
@@ -10,7 +11,7 @@
 		<div class="container px-2 px-lg-3 h-sm-100">
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-4 p-3 mb-md-4">
-					<h2 class="text-danger display-5 mb-4">What we do</h3>
+					<h2 class="text-danger display-5 mb-4">What we do</h2>
 					<div class="submenu pl-3">
 						<div class="menu-item my-2"><a class="text-white" href="#">eDetailers</a></div>
 						<div class="menu-item my-2"><a class="text-white" href="#">Web Development</a></div>
@@ -21,7 +22,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4 p-3 mb-md-4">
-					<h2 class="text-danger display-5 mb-4">Who we are</h3>
+					<h2 class="text-danger display-5 mb-4">Who we are</h2>
 					<div class="submenu pl-3">
 						<div class="menu-item my-2"><a class="text-white" href="#">Values</a></div>
 						<div class="menu-item my-2"><a class="text-white" href="#">The Team</a></div>
@@ -30,7 +31,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-4 bg-darker p-3 mb-md-4">
-					<h2 class="text-danger display-5 mb-4">Get in Touch</h3>
+					<h2 class="text-danger display-5 mb-4">Get in Touch</h2>
 					<div class="submenu pl-3">
 						<div class="menu-item my-2"><a class="text-white" href="#">info@vakilspremedia.com</a></div>
 						<div class="menu-item my-2"><a class="text-white" href="#">Tel: +91 22 2430 6780</a></div>
@@ -51,46 +52,123 @@
 			<div class="position-relative hamburger" onclick="toggleMenu()">menu</div>
 		</div>
 	</header>
-	<div class="snap-container mandatory vh-100">
-		<div class="snap-point">
-			<div class="section bg-dark d-flex ">
-				<div class="container d-flex flex-column justify-content-between align-self-stretch">
-					<div></div>
-					<div>
-						<h2 class="display-1 text-white">We are a global</h2>
-						<div class="display-1 text-danger">Development</div>
-						<h2 class="display-1 text-white">Partner for Brands & Agencies</h2>
-					</div>
-					<div>hi</div>
-				</div>
+	<div class="section bg-dark d-flex ">
+		<div class="container d-flex flex-column justify-content-between align-self-stretch">
+			<div></div>
+			<div>
+				<h2 class="display-1 text-white">We are a global</h2>
+				<div class="display-1 text-danger">Development</div>
+				<h2 class="display-1 text-white">Partner for Brands & Agencies</h2>
 			</div>
-			<div class="section half bg-warning d-flex flex-center">
-				<div class="container text-center">
-					<p class="lead w-50 mx-auto">
-						We are experts at bringing brands to life across digital channels. We specialise in development. Our eDetailers, website,s and emailers are specifically developed with conversion first and foremost, providing the best standards for marketing campaigns.
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="services" class="snap-point snap-container mandatory">
-			<div class="section half bg-danger snap-point"></div>
-			<div class="section half"></div>
-			<div class="section half bg-primary snap-point"></div>
-			<div class="section half"></div>
-			<div class="section half bg-secondary snap-point"></div>
-			<div class="section half"></div>
-		</div>
-		<div class="">
-			<div class="section map" style="background-color: lavender"><h1>Map</h1></div>
-			<div class="section bg-info"><h1>Case studies</h1></div>
-			<div class="section"><h1>About</h1></div>
-			<div class="section half bg-primary"><h1>form</h1></div>
-			<div class="section half bg-dark"><h1>footer</h1></div>
+			<div>hi</div>
 		</div>
 	</div>
+	<div class="py-5 px-2 d-flex flex-center">
+		<div class="container text-center">
+			<div class="row d-flex flex-center">
+				<div class="col-12 col-md-6 lead my-5 py-5">
+					We are experts at bringing brands to life across digital channels. We specialise in development. Our eDetailers, websites, and emailers are specifically developed with conversion first and foremost, providing the best standards for marketing campaigns.
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="services section" data-anim="-">
+		<div class="psuedo-section"><div data-child="wipe-in-right" class="half bg-edetailers"></div></div>
+		<div class="container d-flex flex-center">
+			<div class="row flex-row-reverse">
+				<div class="col-12 col-md-6">
+					<img data-child="fade-in-left" data-delay="1.5s" class="img-fluid" src="img/slide2.jpg">
+				</div>
+				<div class="col-12 col-md-1"></div>
+				<div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+					<div class="display-3 section-title mt-5" data-child="fade-in-right" data-delay="1s">eDetailing</div>
+					<div class="lead py-5" data-child="fade-in-right" data-delay="2s">
+						Helping you make high impact sales engagements to healthcare professionals
+					</div>
+					<div class="services-link" data-child="fade-in-right" data-delay="2.25s">
+						Read More
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="services section" data-anim="-">
+		<div class="psuedo-section"><div data-child="wipe-in-left" class="half bg-web"></div></div>
+		<div class="container d-flex flex-center">
+			<div class="row flex-row-reverse">
+				<div class="col-12 col-md-6">
+					<img data-child="fade-in-left" data-delay="1.5s" class="img-fluid" src="img/slide2.jpg">
+				</div>
+				<div class="col-12 col-md-1"></div>
+				<div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+					<div class="display-3 section-title mt-5" data-child="fade-in-right" data-delay="1s">Web Development</div>
+					<div class="lead py-5" data-child="fade-in-right" data-delay="2s">
+						We create high performance websites that drive new enquiries and sales for your business.
+					</div>
+					<div class="services-link" data-child="fade-in-right" data-delay="2.25s">
+						Read More
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="services section" data-anim="-">
+		<div class="psuedo-section"><div data-child="wipe-in-right" class="half bg-email"></div></div>
+		<div class="container d-flex flex-center">
+			<div class="row flex-row-reverse">
+				<div class="col-12 col-md-6">
+					<img data-child="fade-in-left" data-delay="1.5s" class="img-fluid" src="img/slide2.jpg">
+				</div>
+				<div class="col-12 col-md-1"></div>
+				<div class="col-12 col-md-5 d-flex flex-column justify-content-center">
+					<div class="display-3 section-title mt-5" data-child="fade-in-right" data-delay="1s">Email Marketing & Campaigns</div>
+					<div class="lead py-5" data-child="fade-in-right" data-delay="2s">
+						Coding pixel-perfect email templates, deploying campaigns and setting up automation. You can rely on us for everything about email.
+					</div>
+					<div class="services-link" data-child="fade-in-right" data-delay="2.25s">
+						Read More
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section map bg-web flex-center">
+		<div class="container">
+			<div class="row no-gutters">
+				<div data-anim="-" class="col-12 col-md-4 text-white">
+					<div data-child="fade-in-left" class="display-4">4 years<span>.</span></div>
+					<div data-child="fade-in-left" data-delay=".75s" class="display-4">100+ projects<span>.</span></div>
+					<div data-child="fade-in-left" data-delay="1.5s" class="display-4">25+ countries<span>.</span></div>
+					<br>
+					<div data-child="fade-in-left" data-delay="2.5s" class="pt-5 lead">Working across the globe with pharmaceutical companies</div>
+				</div>
+				<div class="col-12 col-md-8">
+					<h1 class="text-center">Map</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" style="background-color: lavender"><h1>Case studies</h1></div>
+	<div class="section"><h1>About</h1></div>
+	<div class="section half bg-primary"><h1>form</h1></div>
+	<div class="section half bg-dark"><h1>footer</h1></div>
+	<!-- <script type="text/javascript" src="js/wow.min.js"></script> -->
 	<script type="text/javascript">
 		function toggleMenu() {
 			document.getElementById('menu').classList.toggle('active');
+		}
+
+		observer = new IntersectionObserver(entries => entries.forEach(e => {if (e.intersectionRatio > 0) animate(e.target)}),{threshold:.33});
+		document.querySelectorAll('[data-anim]').forEach(i => observer.observe(i))
+
+		animate = item => {
+			observer.unobserve(item);
+			item.style.animationDelay = item.getAttribute('data-delay') || '0s';
+			item.classList.add('animated', item.getAttribute('data-anim'))
+			item.querySelectorAll('[data-child]').forEach(c => {
+				c.style.animationDelay = c.getAttribute('data-delay') || '0s';
+				c.classList.add('animated', c.getAttribute('data-child'))
+			})
 		}
 	</script>
 </body>
