@@ -1,11 +1,11 @@
 .bg-edetailers {
-	background-color: #c84b5d
+	background-color: #D83F5A;
 }
 .bg-web {
-	background-color: #1b4f99
+	background-color: #074E9E;
 }
 .bg-email {
-	background-color: #85b1e8;
+	background-color: #7BB1ED;
 }
 
 .flex-center {
@@ -21,6 +21,10 @@
 	touch-action: none;
 	pointer-events: none;
 }
+.header {
+	position: relative;
+	z-index: 12;
+}
 
 .bg-darker {
 	background-color: $gray-900;
@@ -33,19 +37,58 @@ h1,h2,h3,h4,h5,.display-1,.display-2,.display-3,.display-4,.display-5,.display-6
 	font-family: 'Playfair Display', serif;
 }
 
-#menu {
+#menu, .menu-underlay {
 	z-index: 10;
-	opacity: 0;
-	top: 45px;
+	// clip-path: polygon(125% 0%, 200% 0%, 175% 100%, 100% 100%);
+	// -webkit-clip-path: polygon(125% 0%, 200% 0%, 175% 100%, 100% 100%);
+	top: 0;
 	bottom: 0;
 	width: 100vw;
-	height: calc(100vh - 45px);
+	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-	transition: all .5s ease-in-out;
+	transition: transform .33s linear;
+	// border-left: 10px solid green;
+	transform: skewX(-10deg) translateX(125%);
 	&.active {
-		opacity: 1
+		transform: skewX(0) translateX(0);
+		// clip-path: polygon(0% 0%, 125% 0%, 100% 100%, -25% 100%);
+		// -webkit-clip-path: polygon(0% 0%, 125% 0%, 100% 100%, -25% 100%);
 	}
+}
+#menu {
+	transition-delay: .33s;
+}
+.menu-underlay {
+	z-index: 6;
+	&:nth-of-type(2) {
+		z-index: 7;
+		transition-delay: .1s;
+	}
+	&:nth-of-type(3) {
+		z-index: 8;
+		transition-delay: .2s;
+	}
+}
+
+.hamburger {
+	cursor: pointer;
+	transition: transform .33s ease-in-out;
+	.top, .bottom {
+		stroke-dasharray: 40 121;
+	}
+	&.active {
+		transform: rotate(45deg);
+		.top, .bottom {
+			stroke-dashoffset: -68px;
+		}
+	}
+}
+.line {
+	fill:none;
+	transition: all .33s;
+	stroke: #D83F5A;
+	stroke-width:3.5;
 }
 @include media-breakpoint-down(sm) { 
 	.h-sm-100 {
@@ -64,14 +107,14 @@ a {
 	line-height: 1.75;
 }
 .section {
-	min-height: 100vh;
+	min-height: 90vh;
 	position: relative;
 	display: flex;
 	&.half {
-		min-height: 50vh;
+		min-height: 45vh;
 	}
 	.half {
-		min-height: 50vh;
+		min-height: 45vh;
 		z-index: 8;
 		position: relative;
 		display: flex;
@@ -99,6 +142,20 @@ a {
 }
 .map {
 	span {
-		color: red;
+		display: inline-block;
+		color: #D83F5A;
+	}
+	.jvectormap-zoomin, .jvectormap-zoomout, .jvectormap-legend-cnt {
+		display: none;
+	}
+	.jvectormap-container {
+		width: 100%;
+		height: 100%;
+	}
+	svg, .jvectormap-container, #map {
+		overflow: visible;
+		touch-action: none;
+		pointer-events: none;
+		min-height: 30vh;
 	}
 }

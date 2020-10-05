@@ -44,12 +44,21 @@
 			</div>
 		</div>
 	</div>
-	<header class="navbar fixed-top bg-dark px-5 text-white">
+	<div class="menu-underlay bg-edetailers position-fixed no-touching"></div>
+	<div class="menu-underlay bg-web position-fixed no-touching"></div>
+	<div class="menu-underlay bg-email position-fixed no-touching"></div>
+	<header class="navbar fixed-top px-5 text-white">
 		<div class="navbar-section">
 			<h2 class="mb-0">Vakils</h2>
 		</div>
 		<div class="navbar-section">
-			<div class="position-relative hamburger" onclick="toggleMenu()">menu</div>
+			<div class="position-relative">
+				<svg class="hamburger" viewBox="0 0 100 100" width="50" onclick="toggleMenu(this)">
+					<path class="line top" d="M 70 38 H 30 C 30 38 21.5 37 21.5 44 C 21.5 51 30 50 30 50 H 50 V 30" />
+					<path class="line" d="m 70,50 h -40" />
+					<path class="line bottom" d="M 31 62 H 70 C 70 62 78.5 63 78.5 56 C 78.5 49 70 50 70 50 H 50 V 70" />
+				</svg>
+			</div>
 		</div>
 	</header>
 	<div class="section bg-dark d-flex ">
@@ -135,41 +144,35 @@
 	<div class="section map bg-web flex-center">
 		<div class="container">
 			<div class="row no-gutters">
-				<div data-anim="-" class="col-12 col-md-4 text-white">
-					<div data-child="fade-in-left" class="display-4">4 years<span>.</span></div>
-					<div data-child="fade-in-left" data-delay=".75s" class="display-4">100+ projects<span>.</span></div>
-					<div data-child="fade-in-left" data-delay="1.5s" class="display-4">25+ countries<span>.</span></div>
+				<div class="col-12 col-md-4 text-white">
+					<div class="display-4">4 years<span>.</span></div>
+					<div class="display-4">100+ projects<span>.</span></div>
+					<div class="display-4">25+ countries<span>.</span></div>
 					<br>
-					<div data-child="fade-in-left" data-delay="2.5s" class="pt-5 lead">Working across the globe with pharmaceutical companies</div>
+					<div class="pt-5 lead">Working across the globe with pharmaceutical companies</div>
 				</div>
-				<div class="col-12 col-md-8">
-					<h1 class="text-center">Map</h1>
+				<div class="col-12 col-md-8 d-flex">
+					<div id="map" class="w-100 h-100"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="section" style="background-color: lavender"><h1>Case studies</h1></div>
+	<div class="section flex-center" style="background-color: #F6F6F6">
+		<div class="my-5 text-center">
+			<h2>Case Studies</h2>
+			<div class="row">
+				<div class="col-12">
+					<p>hi</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="section"><h1>About</h1></div>
 	<div class="section half bg-primary"><h1>form</h1></div>
 	<div class="section half bg-dark"><h1>footer</h1></div>
-	<!-- <script type="text/javascript" src="js/wow.min.js"></script> -->
-	<script type="text/javascript">
-		function toggleMenu() {
-			document.getElementById('menu').classList.toggle('active');
-		}
-
-		observer = new IntersectionObserver(entries => entries.forEach(e => {if (e.intersectionRatio > 0) animate(e.target)}),{threshold:.33});
-		document.querySelectorAll('[data-anim]').forEach(i => observer.observe(i))
-
-		animate = item => {
-			observer.unobserve(item);
-			item.style.animationDelay = item.getAttribute('data-delay') || '0s';
-			item.classList.add('animated', item.getAttribute('data-anim'))
-			item.querySelectorAll('[data-child]').forEach(c => {
-				c.style.animationDelay = c.getAttribute('data-delay') || '0s';
-				c.classList.add('animated', c.getAttribute('data-child'))
-			})
-		}
-	</script>
+	<script type="text/javascript" src="js/jquery.2.0.3.custom.min.js"></script>
+	<script type="text/javascript" src="js/jvectormap.2.0.5.min.js"></script>
+	<script type="text/javascript" src="js/jvector.world.min.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
 </body>
 </html>
