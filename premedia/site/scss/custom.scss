@@ -25,6 +25,13 @@
 	position: relative;
 	z-index: 12;
 }
+#logo {
+	max-height: 2em;
+	transition: filter .5s ease-in-out;
+	&.dark {
+		filter: invert(1);
+	}
+}
 
 .bg-darker {
 	background-color: $gray-900;
@@ -39,46 +46,51 @@ h1,h2,h3,h4,h5,.display-1,.display-2,.display-3,.display-4,.display-5,.display-6
 
 #menu, .menu-underlay {
 	z-index: 10;
-	// clip-path: polygon(125% 0%, 200% 0%, 175% 100%, 100% 100%);
-	// -webkit-clip-path: polygon(125% 0%, 200% 0%, 175% 100%, 100% 100%);
 	top: 0;
 	bottom: 0;
 	width: 100vw;
 	height: 100vh;
 	overflow-y: auto;
 	overflow-x: hidden;
-	transition: transform .33s linear;
-	// border-left: 10px solid green;
+	transition: transform .5s ease-in-out;
 	transform: skewX(-10deg) translateX(125%);
+	.container {
+		transition: opacity .5s ease-in-out;
+		opacity: 0;
+	}
 	&.active {
 		transform: skewX(0) translateX(0);
-		// clip-path: polygon(0% 0%, 125% 0%, 100% 100%, -25% 100%);
-		// -webkit-clip-path: polygon(0% 0%, 125% 0%, 100% 100%, -25% 100%);
+		.container {
+			opacity: 1;
+			transition-delay: .65s
+		}
 	}
 }
 #menu {
-	transition-delay: .33s;
+	transition-delay: .15s;
 }
 .menu-underlay {
 	z-index: 6;
 	&:nth-of-type(2) {
 		z-index: 7;
-		transition-delay: .1s;
+		transition-delay: .05s;
 	}
 	&:nth-of-type(3) {
 		z-index: 8;
-		transition-delay: .2s;
+		transition-delay: .1s;
 	}
 }
 
 .hamburger {
+	mix-blend-mode: multiply;
 	cursor: pointer;
-	transition: transform .33s ease-in-out;
+	transition: transform .5s ease-in-out;
 	.top, .bottom {
 		stroke-dasharray: 40 121;
 	}
 	&.active {
 		transform: rotate(45deg);
+		transition-delay: .5s;
 		.top, .bottom {
 			stroke-dashoffset: -68px;
 		}
@@ -86,7 +98,7 @@ h1,h2,h3,h4,h5,.display-1,.display-2,.display-3,.display-4,.display-5,.display-6
 }
 .line {
 	fill:none;
-	transition: all .33s;
+	transition: all .5s;
 	stroke: #D83F5A;
 	stroke-width:3.5;
 }

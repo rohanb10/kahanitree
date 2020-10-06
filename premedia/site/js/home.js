@@ -7,18 +7,60 @@ function toggleMenu(icon) {
 
 
 // Animation observer
-observer = new IntersectionObserver(entries => entries.forEach(e => {if (e.intersectionRatio > 0) animate(e.target)}),{threshold:.33});
-document.querySelectorAll('[data-anim]').forEach(i => observer.observe(i))
+// observer = new IntersectionObserver(entries => entries.forEach(e => {if (e.intersectionRatio > 0) animate(e.target)}),{threshold:.33});
+// document.querySelectorAll('[data-anim]').forEach(i => observer.observe(i))
 
-animate = item => {
-	observer.unobserve(item);
-	item.style.animationDelay = item.getAttribute('data-delay') || '0s';
-	item.classList.add('animated', item.getAttribute('data-anim'))
-	item.querySelectorAll('[data-child]').forEach(c => {
-		c.style.animationDelay = c.getAttribute('data-delay') || '0s';
-		c.classList.add('animated', c.getAttribute('data-child'))
+// animate = item => {
+// 	observer.unobserve(item);
+// 	item.style.animationDelay = item.getAttribute('data-delay') || '0s';
+// 	item.classList.add('animated', item.getAttribute('data-anim'))
+// 	item.querySelectorAll('[data-child]').forEach(c => {
+// 		c.style.animationDelay = c.getAttribute('data-delay') || '0s';
+// 		c.classList.add('animated', c.getAttribute('data-child'))
+// 	})
+// }
+
+var animationObserver = new IntersectionObserver(animateItems, {threshold:.33});
+function animateItems(entries) {
+	entries.forEach(e => {
+		if (e.intersectionRatio > 0) {
+			var item = e.target;
+			animationObserver.unobserve(item);
+			// get data attributes (and then child attributes) from each item and apply them to css
+			item.style.animationDelay = item.getAttribute('data-delay') || '0s';
+			item.classList.add('animated', item.getAttribute('data-anim'))
+			item.querySelectorAll('[data-child]').forEach(c => {
+				c.style.animationDelay = c.getAttribute('data-delay') || '0s';
+				c.classList.add('animated', c.getAttribute('data-child'))
+			})
+		}
+	});
+}
+
+var navbarObserver = new IntersectionObserver(toggleNavbarColour, {
+	threshold: Array.from(Array(101), (v,i) => parseFloat((i/100).toPrecision(2))), 
+	// rootMargin: '50px'
+});
+function toggleNavbarColour(entries) {
+
+	var logo = document.getElementById('logo')
+	var isInDarkBg = entries.some(e => e.intersectionRatio > 0 && e.intersectionRatio <= 1 && e.boundingClientRect.top < 70)
+	logo.classList.toggle('dark', isInDarkBg)
+	// console.log(expression);
+	// if (isInDarkBg) console.log(entries.find(e => e.intersectionRatio > 0 && e.intersectionRatio < 1).target)
+	entries.forEach(e => {
+		if (e.target === document.querySelector('.half.bg-web')) console.log(e.intersectionRatio, e);
+		// logo.classList.toggle('dark', e.intersectionRatio > 0.1 && e.intersectionRatio <= 1 && e.boundingClientRect.top < 70)
 	})
 }
+// navbarObserver.observe(document.getElementById('hi'));
+document.querySelectorAll('.section.bg-dark, .bg-web, .navbar').forEach(bg => navbarObserver.observe(bg))
+// navbarObserver.observe(document.querySelector('.section.bg-dark'))
+
+
+document.querySelectorAll('[data-anim]').forEach(i => animationObserver.observe(i))
+// End animation observer
+
 // End animation observer
 
 
